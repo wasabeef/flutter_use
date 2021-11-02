@@ -3,7 +3,8 @@ library template;
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:video_player/video_player.dart';
 
-/// plays video obtained from the network using [video_player](ref link) plugin, tracks its state, and exposes playback controls.
+/// Creates `VideoPlayerController` using [video_player](ref link), plays video
+/// obtained from the network, tracks its state, and exposes playback controls.
 /// [ref link](https://pub.dev/packages/video_player)
 VideoPlayerController useNetworkVideo({
   required String dataSource,

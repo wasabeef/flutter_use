@@ -1,6 +1,6 @@
 # `useNetworkVideo`
 
-plays video obtained from the network using [video_player](ref link) plugin, tracks its state, and exposes playback controls
+Creates `VideoPlayerController` using [video_player](https://pub.dev/packages/video_player), plays video obtained from the network, tracks its state, and exposes playback controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
 # `useAssetVideo`
 
-plays video from an asset using plugin, tracks its state, and exposes playback controls.
+Creates `VideoPlayerController` using [video_player](https://pub.dev/packages/video_player), plays video obtained from an asset, tracks its state, and exposes playback controls.
 
 ## Installation
 
