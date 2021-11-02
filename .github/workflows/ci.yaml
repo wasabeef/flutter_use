@@ -1,0 +1,40 @@
+name: Dart CI
+
+on:
+  pull_request: { }
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    name: Run on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '2.5.3'
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: '2.14.4'
+
+      - name: Set environment
+        run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+
+      - name: Get dependencies for macos and ubuntu
+        run: |
+          dart pub global activate melos
+          melos run pub:get
+    
+      - name: Run tests for our dart project.
+        run: |
+          melos run unit:test
+
+      - name: Check for any formatting and statically analyze the code.
+        run: |
+          melos run format
+          melos run analyze
