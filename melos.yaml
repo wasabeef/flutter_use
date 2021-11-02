@@ -22,8 +22,12 @@ scripts:
   example:
     run: melos exec --flutter -- exec flutter run
     select-package:
-      scope: 'example'
+      scope: example
 
   unit:test:
     run: |
       melos exec -- exec flutter test
+    select-package:
+      dir-exists:
+        - test
+      ignore-scope: example
