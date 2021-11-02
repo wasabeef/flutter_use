@@ -1,0 +1,32 @@
+# `useNetworkVideo`
+
+plays video obtained from the network using [video_player](ref link) plugin, tracks its state, and exposes playback controls
+
+## Installation
+
+Required [video_player](https://img.shields.io/badge/required-video__player-brightgreen).
+
+```yaml
+dependencies:
+  video_player:
+  flutter_use_video: ^1.0.0
+```
+
+## Usage
+
+```dart
+class Counter extends HookWidget {
+  @override
+  Widget build(BuildContext context) {
+    final videoController = useNetworkVideo(
+      dataSource: "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+      autoPlay: true,
+      looping: true,
+    );
+
+    return Container(
+      child: VideoPlayer(videoController),
+    );
+  }
+}
+```
