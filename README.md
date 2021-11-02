@@ -10,15 +10,15 @@
     <br />
     <br />
   </h1>
-  <sup>
+  <div>
     <br />
     <a href="https://pub.dev/packages/flutter_lints">
-      <img src="https://img.shields.io/badge/style-flutter_lints-40c4ff.svg" alt="flutter_lints" />
+      <img src="https://img.shields.io/badge/style-flutter__lints-40c4ff.svg" alt="flutter_lints" />
     </a>
     <br />
     Inspired by <a href="https://github.com/streamich/react-use">react-use</a>.
     <br />
-  </sup>
+  </div>
   <br />
   <br />
 </div>
