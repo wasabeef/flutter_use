@@ -2,9 +2,7 @@
   <h1>
     <br/>
     <br/>
-    👍
-    <br />
-    flutter_use
+    <img src="./art/flutter_use_logo.png" alt="flutter_use" />
     <br />
     <br />
     <br />
