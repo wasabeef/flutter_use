@@ -11,7 +11,7 @@ class Counter extends HookWidget {
     useEffectOnce(() {
       print('Running effect once on mount');
       return () {
-        console.log('Running clean-up of effect on unmount');
+        print('Running clean-up of effect on unmount');
       }
     });
 
