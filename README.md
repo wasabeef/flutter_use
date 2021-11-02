@@ -36,7 +36,6 @@
   - `useFullscreen` &mdash; display an element or video full-screen.
   - [`useAudio`](./docs/useAudio.md) &mdash; plays audio and exposes its controls. [![just_audio](https://img.shields.io/badge/required-just__audio-brightgreen)](https://pub.dev/packages/just_audio)
   - [`useAssetVideo`](./docs/useAssetVideo.md) and [`useNetworkVideo`](./docs/useNetworkVideo.md) &mdash; plays video, tracks its state, and exposes playback controls. [![video_player](https://img.shields.io/badge/required-video__player-brightgreen)](https://pub.dev/packages/video_player)
-  - `useCamera` &mdash; plays camera, tracks its state, and its controls. [![camera](https://img.shields.io/badge/required-camera-brightgreen)](https://pub.dev/packages/camera)
     <br/>
     <br/>
 - **Animations**
