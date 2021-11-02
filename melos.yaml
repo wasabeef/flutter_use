@@ -18,6 +18,11 @@ scripts:
   analyze: melos exec -- exec dart analyze .
 
   format: ./scripts/dartfmt.sh
+    
+  example:
+    run: melos exec --flutter -- exec flutter run
+    select-package:
+      scope: 'example'
 
   unit:test:
     run: |
