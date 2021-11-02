@@ -1,0 +1,10 @@
+{
+  "name": "flutter_use",
+  "author": "wasabeef",
+  "devDependencies": {
+    "husky": "7.0.4"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
