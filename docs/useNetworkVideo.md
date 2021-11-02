@@ -4,7 +4,7 @@ plays video obtained from the network using [video_player](ref link) plugin, tra
 
 ## Installation
 
-Required [video_player](https://img.shields.io/badge/required-video__player-brightgreen).
+Required [video_player](https://pub.dev/packages/video_player).
 
 ```yaml
 dependencies:

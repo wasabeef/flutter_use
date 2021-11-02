@@ -4,7 +4,7 @@ plays video from an asset using plugin, tracks its state, and exposes playback c
 
 ## Installation
 
-Required [video_player](https://img.shields.io/badge/required-video__player-brightgreen).
+Required [video_player](https://pub.dev/packages/video_player).
 
 ```yaml
 dependencies:
