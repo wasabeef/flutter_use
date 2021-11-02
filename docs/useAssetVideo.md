@@ -15,7 +15,7 @@ dependencies:
 ## Usage
 
 ```dart
-class Counter extends HookWidget {
+class Sample extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final videoController = useAssetVideo(

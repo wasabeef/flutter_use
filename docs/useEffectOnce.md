@@ -5,7 +5,7 @@ Flutter lifecycle hook that runs an effect only once.
 ## Usage
 
 ```dart
-class Counter extends HookWidget {
+class Sample extends HookWidget {
   @override
   Widget build(BuildContext context) {
     useEffectOnce(() {
