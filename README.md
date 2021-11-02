@@ -54,7 +54,7 @@
     <br/>
     <br/>
 - **Lifecycles**
-  - `useEffectOnce` &mdash; a modified `useEffect` hook that only runs once.
+  - [`useEffectOnce`](./docs/useEffectOnce.md) &mdash; a modified [`useEffect`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/useEffect.html) hook that only runs once.
   - `useEvent` &mdash; subscribe to events.
   - `useLifecycles` &mdash; calls `mount` and `unmount` callbacks.
   - `usePromise` &mdash; resolves promise only while component is mounted.

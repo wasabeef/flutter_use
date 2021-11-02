@@ -1,6 +1,6 @@
-name: flutter_use_template
+name: flutter_use
 
-description: This is a template hook for Flutter Hooks.
+description: Collection of Flutter Hooks.
 version: 0.0.1
 homepage: https://github.com/wasabeef/flutter_use
 repository: https://github.com/wasabeef/flutter_use

@@ -22,5 +22,3 @@ scripts:
   unit:test:
     run: |
       melos exec -- exec flutter test
-    select-package:
-      dir-exists: test
