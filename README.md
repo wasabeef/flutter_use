@@ -1,13 +1,5 @@
 <div align="center">
-  <h1>
-    <br/>
-    <br/>
-    <img src="./art/flutter_use_logo.png" alt="flutter_use" />
-    <br />
-    <br />
-    <br />
-    <br />
-  </h1>
+  <img src="https://github.com/wasabeef/flutter_use/raw/main/art/flutter_use_logo.png" width="480px" alt="flutter_use" />
   <div>
     <br />
     <a href="https://pub.dev/packages/flutter_lints">
