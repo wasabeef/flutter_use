@@ -1,0 +1,26 @@
+name: flutter_use
+
+packages:
+  - packages/**
+  - example/*
+
+ide:
+  intellij: true
+  vscode: true
+
+scripts:
+  pub:upgrade:
+    run: melos exec --flutter -- exec flutter pub upgrade
+
+  pub:get:
+    run: melos exec --flutter -- exec flutter pub get
+
+  analyze: melos exec -- exec dart analyze .
+
+  format: ./scripts/dartfmt.sh
+
+  unit:test:
+    run: |
+      melos exec -- exec flutter test
+    select-package:
+      dir-exists: test
