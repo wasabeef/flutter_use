@@ -66,7 +66,6 @@
 - **State**
   - `useDefault` &mdash; returns the default value when state is `null` or `undefined`.
   - `useLatest` &mdash; returns the latest state or props
-  - `usePrevious` &mdash; returns the previous state or props.
   - `usePreviousDistinct` &mdash; like `usePrevious` but with a predicate to determine if `previous` should update.
   - `useObservable` &mdash; tracks latest value of an `Observable`.
   - `useSetState` &mdash; creates `setState` method which works like `this.setState`.
