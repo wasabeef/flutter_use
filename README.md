@@ -6,7 +6,7 @@
       <img src="https://img.shields.io/badge/style-flutter__lints-40c4ff.svg" alt="flutter_lints" />
     </a>
     <br />
-    Inspired by <a href="https://github.com/streamich/react-use">react-use</a>.
+    <sup style="font-size: 2px;">Inspired by <a href="https://github.com/streamich/react-use">react-use</a>.</sup>
     <br />
   </div>
   <br />
