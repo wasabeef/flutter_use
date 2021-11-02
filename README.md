@@ -27,12 +27,12 @@
   - `useBattery` &mdash; tracks device battery state. ![battery_plus](https://img.shields.io/badge/required-battery__plus-brightgreen)
   - `useGeolocation` &mdash; tracks geo location state of user's device. ![geolocator](https://img.shields.io/badge/required-geolocator-brightgreen)
   - `useNetworkState` &mdash; tracks the state of browser's network connection. ![connectivity_plus](https://img.shields.io/badge/required-connectivity__plus-brightgreen)
-  - `useScroll` &mdash; tracks a widget's scroll position.
-  - `useScrolling` &mdash; tracks whether widget is scrolling.
   - `useAccelerometer`, `useUserAccelerometer`, `useGyroscope,` and `useMagnetometer` &mdash; tracks accelerometer, gyroscope, and magnetometer sensors state of user's device. ![sensor_plus](https://img.shields.io/badge/required-sensor__plus-brightgreen)
     <br/>
     <br/>
 - **UI**
+  - `useScroll` &mdash; tracks a widget's scroll position.
+  - `useScrolling` &mdash; tracks whether widget is scrolling.
   - `useFullscreen` &mdash; display an element or video full-screen.
   - `useAudio` &mdash; plays audio and exposes its controls. ![just_audio](https://img.shields.io/badge/required-just__audio-brightgreen)
   - [`useAssetVideo`](./docs/useAssetVideo.md) and [`useNetworkVideo`](./docs/useNetworkVideo.md) &mdash; plays video, tracks its state, and exposes playback controls. ![video_player](https://img.shields.io/badge/required-video__player-brightgreen) 
