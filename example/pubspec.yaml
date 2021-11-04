@@ -21,6 +21,8 @@ dependencies:
     path: ../packages/audio
   flutter_use_battery:
     path: ../packages/battery
+  flutter_use_network_state:
+    path: ../packages/network
 
 dev_dependencies:
   flutter_test:
