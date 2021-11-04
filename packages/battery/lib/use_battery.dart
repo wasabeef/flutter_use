@@ -12,9 +12,9 @@ ValueNotifier<UseBatteryState> useBattery() {
   final isInBatterySaveMode = useFuture(battery.isInBatterySaveMode);
 
   final newState = UseBatteryState(
-    fetched: batteryStateChanged.data != null &&
-        batteryLevel.data != null &&
-        isInBatterySaveMode.data != null,
+    fetched: batteryStateChanged.hasData ||
+        batteryLevel.hasData ||
+        isInBatterySaveMode.hasData,
     batteryLevel: batteryLevel.data,
     isInBatterySaveMode: isInBatterySaveMode.data,
     batteryState: batteryStateChanged.data,

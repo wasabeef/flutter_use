@@ -2,7 +2,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-/// Tracks the state of browser's network connection using [connectivity_plus](ref link).
+/// Tracks the state of network connection using [connectivity_plus](ref link).
 /// [ref link](https://pub.dev/packages/connectivity_plus)
 ValueNotifier<NetworkState> useNetworkState() {
   final state = useState(const NetworkState(fetched: false));
@@ -10,7 +10,7 @@ ValueNotifier<NetworkState> useNetworkState() {
   final connectivityChanged = useStream(connectivity.onConnectivityChanged);
 
   final newState = NetworkState(
-      fetched: connectivityChanged.data != null,
+      fetched: connectivityChanged.hasData,
       connectivityResult: connectivityChanged.data);
 
   if (state.value != newState) {
