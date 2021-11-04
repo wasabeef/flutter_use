@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run example on main.dart",
+            "program": "${workspaceFolder}/example/lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--debug"
+            ]
+        },
+    ]
+}
