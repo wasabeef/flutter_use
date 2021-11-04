@@ -1,5 +1,5 @@
 import 'package:battery_plus/battery_plus.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 /// Tracks battery status using [battery_plus](ref link).
