@@ -19,9 +19,15 @@ dependencies:
     path: ../packages/video
   flutter_use_audio:
     path: ../packages/audio
+  flutter_use_battery:
+    path: ../packages/battery
 
 dev_dependencies:
+  flutter_test:
+    sdk: flutter
   flutter_lints: ^1.0.0
+  mockito: ^5.0.16
+
 
 flutter:
   uses-material-design: true
