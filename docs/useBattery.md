@@ -39,7 +39,7 @@ class Sample extends HookWidget {
 ```
 ## Reference
 
-- **`fetched`**_`: boo`_ - whether battery state is fetched;
+- **`fetched`**_`: bool`_ - whether battery state is fetched;
 - **`batteryLevel`**_`: int`_ - representing the system's battery charge level to a value between 0 and 100.
 - **`isInBatterySaveMode`**_`: bool`_ - check if device is on battery save mode.
 - **`batteryState`**_`: BatteryState`_ - battery state changes.
