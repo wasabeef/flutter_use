@@ -1,5 +1,3 @@
-library template;
-
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:video_player/video_player.dart';
 
