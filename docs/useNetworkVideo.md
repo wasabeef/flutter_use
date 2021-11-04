@@ -9,7 +9,7 @@ Required [video_player](https://pub.dev/packages/video_player).
 ```yaml
 dependencies:
   video_player:
-  flutter_use_video: ^1.0.0
+  flutter_use_video: ^0.0.2
 ```
 
 ## Usage

@@ -9,7 +9,7 @@ Required [just_audio](https://pub.dev/packages/just_audio).
 ```yaml
 dependencies:
   just_audio:
-  flutter_use_audio: ^1.0.0
+  flutter_use_audio: ^0.0.2
 ```
 
 ## Usage

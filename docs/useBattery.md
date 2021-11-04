@@ -9,7 +9,7 @@ Required [battery_plus](https://pub.dev/packages/battery_plus).
 ```yaml
 dependencies:
   battery_plus:
-  flutter_use_battery: ^1.0.0
+  flutter_use_battery: ^0.0.2
 ```
 
 ## Usage
