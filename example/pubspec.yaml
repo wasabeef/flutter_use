@@ -23,6 +23,8 @@ dependencies:
     path: ../packages/battery
   flutter_use_network_state:
     path: ../packages/network
+  flutter_use_sensors:
+    path: ../packages/sensors
 
 dev_dependencies:
   flutter_test:
