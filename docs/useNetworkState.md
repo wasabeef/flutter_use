@@ -18,7 +18,7 @@ dependencies:
 class Sample extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final battery = useBattery();
+    final networkState = useNetworkState();
     return Scaffold(
       body: Center(
         child: Column(
@@ -39,7 +39,7 @@ class Sample extends HookWidget {
 ## Reference
 
 - **`fetched`**_`: bool`_ - whether network connection state is fetched;
-- **`connectivityResult`**_`: connectivityResult`_ - network connection state changes.
+- **`connectivity`**_`: ConnectivityResult`_ - network connection state changes.
   - **`wifi`** - Device connected via Wi-Fi.
   - **`ethernet`** - Device connected to ethernet network.
   - **`mobile`** - Device connected to cellular network.

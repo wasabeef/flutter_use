@@ -11,7 +11,7 @@ ValueNotifier<NetworkState> useNetworkState() {
 
   final newState = NetworkState(
       fetched: connectivityChanged.hasData,
-      connectivityResult: connectivityChanged.data);
+      connectivity: connectivityChanged.data);
 
   if (state.value != newState) {
     state.value = newState;
@@ -24,13 +24,13 @@ ValueNotifier<NetworkState> useNetworkState() {
 class NetworkState {
   const NetworkState({
     required this.fetched,
-    ConnectivityResult? connectivityResult,
-  }) : _connectivityResult = connectivityResult ?? ConnectivityResult.none;
+    ConnectivityResult? connectivity,
+  }) : _connectivity = connectivity ?? ConnectivityResult.none;
 
   final bool fetched;
 
-  final ConnectivityResult _connectivityResult;
-  ConnectivityResult get connectivityResult => _connectivityResult;
+  final ConnectivityResult _connectivity;
+  ConnectivityResult get connectivity => _connectivity;
 
   @override
   bool operator ==(Object other) =>
@@ -38,8 +38,8 @@ class NetworkState {
       other is NetworkState &&
           runtimeType == other.runtimeType &&
           fetched == other.fetched &&
-          _connectivityResult == other._connectivityResult;
+          _connectivity == other._connectivity;
 
   @override
-  int get hashCode => fetched.hashCode ^ _connectivityResult.hashCode;
+  int get hashCode => fetched.hashCode ^ _connectivity.hashCode;
 }
