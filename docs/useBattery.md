@@ -1,4 +1,4 @@
-# `useAudio`
+# `useBattery`
 
 Tracks battery status.
 
@@ -18,14 +18,21 @@ dependencies:
 class Sample extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final player = useAudio();
-    return ElevatedButton(
-      onPressed: () async {
-        player.play();
-        await player.seek(const Duration(seconds: 10));
-        await player.pause();
-      },
-      child: const Text('Play'),
+    final battery = useBattery();
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text("-- Battery --"),
+            Text("fetched: ${battery.value.fetched}"),
+            Text("batteryState: ${battery.value.batteryState}"),
+            Text("level: ${battery.value.batteryLevel}"),
+            Text("isInBatterySaveMode: ${battery.value.isInBatterySaveMode}"),
+          ],
+        ),
+      ),
     );
   }
 }
