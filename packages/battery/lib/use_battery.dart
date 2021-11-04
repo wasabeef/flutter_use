@@ -7,7 +7,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 ValueNotifier<UseBatteryState> useBattery() {
   final state = useState(const UseBatteryState(fetched: false));
   final battery = useMemoized(() => Battery());
-
   final batteryStateChanged = useStream(battery.onBatteryStateChanged);
   final batteryLevel = useFuture(battery.batteryLevel);
   final isInBatterySaveMode = useFuture(battery.isInBatterySaveMode);
