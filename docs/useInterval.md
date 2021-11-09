@@ -20,7 +20,7 @@ class Sample extends HookWidget {
       children: [
         Text("count: ${count.value}"),
         ElevatedButton(
-          onPressed: () async {
+          onPressed: () {
             isRunning.value = !isRunning.value;
           },
           child: const Text("Button"),
