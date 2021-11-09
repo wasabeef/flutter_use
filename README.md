@@ -73,3 +73,14 @@
   - `useStateValidator` &mdash; tracks state of an object.
   - `useMultiStateValidator` &mdash; alike the `useStateValidator`, but tracks multiple states at a time.
   - `useMethods` &mdash; neat alternative to `useReducer`.
+
+<br />
+<br />
+<br />
+
+<p align="center">
+  <a href="./LICENSE"><strong>Unlicense</strong></a> &mdash; public domain.
+</p>
+
+<br />
+<br />
