@@ -35,6 +35,7 @@
   - [`useInterval`](./docs/useInterval.md) &mdash; re-renders component on a set interval using `Timer.periodic`.
   - `useTimeout` &mdash; re-renders component after a timeout.
   - `useTimeoutFn` &mdash; calls given function after a timeout.
+  - [`useUpdate`](./docs/useUpdate.md) &mdash; returns a callback, which re-renders component when called.
     <br/>
     <br/>
 - **Side-effects**
