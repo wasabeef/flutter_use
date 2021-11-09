@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_use_battery/use_battery.dart';
+import 'package:flutter_use_geolocation/use_geolocation.dart';
 import 'package:flutter_use_network_state/use_network_state.dart';
 import 'package:flutter_use_sensors/use_sensors.dart';
 
@@ -34,6 +35,7 @@ class MyHomePage extends HookWidget {
     final userAccelerometerState = useUserAccelerometer();
     final gyroscopeState = useGyroscope();
     final magnetometerState = useMagnetometer();
+    final geolocation = useGeolocation();
 
     return Scaffold(
       body: Center(
@@ -52,11 +54,24 @@ class MyHomePage extends HookWidget {
             Text("connectivityResult: ${networkState.value.connectivity}"),
             const Text("-- Sensors --"),
             Text(
+                "accelerometerState fetched: ${accelerometerState.value.fetched}"),
+            Text(
                 "accelerometerState: ${accelerometerState.value.accelerometer}"),
             Text(
+                "userAccelerometerState fetched: ${userAccelerometerState.value.fetched}"),
+            Text(
                 "userAccelerometerState: ${userAccelerometerState.value.userAccelerometer}"),
+            Text("gyroscope fetched: ${gyroscopeState.value.fetched}"),
             Text("gyroscope: ${gyroscopeState.value.gyroscope}"),
+            Text("magnetometer fetched: ${magnetometerState.value.fetched}"),
             Text("magnetometer: ${magnetometerState.value.magnetometer}"),
+            const Text("-- Geolocation --"),
+            Text("permission checked: ${geolocation.fetched}"),
+            Text("location: ${geolocation.position}"),
+            ElevatedButton(
+              onPressed: () async {},
+              child: const Text("Button"),
+            )
           ],
         ),
       ),

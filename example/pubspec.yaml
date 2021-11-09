@@ -25,6 +25,8 @@ dependencies:
     path: ../packages/network
   flutter_use_sensors:
     path: ../packages/sensors
+  flutter_use_geolocation:
+    path: ../packages/geolocation
 
 dev_dependencies:
   flutter_test:
