@@ -4,7 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 /// Tracks battery status using [battery_plus](ref link).
 /// [ref link](https://pub.dev/packages/battery_plus)
-ValueNotifier<UseBatteryState> useBattery() {
+UseBatteryState useBattery() {
   final state = useState(const UseBatteryState(fetched: false));
   final battery = useMemoized(() => Battery());
   final batteryStateChanged = useStream(battery.onBatteryStateChanged);
@@ -24,7 +24,7 @@ ValueNotifier<UseBatteryState> useBattery() {
     state.value = newState;
   }
 
-  return state;
+  return state.value;
 }
 
 @immutable

@@ -25,7 +25,7 @@ class Sample extends HookWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("gyroscope: ${gyroscopeState.value.gyroscope}"),
+            Text("gyroscope: ${gyroscopeState.gyroscope}"),
           ],
         ),
       ),

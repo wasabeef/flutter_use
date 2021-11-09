@@ -4,7 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 /// Tracks the state of network connection using [connectivity_plus](ref link).
 /// [ref link](https://pub.dev/packages/connectivity_plus)
-ValueNotifier<NetworkState> useNetworkState() {
+NetworkState useNetworkState() {
   final state = useState(const NetworkState(fetched: false));
   final connectivity = useMemoized(() => Connectivity());
   final connectivityChanged = useStream(connectivity.onConnectivityChanged);
@@ -17,7 +17,7 @@ ValueNotifier<NetworkState> useNetworkState() {
     state.value = newState;
   }
 
-  return state;
+  return state.value;
 }
 
 @immutable

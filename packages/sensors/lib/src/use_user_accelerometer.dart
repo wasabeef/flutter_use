@@ -4,7 +4,7 @@ import 'package:sensors_plus/sensors_plus.dart';
 
 /// Tracks the state of device accelerometer with gravity removed using [sensors_plus](ref link).
 /// [ref link](https://pub.dev/packages/sensors_plus)
-ValueNotifier<UserAccelerometerState> useUserAccelerometer() {
+UserAccelerometerState useUserAccelerometer() {
   final state = useState(UserAccelerometerState(fetched: false));
   final userAccelerometerEventsChanged = useStream(userAccelerometerEvents);
 
@@ -17,7 +17,7 @@ ValueNotifier<UserAccelerometerState> useUserAccelerometer() {
     state.value = newState;
   }
 
-  return state;
+  return state.value;
 }
 
 @immutable

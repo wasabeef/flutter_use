@@ -26,9 +26,9 @@ class Sample extends HookWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text("-- Network --"),
-            Text("fetched: ${networkState.value.fetched}"),
+            Text("fetched: ${networkState.fetched}"),
             Text(
-                "connectivityResult: ${networkState.value.connectivityResult}"),
+                "connectivityResult: ${networkState.connectivityResult}"),
           ],
         ),
       ),

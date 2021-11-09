@@ -4,7 +4,7 @@ import 'package:sensors_plus/sensors_plus.dart';
 
 /// Tracks the state of device accelerometer using [sensors_plus](ref link).
 /// [ref link](https://pub.dev/packages/sensors_plus)
-ValueNotifier<AccelerometerState> useAccelerometer() {
+AccelerometerState useAccelerometer() {
   final state = useState(AccelerometerState(fetched: false));
   final accelerometerEventsChanged = useStream(accelerometerEvents);
 
@@ -17,7 +17,7 @@ ValueNotifier<AccelerometerState> useAccelerometer() {
     state.value = newState;
   }
 
-  return state;
+  return state.value;
 }
 
 @immutable

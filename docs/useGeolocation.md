@@ -26,7 +26,7 @@ class Sample extends HookWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text("-- Geolocation --"),
-            Text("location: ${geolocation.value.position}"),
+            Text("location: ${geolocation.position}"),
           ],
         ),
       ),

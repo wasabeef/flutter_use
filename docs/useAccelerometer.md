@@ -26,7 +26,7 @@ class Sample extends HookWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-                "accelerometerState: ${accelerometerState.value.accelerometer}"),
+                "accelerometerState: ${accelerometerState.accelerometer}"),
           ],
         ),
       ),

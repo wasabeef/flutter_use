@@ -25,7 +25,7 @@ class Sample extends HookWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("magnetometer: ${magnetometerState.value.magnetometer}"),
+            Text("magnetometer: ${magnetometerState.magnetometer}"),
           ],
         ),
       ),
