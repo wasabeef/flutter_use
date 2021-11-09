@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_use/flutter_use.dart';
 import 'package:flutter_use_battery/use_battery.dart';
 import 'package:flutter_use_geolocation/use_geolocation.dart';
 import 'package:flutter_use_network_state/use_network_state.dart';
@@ -37,6 +38,14 @@ class MyHomePage extends HookWidget {
     final magnetometerState = useMagnetometer();
     final geolocation = useGeolocation();
 
+    final count = useState(0);
+    final delay = useState(const Duration(milliseconds: 300));
+    final isRunning = useState(true);
+    useInterval(
+      () => count.value++,
+      delay: isRunning.value ? delay.value : null,
+    );
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -66,8 +75,11 @@ class MyHomePage extends HookWidget {
             const Text("-- Geolocation --"),
             Text("permission checked: ${geolocation.fetched}"),
             Text("location: ${geolocation.position}"),
+            Text("count: ${count.value}"),
             ElevatedButton(
-              onPressed: () async {},
+              onPressed: () async {
+                isRunning.value = !isRunning.value;
+              },
               child: const Text("Button"),
             )
           ],

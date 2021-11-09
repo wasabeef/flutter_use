@@ -32,7 +32,7 @@
     <br/>
     <br/>
 - **Animations**
-  - `useInterval` and `useHarmonicIntervalFn` &mdash; re-renders component on a set interval using `setInterval`.
+  - `useInterval` &mdash; re-renders component on a set interval using `Timer.periodic`.
   - `useTimeout` &mdash; re-renders component after a timeout.
   - `useTimeoutFn` &mdash; calls given function after a timeout.
     <br/>
