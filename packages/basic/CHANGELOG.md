@@ -3,4 +3,6 @@
 **Features**
 - Add `useEffectOnce()` hook.
 - Add `useInterval()` hook.
+- Add `useTimeout()` hook.
+- Add `useTimeoutFn()` hook.
 - Add `useUpdate()` hook.

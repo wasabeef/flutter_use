@@ -30,6 +30,7 @@ class MyHomePage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint("build");
     final battery = useBattery();
     final networkState = useNetworkState();
     final accelerometerState = useAccelerometer();
@@ -47,6 +48,12 @@ class MyHomePage extends HookWidget {
     );
 
     final update = useUpdate();
+
+    final timeoutFn = useTimeoutFn(() {
+      debugPrint('timeout');
+    }, const Duration(seconds: 3));
+
+    final timeout = useTimeout(const Duration(seconds: 3));
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -93,6 +100,24 @@ class MyHomePage extends HookWidget {
               ElevatedButton(
                 onPressed: () => update(),
                 child: const Text("Force Update"),
+              ),
+
+              const SizedBox(height: 32),
+              Text("${timeoutFn.isReady}"),
+              Text("${timeout.isReady}"),
+              ElevatedButton(
+                onPressed: () {
+                  timeoutFn.cancel();
+                  timeout.cancel();
+                },
+                child: const Text("Cancel"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  timeoutFn.reset();
+                  timeout.reset();
+                },
+                child: const Text("Reset"),
               ),
             ],
           ),

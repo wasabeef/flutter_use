@@ -33,8 +33,8 @@
     <br/>
 - **Animations**
   - [`useInterval`](./docs/useInterval.md) &mdash; re-renders component on a set interval using `Timer.periodic`. [![][img-demo]](https://dartpad.dev/?id=d4ce8c315a0157ad18257886d661c8b9&null_safety=true)
-  - `useTimeout` &mdash; re-renders component after a timeout.
-  - `useTimeoutFn` &mdash; calls given function after a timeout.
+  - [`useTimeout`](./docs/useTimeout.md) &mdash; re-renders component after a timeout. [![][img-demo]](https://dartpad.dev/?id=e1cb8d7045982ec96b0b314e9fb58202&null_safety=true)
+  - [`useTimeoutFn`](./docs/useTimeoutFn.md) &mdash; calls given function after a timeout. [![][img-demo]](https://dartpad.dev/?id=12449436914e1dec13c8f9c5cf63935b&null_safety=true)
   - [`useUpdate`](./docs/useUpdate.md) &mdash; returns a callback, which re-renders component when called.
     <br/>
     <br/>
