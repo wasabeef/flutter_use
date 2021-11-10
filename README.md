@@ -32,7 +32,7 @@
     <br/>
     <br/>
 - **Animations**
-  - [`useInterval`](./docs/useInterval.md) &mdash; re-renders component on a set interval using `Timer.periodic`.
+  - [`useInterval`](./docs/useInterval.md) &mdash; re-renders component on a set interval using `Timer.periodic`. [![][img-demo]](https://dartpad.dev/?id=d4ce8c315a0157ad18257886d661c8b9&null_safety=true)
   - `useTimeout` &mdash; re-renders component after a timeout.
   - `useTimeoutFn` &mdash; calls given function after a timeout.
   - [`useUpdate`](./docs/useUpdate.md) &mdash; returns a callback, which re-renders component when called.
@@ -84,3 +84,6 @@
 
 <br />
 <br />
+
+
+[img-demo]: https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg
