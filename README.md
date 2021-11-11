@@ -23,12 +23,6 @@
 - **UI**
   - [`useAudio`](./docs/useAudio.md) &mdash; plays audio and exposes its controls. [![just_audio](https://img.shields.io/badge/required-just__audio-brightgreen)](https://pub.dev/packages/just_audio)
   - [`useAssetVideo`](./docs/useAssetVideo.md) and [`useNetworkVideo`](./docs/useNetworkVideo.md) &mdash; plays video, tracks its state, and exposes playback controls. [![video_player](https://img.shields.io/badge/required-video__player-brightgreen)](https://pub.dev/packages/video_player)
-  - [TBD] `useScroll` &mdash; tracks a widget's scroll position.
-  - [TBD] `useScrolling` &mdash; tracks whether widget is scrolling.
-  - [TBD] `useFullscreen` &mdash; display an element or video full-screen.
-  - [TBD] `useClickAway`&mdash; triggers callback when user clicks outside target area.
-  - [TBD] `useOrientation` &mdash; tracks state of device's screen orientation.
-  - [TBD] `usePageLeave` &mdash; triggers when mouse leaves page boundaries.
     <br/>
     <br/>
 - **Animations**
@@ -44,7 +38,6 @@
   - `useDebounce` &mdash; debounces a function.
   - `useError` &mdash; error dispatcher.
   - `useThrottle` and `useThrottleFn` &mdash; throttles a function.
-  - [TBD] `usePermission` &mdash; query permission status for apps APIs.
     <br/>
     <br/>
 - **Lifecycles**
@@ -73,6 +66,15 @@
   - `useStateValidator` &mdash; tracks state of an object.
   - `useMultiStateValidator` &mdash; alike the `useStateValidator`, but tracks multiple states at a time.
   - `useMethods` &mdash; neat alternative to `useReducer`.
+
+- **TBD**
+  - `useScroll` &mdash; tracks a widget's scroll position.
+  - `useScrolling` &mdash; tracks whether widget is scrolling.
+  - `useFullscreen` &mdash; display an element or video full-screen.
+  - `useClickAway`&mdash; triggers callback when user clicks outside target area.
+  - `useOrientation` &mdash; tracks state of device's screen orientation.
+  - `usePageLeave` &mdash; triggers when mouse leaves page boundaries.
+  - `usePermission` &mdash; query permission status for apps APIs.
 
 <br />
 <br />
