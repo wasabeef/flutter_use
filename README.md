@@ -56,7 +56,7 @@
   - `useObservable` &mdash; tracks latest value of an `Observable`.
   - `useSetState` &mdash; creates `setState` method which works like `this.setState`.
   - `useStateList` &mdash; circularly iterates over an array.
-  - `useToggle` and `useBoolean` &mdash; tracks state of a boolean.
+  - [`useToggle` and `useBoolean`](./docs/useToggle.md) &mdash; tracks state of a boolean. [![][img-demo]](https://dartpad.dev/?id=7e070264db2566b3c990c403dd61c3ff&null_safety=true)
   - `useCounter` and `useNumber` &mdash; tracks state of a number.
   - `useList` &mdash; tracks state of an array.
   - `useMap` &mdash; tracks state of an object.

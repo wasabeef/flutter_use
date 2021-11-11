@@ -68,14 +68,16 @@ class MyHomePage extends HookWidget {
 
     // flutter_hooks v0.18.1
     final appLifecycle = useAppLifecycleState();
-    debugPrint('useAppLifecycleState: $appLifecycle');
+    // debugPrint('useAppLifecycleState: $appLifecycle');
     useOnAppLifecycleStateChange((prev, current) {
       debugPrint('useOnAppLifecycleStateChange: ${prev}, ${current}');
     });
 
+    final toggleState = useToggle(false);
+
     return Scaffold(
       body: SingleChildScrollView(
-        padding: const EdgeInsets.only(top: 32),
+        padding: const EdgeInsets.symmetric(vertical: 32),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -120,21 +122,53 @@ class MyHomePage extends HookWidget {
                 child: const Text("Force Update"),
               ),
               const SizedBox(height: 32),
-              Text("${timeoutFn.isReady}"),
-              Text("${timeout.isReady}"),
-              ElevatedButton(
-                onPressed: () {
-                  timeoutFn.cancel();
-                  timeout.cancel();
-                },
-                child: const Text("Cancel"),
+              const Text("-- Timeout --"),
+              Text("timeoutFn: ${timeoutFn.isReady}"),
+              Text("timeout: ${timeout.isReady}"),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      timeoutFn.cancel();
+                      timeout.cancel();
+                    },
+                    child: const Text("Cancel"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      timeoutFn.reset();
+                      timeout.reset();
+                    },
+                    child: const Text("Reset"),
+                  ),
+                ],
               ),
-              ElevatedButton(
-                onPressed: () {
-                  timeoutFn.reset();
-                  timeout.reset();
-                },
-                child: const Text("Reset"),
+              const SizedBox(height: 32),
+              const Text("-- Toggle --"),
+              Text("${toggleState.value}"),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      toggleState.toggle();
+                    },
+                    child: const Text('toggle'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      toggleState.toggle(value: true);
+                    },
+                    child: const Text('true'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      toggleState.toggle(value: false);
+                    },
+                    child: const Text('false'),
+                  ),
+                ],
               ),
             ],
           ),

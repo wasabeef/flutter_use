@@ -8,3 +8,5 @@ export 'src/use_update.dart';
 export 'src/use_effect_once.dart';
 export 'src/use_lifecycles.dart';
 // State
+export 'src/use_toggle.dart';
+export 'src/use_boolean.dart';
