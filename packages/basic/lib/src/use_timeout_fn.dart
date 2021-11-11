@@ -10,14 +10,14 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 TimeoutState useTimeoutFn(VoidCallback fn, Duration delay) {
   final timer = useRef<Timer?>(null);
   final callback = useRef(fn);
-  final state = useRef(const TimeoutState(null, null, isReady: null));
+  final state = useRef(const TimeoutState(isReady: null));
 
   // update ref when function changes
   useEffect(() {
     callback.value = fn;
   }, [fn]);
 
-  final start = useCallback(() {
+  final reset = useCallback(() {
     state.value = state.value.copyWith(isReady: false);
     timer.value?.cancel();
     timer.value = Timer(delay, () {
@@ -33,8 +33,8 @@ TimeoutState useTimeoutFn(VoidCallback fn, Duration delay) {
 
   // set on mount, clear on unmount
   useEffect(() {
-    state.value = TimeoutState(cancel, start, isReady: null);
-    start();
+    state.value = TimeoutState(cancel: cancel, reset: reset, isReady: null);
+    reset();
 
     return cancel;
   }, [delay]);
@@ -44,7 +44,13 @@ TimeoutState useTimeoutFn(VoidCallback fn, Duration delay) {
 
 @immutable
 class TimeoutState {
-  const TimeoutState(this._cancel, this._reset, {required this.isReady});
+  const TimeoutState({
+    required this.isReady,
+    VoidCallback? cancel,
+    VoidCallback? reset,
+  })  : _cancel = cancel,
+        _reset = reset;
+
   final bool? isReady;
   final VoidCallback? _cancel;
   final VoidCallback? _reset;
@@ -59,14 +65,8 @@ class TimeoutState {
     required bool? isReady,
   }) =>
       TimeoutState(
-        cancel ?? _cancel,
-        reset ?? _reset,
+        cancel: cancel ?? _cancel,
+        reset: reset ?? _reset,
         isReady: isReady,
       );
-}
-
-enum UseTimeoutAction {
-  start,
-  cancel,
-  reset,
 }
