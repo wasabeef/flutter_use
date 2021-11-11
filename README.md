@@ -42,8 +42,7 @@
     <br/>
 - **Lifecycles**
   - [`useEffectOnce`](./docs/useEffectOnce.md) &mdash; a modified [`useEffect`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/useEffect.html) hook that only runs once.
-  - `useEvent` &mdash; subscribe to events.
-  - `useLifecycles` &mdash; calls `mount` and `unmount` callbacks.
+  - [`useLifecycles`](./docs/useLifecycles.md) &mdash; calls `mount` and `unmount` callbacks.
   - `usePromise` &mdash; resolves promise only while component is mounted.
   - `useLogger` &mdash; logs in console as component goes through life-cycles.
   - `useUpdateEffect` &mdash; run an `effect` only on updates.
@@ -68,6 +67,7 @@
   - `useMethods` &mdash; neat alternative to `useReducer`.
 
 - **TBD**
+  - `useEvent` &mdash; subscribe to events.
   - `useScroll` &mdash; tracks a widget's scroll position.
   - `useScrolling` &mdash; tracks whether widget is scrolling.
   - `useFullscreen` &mdash; display an element or video full-screen.

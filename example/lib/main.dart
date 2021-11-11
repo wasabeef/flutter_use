@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_brace_in_string_interps
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_use/flutter_use.dart';
@@ -50,10 +52,26 @@ class MyHomePage extends HookWidget {
     final update = useUpdate();
 
     final timeoutFn = useTimeoutFn(() {
-      debugPrint('timeout');
+      debugPrint('useTimeoutFn timeout');
     }, const Duration(seconds: 3));
 
     final timeout = useTimeout(const Duration(seconds: 3));
+
+    useLifecycles(
+      mount: () {
+        debugPrint('useLifecycles mount');
+      },
+      unmount: () {
+        debugPrint('useLifecycles unmount');
+      },
+    );
+
+    // flutter_hooks v0.18.1
+    final appLifecycle = useAppLifecycleState();
+    debugPrint('useAppLifecycleState: $appLifecycle');
+    useOnAppLifecycleStateChange((prev, current) {
+      debugPrint('useOnAppLifecycleStateChange: ${prev}, ${current}');
+    });
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -101,7 +119,6 @@ class MyHomePage extends HookWidget {
                 onPressed: () => update(),
                 child: const Text("Force Update"),
               ),
-
               const SizedBox(height: 32),
               Text("${timeoutFn.isReady}"),
               Text("${timeout.isReady}"),
