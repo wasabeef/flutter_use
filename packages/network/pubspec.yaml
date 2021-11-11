@@ -13,7 +13,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_hooks: ^0.18.0
+  flutter_hooks: ^0.18.1
   connectivity_plus: ^2.0.2
 
 dev_dependencies:
