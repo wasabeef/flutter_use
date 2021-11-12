@@ -1,3 +1,6 @@
+// Sensors
+export 'src/use_orientation.dart';
+export 'src/use_orientation_fn.dart';
 // Animations
 export 'src/use_interval.dart';
 export 'src/use_timeout.dart';

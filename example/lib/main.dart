@@ -67,13 +67,17 @@ class MyHomePage extends HookWidget {
     );
 
     // flutter_hooks v0.18.1
-    final appLifecycle = useAppLifecycleState();
-    // debugPrint('useAppLifecycleState: $appLifecycle');
     useOnAppLifecycleStateChange((prev, current) {
       debugPrint('useOnAppLifecycleStateChange: ${prev}, ${current}');
+      debugPrint('${MediaQuery.of(context).orientation}');
     });
 
     final toggleState = useToggle(false);
+
+    final orientation = useOrientation();
+    useOrientationFn((orientation) {
+      debugPrint('useOrientationFn: $orientation');
+    });
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -170,6 +174,9 @@ class MyHomePage extends HookWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 32),
+              const Text("-- Orientation --"),
+              Text("${orientation}"),
             ],
           ),
         ),

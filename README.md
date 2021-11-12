@@ -18,6 +18,8 @@
   - [`useGeolocation`](./docs/useGeolocation.md) &mdash; tracks geo location and permission state of user's device. [![geolocator](https://img.shields.io/badge/required-geolocator-brightgreen)](https://pub.dev/packages/geolocator)
   - [`useNetworkState`](./docs/useNetworkState.md) &mdash; tracks the state of apps network connection. [![connectivity_plus](https://img.shields.io/badge/required-connectivity__plus-brightgreen)](https://pub.dev/packages/connectivity_plus)
   - [`useAccelerometer`](./docs/useAccelerometer.md), [`useUserAccelerometer`](./docs/useUserAccelerometer.md), [`useGyroscope`](./docs/useGyroscope.md), and [`useMagnetometer`](./docs/useMagnetometer.md) &mdash; tracks accelerometer, gyroscope, and magnetometer sensors state of user's device. [![sensors_plus](https://img.shields.io/badge/required-sensors__plus-brightgreen)](https://pub.dev/packages/sensors_plus)
+  - [`useOrientation`](./docs/useOrientation.md) &mdash; tracks state of device's screen orientation.
+  - [`useOrientationFn`](./docs/useOrientationFn.md) &mdash; calls given function changed screen orientation of user's device.
     <br/>
     <br/>
 - **UI**
@@ -74,7 +76,6 @@
   - `useScrolling` &mdash; tracks whether widget is scrolling.
   - `useFullscreen` &mdash; display an element or video full-screen.
   - `useClickAway`&mdash; triggers callback when user clicks outside target area.
-  - `useOrientation` &mdash; tracks state of device's screen orientation.
   - `usePageLeave` &mdash; triggers when mouse leaves page boundaries.
   - `usePermission` &mdash; query permission status for apps APIs.
 
