@@ -13,7 +13,7 @@ class Sample extends HookWidget {
 
     return Column(
       children: [
-        Text("Builds count: $buildsCount}"),
+        Text("Builds count: $buildsCount"),
         ElevatedButton(
           onPressed: () => update(),
           child: const Text('Rebuild'),
