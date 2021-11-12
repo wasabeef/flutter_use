@@ -26,10 +26,10 @@
     <br/>
     <br/>
 - **Animations**
-  - [`useInterval`](./docs/useInterval.md) &mdash; re-renders component on a set interval using `Timer.periodic`. [![][img-demo]](https://dartpad.dev/?id=d4ce8c315a0157ad18257886d661c8b9&null_safety=true)
-  - [`useTimeout`](./docs/useTimeout.md) &mdash; re-renders component after a timeout. [![][img-demo]](https://dartpad.dev/?id=e1cb8d7045982ec96b0b314e9fb58202&null_safety=true)
+  - [`useInterval`](./docs/useInterval.md) &mdash; re-builds component on a set interval using `Timer.periodic`. [![][img-demo]](https://dartpad.dev/?id=d4ce8c315a0157ad18257886d661c8b9&null_safety=true)
+  - [`useTimeout`](./docs/useTimeout.md) &mdash; re-builds component after a timeout. [![][img-demo]](https://dartpad.dev/?id=e1cb8d7045982ec96b0b314e9fb58202&null_safety=true)
   - [`useTimeoutFn`](./docs/useTimeoutFn.md) &mdash; calls given function after a timeout. [![][img-demo]](https://dartpad.dev/?id=12449436914e1dec13c8f9c5cf63935b&null_safety=true)
-  - [`useUpdate`](./docs/useUpdate.md) &mdash; returns a callback, which re-renders component when called.
+  - [`useUpdate`](./docs/useUpdate.md) &mdash; returns a callback, which re-builds component when called.
     <br/>
     <br/>
 - **Side-effects**
@@ -64,7 +64,7 @@
   - `useQueue` &mdash; implements simple queue.
   - `useStateValidator` &mdash; tracks state of an object.
   - `useMultiStateValidator` &mdash; alike the `useStateValidator`, but tracks multiple states at a time.
-  - [`useFirstMountState`](./docs/useFirstMountState.md) &mdash; check if current render is first. [![][img-demo]](https://dartpad.dev/?id=c9b6853d726ae29dcf902efcf7e85dc6&null_safety=true)
+  - [`useFirstMountState`](./docs/useFirstMountState.md) &mdash; check if current build is first. [![][img-demo]](https://dartpad.dev/?id=c9b6853d726ae29dcf902efcf7e85dc6&null_safety=true)
   - `useMethods` &mdash; neat alternative to `useReducer`.
 
 - **TBD**

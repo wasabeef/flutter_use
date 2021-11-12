@@ -3,7 +3,7 @@
 Calls given function after specified duration.
 
 Several thing about it's work:
-- does not re-render component;
+- does not re-build component;
 - automatically cancel timeout on cancel;
 - automatically reset timeout on delay change;
 - reset function call will cancel previous timeout;
@@ -47,8 +47,8 @@ class Sample extends HookWidget {
 - **`fn`**_`: VoidCallback`_ - function that will be called;
 - **`delay`**_`: Duration`_ - delay
 - **`isReady`**_`: bool`_ - function returning current timeout state:
-    - `false` - pending re-render
-    - `true` - re-render performed
-    - `null` - re-render cancelled
-- **`cancel()`** - cancel the timeout (component will not be re-rendered)
+    - `false` - pending re-build
+    - `true` - re-build performed
+    - `null` - re-build cancelled
+- **`cancel()`** - cancel the timeout (component will not be re-builded)
 - **`reset()`** - reset the timeout

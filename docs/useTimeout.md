@@ -1,6 +1,6 @@
 # `useTimeout`
 
-Re-renders the component after a specified duration.
+Re-builds the component after a specified duration.
 Provides handles to cancel and/or reset the timeout.
 
 ## Usage
@@ -38,8 +38,8 @@ class Sample extends HookWidget {
 
 - **`delay`**_`: Duration`_ - delay
 - **`isReady`**_`: bool`_ - function returning current timeout state:
-    - `false` - pending re-render
-    - `true` - re-render performed
-    - `null` - re-render cancelled
-- **`cancel()`** - cancel the timeout (component will not be re-rendered)
+    - `false` - pending re-build
+    - `true` - re-build performed
+    - `null` - re-build cancelled
+- **`cancel()`** - cancel the timeout (component will not be re-builded)
 - **`reset()`** - reset the timeout

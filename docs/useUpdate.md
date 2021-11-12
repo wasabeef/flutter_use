@@ -1,6 +1,6 @@
 # `useUpdate`
 
-Flutter utility hook that returns a function that forces component to re-render when called.
+Flutter utility hook that returns a function that forces component to re-build when called.
 
 ## Usage
 
