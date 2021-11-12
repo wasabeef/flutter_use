@@ -36,7 +36,6 @@
     <br/>
 - **Side-effects**
   - `useAsync`, `useAsyncFn`, and `useAsyncRetry` &mdash; resolves an `async` function.
-  - `useCopyToClipboard` &mdash; copies text to clipboard.
   - `useDebounce` &mdash; debounces a function.
   - `useError` &mdash; error dispatcher.
   - `useThrottle` and `useThrottleFn` &mdash; throttles a function.
@@ -71,6 +70,7 @@
   - `useMethods` &mdash; neat alternative to `useReducer`.
 
 - **TBD**
+  - `useCopyToClipboard` &mdash; copies text to clipboard.
   - `useEvent` &mdash; subscribe to events.
   - `useScroll` &mdash; tracks a widget's scroll position.
   - `useScrolling` &mdash; tracks whether widget is scrolling.
