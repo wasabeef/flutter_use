@@ -64,6 +64,7 @@
   - `useQueue` &mdash; implements simple queue.
   - `useStateValidator` &mdash; tracks state of an object.
   - `useMultiStateValidator` &mdash; alike the `useStateValidator`, but tracks multiple states at a time.
+  - [`useFirstMountState`](./docs/useFirstMountState.md) &mdash; check if current render is first. [![][img-demo]](https://dartpad.dev/?id=c9b6853d726ae29dcf902efcf7e85dc6&null_safety=true)
   - `useMethods` &mdash; neat alternative to `useReducer`.
 
 - **TBD**

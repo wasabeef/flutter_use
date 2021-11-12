@@ -10,3 +10,4 @@ export 'src/use_lifecycles.dart';
 // State
 export 'src/use_toggle.dart';
 export 'src/use_boolean.dart';
+export 'src/use_first_mount_state.dart';
