@@ -12,6 +12,7 @@ export 'src/use_update.dart';
 // Lifecycles
 export 'src/use_effect_once.dart';
 export 'src/use_lifecycles.dart';
+export 'src/use_update_effect.dart';
 // State
 export 'src/use_toggle.dart';
 export 'src/use_boolean.dart';
