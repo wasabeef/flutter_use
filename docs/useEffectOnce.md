@@ -2,6 +2,13 @@
 
 Flutter lifecycle hook that runs an effect only once.
 
+## Installation
+
+```yaml
+dependencies:
+  flutter_use: ^0.0.2
+```
+
 ## Usage
 
 ```dart

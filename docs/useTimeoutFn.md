@@ -9,6 +9,13 @@ Several thing about it's work:
 - reset function call will cancel previous timeout;
 - timeout will NOT be reset on function change. It will be called within the timeout, you have to reset it on your own when needed. 
 
+## Installation
+
+```yaml
+dependencies:
+  flutter_use: ^0.0.2
+```
+
 ## Usage
 
 ```dart

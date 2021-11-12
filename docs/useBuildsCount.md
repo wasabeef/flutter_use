@@ -2,6 +2,13 @@
 
 Tracks component's builds count including the first build.
 
+## Installation
+
+```yaml
+dependencies:
+  flutter_use: ^0.0.2
+```
+
 ## Usage
 
 ```dart

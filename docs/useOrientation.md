@@ -2,6 +2,13 @@
 
 Tracks screen orientation of user's device.
 
+## Installation
+
+```yaml
+dependencies:
+  flutter_use: ^0.0.2
+```
+
 ## Usage
 
 ```dart

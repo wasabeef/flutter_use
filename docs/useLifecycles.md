@@ -3,6 +3,13 @@
 Flutter lifecycle hook that call `mount` and `unmount` callbacks, when component is mounted and un-mounted, respectively.  
 If you want to use hook that app lifecycles, recommended use to flutter_hooks v0.18.1+ [useAppLifecycleState](https://pub.dartlang.org/documentation/flutter_hooks/latest/flutter_hooks/useAppLifecycleState.html) or [useOnAppLifecycleStateChange](https://pub.dartlang.org/documentation/flutter_hooks/latest/flutter_hooks/useOnAppLifecycleStateChange.html)
 
+## Installation
+
+```yaml
+dependencies:
+  flutter_use: ^0.0.2
+```
+
 ## Usage
 
 ```dart

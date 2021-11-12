@@ -2,6 +2,13 @@
 
 Returns `true` if component is just mounted (on first build) and `false` otherwise.
 
+## Installation
+
+```yaml
+dependencies:
+  flutter_use: ^0.0.2
+```
+
 ## Usage
 
 ```dart

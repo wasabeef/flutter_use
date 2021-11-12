@@ -3,6 +3,13 @@
 Re-builds the component after a specified duration.
 Provides handles to cancel and/or reset the timeout.
 
+## Installation
+
+```yaml
+dependencies:
+  flutter_use: ^0.0.2
+```
+
 ## Usage
 
 ```dart

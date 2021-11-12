@@ -3,6 +3,13 @@
 Flutter state hook that tracks value of a boolean.
 `useBoolean` is an alias for `useToggle`.
 
+## Installation
+
+```yaml
+dependencies:
+  flutter_use: ^0.0.2
+```
+
 ## Usage
 
 ```dart
