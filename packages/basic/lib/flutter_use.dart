@@ -11,3 +11,4 @@ export 'src/use_lifecycles.dart';
 export 'src/use_toggle.dart';
 export 'src/use_boolean.dart';
 export 'src/use_first_mount_state.dart';
+export 'src/use_builds_count.dart';

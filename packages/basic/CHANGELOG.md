@@ -10,3 +10,4 @@
 - Add `useToggle()` hook.
 - Add `useBoolean()` hook.
 - Add `useFirstMountState()` hook.
+- Add `useBuildsCount()` hook.
