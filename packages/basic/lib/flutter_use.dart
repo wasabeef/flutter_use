@@ -1,3 +1,5 @@
+library flutter_use;
+
 // Sensors
 export 'src/use_orientation.dart';
 export 'src/use_orientation_fn.dart';
