@@ -34,6 +34,7 @@ class ToggleState {
           runtimeType == other.runtimeType &&
           value == other.value &&
           toggle == other.toggle;
+
   @override
   int get hashCode => value.hashCode;
 }
