@@ -14,3 +14,6 @@
 - Add `useBoolean()` hook.
 - Add `useFirstMountState()` hook.
 - Add `useBuildsCount()` hook.
+- Add `useError()` hook.
+- Add `useException()` hook.
+

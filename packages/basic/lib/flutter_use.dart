@@ -9,6 +9,8 @@ export 'src/use_timeout.dart';
 export 'src/use_timeout_fn.dart';
 export 'src/use_update.dart';
 // Side-effects
+export 'src/use_error.dart';
+export 'src/use_exception.dart';
 // Lifecycles
 export 'src/use_effect_once.dart';
 export 'src/use_lifecycles.dart';

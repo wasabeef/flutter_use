@@ -1,5 +1,3 @@
-// ignore_for_file: unnecessary_brace_in_string_interps
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_use/flutter_use.dart';
@@ -26,6 +24,17 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class SampleError extends Error {
+  SampleError(this.message);
+  final String message;
+}
+
+class UseError extends Error {}
+
+class SampleException implements Exception {}
+
+class UseException implements Exception {}
 
 class MyHomePage extends HookWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -78,6 +87,24 @@ class MyHomePage extends HookWidget {
     useOrientationFn((orientation) {
       debugPrint('useOrientationFn: $orientation');
     });
+
+    final errorState = useError();
+    if (errorState.value is SampleError) {
+      final error = errorState.value as SampleError;
+      debugPrint('SampleError: ${error.message}');
+    } else if (errorState.value is UseError) {
+      debugPrint('UseError: ${errorState.value}');
+    } else {
+      debugPrint('Error: ${errorState.value}');
+    }
+    final exceptionState = useException();
+    if (exceptionState.value is SampleException) {
+      debugPrint('SampleException: ${exceptionState.value}');
+    } else if (exceptionState.value is UseException) {
+      debugPrint('UseException: ${exceptionState.value}');
+    } else {
+      debugPrint('Error: ${exceptionState.value}');
+    }
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -177,6 +204,20 @@ class MyHomePage extends HookWidget {
               const SizedBox(height: 32),
               const Text("-- Orientation --"),
               Text("${orientation}"),
+              const SizedBox(height: 32),
+              const Text("-- Error --"),
+              ElevatedButton(
+                onPressed: () {
+                  errorState.dispatch(SampleError('This is SampleError'));
+                },
+                child: const Text('Dispatch SampleError'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  exceptionState.dispatch(SampleException());
+                },
+                child: const Text('Dispatch SampleException'),
+              ),
             ],
           ),
         ),
