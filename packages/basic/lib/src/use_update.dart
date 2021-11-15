@@ -3,10 +3,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 /// Returns a function that forces component to re-build when called.
 VoidCallback useUpdate() {
-  final reducer = useReducer(
-    (state, action) => () {},
-    initialState: null,
-    initialAction: null,
-  );
-  return () => reducer.dispatch(null);
+  final attempt = useState(0);
+  return () => attempt.value++;
 }
