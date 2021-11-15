@@ -5,13 +5,14 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 /// Tracks battery status using [battery_plus](ref link).
 /// [ref link](https://pub.dev/packages/battery_plus)
 UseBatteryState useBattery() {
-  final state = useState(const UseBatteryState(fetched: false));
+  final state = useRef(const UseBatteryState(fetched: false));
   final battery = useMemoized(() => Battery());
   final batteryStateChanged = useStream(battery.onBatteryStateChanged);
   final batteryLevel = useFuture(battery.batteryLevel);
-  final isInBatterySaveMode = useFuture(battery.isInBatterySaveMode);
+  final isInBatterySaveMode =
+      useFuture(battery.isInBatterySaveMode);
 
-  final newState = UseBatteryState(
+  state.value = UseBatteryState(
     fetched: batteryStateChanged.hasData ||
         batteryLevel.hasData ||
         isInBatterySaveMode.hasData,
@@ -19,10 +20,6 @@ UseBatteryState useBattery() {
     isInBatterySaveMode: isInBatterySaveMode.data,
     batteryState: batteryStateChanged.data,
   );
-
-  if (state.value != newState) {
-    state.value = newState;
-  }
 
   return state.value;
 }
@@ -48,21 +45,4 @@ class UseBatteryState {
 
   final BatteryState _batteryState;
   BatteryState get batteryState => _batteryState;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is UseBatteryState &&
-          fetched == other.fetched &&
-          _batteryLevel == other._batteryLevel &&
-          _isInBatterySaveMode == other._isInBatterySaveMode &&
-          _batteryState == other._batteryState;
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      fetched.hashCode ^
-      _batteryLevel.hashCode ^
-      _isInBatterySaveMode.hashCode ^
-      _batteryState.hashCode;
 }

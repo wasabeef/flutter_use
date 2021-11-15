@@ -17,20 +17,17 @@ GeolocationState useGeolocation({
     speedAccuracy: 0,
   ),
 }) {
-  final state = useState(GeolocationState(
+  final state = useRef(GeolocationState(
     fetched: false,
     position: initialPosition,
   ));
-  final positionChanged = useStream(Geolocator.getPositionStream());
+  final positionChanged =
+      useStream(useMemoized(() => Geolocator.getPositionStream()));
 
-  final newState = GeolocationState(
+  state.value = GeolocationState(
     fetched: positionChanged.hasData,
     position: positionChanged.data ?? initialPosition,
   );
-
-  if (state.value != newState) {
-    state.value = newState;
-  }
 
   return state.value;
 }
@@ -44,41 +41,4 @@ class GeolocationState {
 
   final bool fetched;
   final Position position;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is GeolocationState &&
-          runtimeType == other.runtimeType &&
-          fetched == other.fetched &&
-          position == other.position;
-
-  @override
-  int get hashCode => fetched.hashCode ^ position.hashCode;
-}
-
-@immutable
-class GeolocationPermissionState {
-  const GeolocationPermissionState({
-    required this.checked,
-    this.serviceEnabled,
-    this.permission,
-  });
-
-  final bool checked;
-  final bool? serviceEnabled;
-  final LocationPermission? permission;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is GeolocationPermissionState &&
-          runtimeType == other.runtimeType &&
-          checked == other.checked &&
-          serviceEnabled == other.serviceEnabled &&
-          permission == other.permission;
-
-  @override
-  int get hashCode =>
-      checked.hashCode ^ serviceEnabled.hashCode ^ permission.hashCode;
 }
