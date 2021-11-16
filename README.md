@@ -55,7 +55,7 @@
     <br/>
 - **State**
   - `useDefault` &mdash; returns the default value when state is `null` or `undefined`.
-  - `useLatest` &mdash; returns the latest state or props
+  - [`useLatest`](./docs/useLatest.md) &mdash; returns the latest state or props.  [![][img-demo]](https://dartpad.dev/?id=2a76f5b16c2f27d11c023a140f38ce33&null_safety=true)
   - `usePreviousDistinct` &mdash; like `usePrevious` but with a predicate to determine if `previous` should update.
   - `useObservable` &mdash; tracks latest value of an `Observable`.
   - `useSetState` &mdash; creates `setState` method which works like `this.setState`.
