@@ -9,8 +9,7 @@ UseBatteryState useBattery() {
   final battery = useMemoized(() => Battery());
   final batteryStateChanged = useStream(battery.onBatteryStateChanged);
   final batteryLevel = useFuture(battery.batteryLevel);
-  final isInBatterySaveMode =
-      useFuture(battery.isInBatterySaveMode);
+  final isInBatterySaveMode = useFuture(battery.isInBatterySaveMode);
 
   state.value = UseBatteryState(
     fetched: batteryStateChanged.hasData ||
