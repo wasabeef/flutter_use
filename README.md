@@ -47,6 +47,8 @@
   - [`useLifecycles`](./docs/useLifecycles.md) &mdash; calls `mount` and `unmount` callbacks.
   - `usePromise` &mdash; resolves promise only while component is mounted.
   - `useLogger` &mdash; logs in console as component goes through life-cycles.
+  - [`useMount`](./docs/useMount.md) &mdash; calls `mount` callbacks. [![][img-demo]](https://dartpad.dev/?id=aa25e9bc3913779fcc795bef2bdc8d39&null_safety=true)
+  - [`useUnMount`](./docs/useUnMount.md) &mdash; calls `unmount` callbacks.
   - [`useUpdateEffect`](./docs/useUpdateEffect.md) &mdash; run an `effect` only on updates. [![][img-demo]](https://dartpad.dev/?id=724fee007fe78419fde61f185b83095b&null_safety=true)
   - `useDeepCompareEffect`, `useShallowCompareEffect`, and `useCustomCompareEffect` &mdash; run an `effect` depending on deep comparison of its dependencies
     <br/>
