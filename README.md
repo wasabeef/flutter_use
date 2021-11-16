@@ -71,8 +71,10 @@
   - [`useFirstMountState`](./docs/useFirstMountState.md) &mdash; check if current build is first. [![][img-demo]](https://dartpad.dev/?id=c9b6853d726ae29dcf902efcf7e85dc6&null_safety=true)
   - [`useBuildsCount`](./docs/useBuildsCount.md) &mdash; count component builds. [![][img-demo]](https://dartpad.dev/?id=d54979d95910abd48054547202e20c12&null_safety=true)
   - `useMethods` &mdash; neat alternative to `useReducer`.
-
-- **TBD**
+    <br/>
+    <br/>
+- <details><summary><b>TBD</b></summary><div>
+  
   - `useCopyToClipboard` &mdash; copies text to clipboard.
   - `useEvent` &mdash; subscribe to events.
   - `useScroll` &mdash; tracks a widget's scroll position.
@@ -81,6 +83,9 @@
   - `useClickAway`&mdash; triggers callback when user clicks outside target area.
   - `usePageLeave` &mdash; triggers when mouse leaves page boundaries.
   - `usePermission` &mdash; query permission status for apps APIs.
+  
+</div></details>
+
 
 <br />
 <br />
