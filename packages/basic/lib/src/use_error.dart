@@ -3,37 +3,28 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 /// Returns an error dispatcher.
 ErrorState useError() {
-  final dispatcher = useRef<_ErrorDispatcher>((Error e) {});
-  final state = useState(ErrorState(dispatcher.value));
-  dispatcher.value = useCallback((e) {
-    final newState = ErrorState(dispatcher.value, value: e);
-    if (state.value != newState) state.value = newState;
+  final error = useState<Error?>(null);
+  final dispatcher = useCallback<_Dispatcher>((e) {
+    error.value = e;
   }, const []);
 
-  useEffect(() {
-    state.value = ErrorState(dispatcher.value);
+  final getter = useCallback<_GetFunction>(() {
+    return error.value;
   }, const []);
+  final state = useRef(ErrorState(dispatcher, getter));
 
   return state.value;
 }
 
-typedef _ErrorDispatcher = void Function(Error e);
+typedef _Dispatcher = void Function(Error e);
+typedef _GetFunction = Error? Function();
 
 @immutable
 class ErrorState {
-  const ErrorState(this._dispatcher, {this.value});
-  final Error? value;
-  final _ErrorDispatcher _dispatcher;
+  const ErrorState(this._dispatcher, this._getter);
+  final _GetFunction _getter;
+  final _Dispatcher _dispatcher;
+
   void dispatch(Error e) => _dispatcher(e);
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ErrorState &&
-          runtimeType == other.runtimeType &&
-          value == other.value &&
-          _dispatcher == other._dispatcher;
-
-  @override
-  int get hashCode => _dispatcher.hashCode ^ value.hashCode;
+  Error? get value => _getter();
 }
