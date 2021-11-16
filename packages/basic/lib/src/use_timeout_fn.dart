@@ -8,32 +8,37 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 /// Calls given function after specified duration.
 /// Provides handles to cancel and/or reset the timeout.
 TimeoutState useTimeoutFn(VoidCallback fn, Duration delay) {
-  final timer = useRef<Timer?>(null);
+  final isReady = useRef<bool?>(null);
+  final timeout = useRef<Timer?>(null);
   final callback = useRef(fn);
-  final state = useRef(const TimeoutState(isReady: null));
 
   // update ref when function changes
   useEffect(() {
     callback.value = fn;
   }, [fn]);
 
+  final getIsReady = useCallback<_IsReadyFunction>(() {
+    return isReady.value;
+  }, const []);
+
   final reset = useCallback(() {
-    state.value = state.value.copyWith(isReady: false);
-    timer.value?.cancel();
-    timer.value = Timer(delay, () {
-      state.value = state.value.copyWith(isReady: true);
+    isReady.value = false;
+    timeout.value?.cancel();
+    timeout.value = Timer(delay, () {
+      isReady.value = true;
       callback.value();
     });
   }, const []);
 
   final cancel = useCallback(() {
-    state.value = state.value.copyWith(isReady: null);
-    timer.value?.cancel();
+    isReady.value = null;
+    timeout.value?.cancel();
   }, const []);
+
+  final state = useRef(TimeoutState(getIsReady, reset, cancel));
 
   // set on mount, clear on unmount
   useEffect(() {
-    state.value = TimeoutState(cancel: cancel, reset: reset, isReady: null);
     reset();
 
     return cancel;
@@ -42,31 +47,13 @@ TimeoutState useTimeoutFn(VoidCallback fn, Duration delay) {
   return state.value;
 }
 
+typedef _IsReadyFunction = bool? Function();
+
 @immutable
 class TimeoutState {
-  const TimeoutState({
-    required this.isReady,
-    VoidCallback? cancel,
-    VoidCallback? reset,
-  })  : _cancel = cancel,
-        _reset = reset;
+  const TimeoutState(this.isReady, this.cancel, this.reset);
 
-  final bool? isReady;
-  final VoidCallback? _cancel;
-  final VoidCallback? _reset;
-
-  void cancel() => _cancel?.call();
-
-  void reset() => _reset?.call();
-
-  TimeoutState copyWith({
-    VoidCallback? cancel,
-    VoidCallback? reset,
-    required bool? isReady,
-  }) =>
-      TimeoutState(
-        cancel: cancel ?? _cancel,
-        reset: reset ?? _reset,
-        isReady: isReady,
-      );
+  final _IsReadyFunction isReady;
+  final VoidCallback cancel;
+  final VoidCallback reset;
 }

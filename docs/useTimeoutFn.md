@@ -53,7 +53,7 @@ class Sample extends HookWidget {
 
 - **`fn`**_`: VoidCallback`_ - function that will be called;
 - **`delay`**_`: Duration`_ - delay
-- **`isReady`**_`: bool`_ - function returning current timeout state:
+- **`isReady()`**_`: bool?`_ - function returning current timeout state:
     - `false` - pending re-build
     - `true` - re-build performed
     - `null` - re-build cancelled
