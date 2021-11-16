@@ -18,3 +18,4 @@
 - Add `useException()` hook.
 - Add `useFutureRetry()` hook.
 - Add `useDebounce()` hook.
+- Add `useDefault()` hook.

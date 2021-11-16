@@ -20,6 +20,7 @@ export 'src/use_mount.dart';
 export 'src/use_unmount.dart';
 export 'src/use_update_effect.dart';
 // State
+export 'src/use_default.dart';
 export 'src/use_latest.dart';
 export 'src/use_toggle.dart';
 export 'src/use_boolean.dart';
