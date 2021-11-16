@@ -28,14 +28,14 @@
     <br/>
     <br/>
 - **Animations**
-  - [`useInterval`](./docs/useInterval.md) &mdash; re-builds component on a set interval using `Timer.periodic`. [![][img-demo]](https://dartpad.dev/?id=d4ce8c315a0157ad18257886d661c8b9&null_safety=true)
+  - [`useInterval`](./docs/useInterval.md) &mdash; re-builds component on a set interval using [`Timer.periodic`](https://api.dart.dev/stable/2.14.4/dart-async/Timer/Timer.periodic.html). [![][img-demo]](https://dartpad.dev/?id=d4ce8c315a0157ad18257886d661c8b9&null_safety=true)
   - [`useTimeout`](./docs/useTimeout.md) &mdash; re-builds component after a timeout. [![][img-demo]](https://dartpad.dev/?id=e1cb8d7045982ec96b0b314e9fb58202&null_safety=true)
   - [`useTimeoutFn`](./docs/useTimeoutFn.md) &mdash; calls given function after a timeout. [![][img-demo]](https://dartpad.dev/?id=12449436914e1dec13c8f9c5cf63935b&null_safety=true)
   - [`useUpdate`](./docs/useUpdate.md) &mdash; returns a callback, which re-builds component when called.
     <br/>
     <br/>
 - **Side-effects**
-  - [`useFutureRetry`](./docs/useFutureRetry.md) &mdash; `useFuture` with an additional retry method.  [![][img-demo]](https://dartpad.dev/?id=ab910cc4170f5e8746229cc958ba845c&null_safety=true)
+  - [`useFutureRetry`](./docs/useFutureRetry.md) &mdash; [`useFuture`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/useFuture.html) with an additional retry method.  [![][img-demo]](https://dartpad.dev/?id=ab910cc4170f5e8746229cc958ba845c&null_safety=true)
   - `useDebounce` &mdash; debounces a function.
   - [`useError`](./docs/useError.md) &mdash; error dispatcher. [![][img-demo]](https://dartpad.dev/?id=8e8e4876d546dd38517cb833ee694359&null_safety=true)
   - [`useException`](.docs/useException.md) &mdash; exception dispatcher. [![][img-demo]](https://dartpad.dev/?id=98580d1987dcae38ea0f27ee67a0d089&null_safety=true)
