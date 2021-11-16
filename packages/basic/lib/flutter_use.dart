@@ -10,6 +10,7 @@ export 'src/use_timeout_fn.dart';
 export 'src/use_update.dart';
 // Side-effects
 export 'src/use_future_retry.dart';
+export 'src/use_debounce.dart';
 export 'src/use_error.dart';
 export 'src/use_exception.dart';
 // Lifecycles
