@@ -4,37 +4,33 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 /// Flutter state hook that tracks value of a boolean.
 /// useBoolean is an alias for useToggle.
 ToggleState useToggle(bool initialValue) {
-  final toggle = useRef<_ToggleCallback>(({bool? value}) {});
-  final state = useState(ToggleState(initialValue, toggle.value));
+  final toggle = useState(initialValue);
 
-  toggle.value = useCallback(({value}) {
-    final newState = ToggleState(value ?? !state.value.value, toggle.value);
-    if (state.value != newState) state.value = newState;
+  final setter = useCallback<_SetFunction>(({value}) {
+    toggle.value = value ?? !toggle.value;
   }, const []);
 
-  useEffect(() {
-    state.value = ToggleState(initialValue, toggle.value);
+  final getter = useCallback<bool Function()>(() {
+    return toggle.value;
   }, const []);
+  
+  final state = useState(ToggleState(getter, setter));
 
   return state.value;
 }
 
-typedef _ToggleCallback = void Function({bool? value});
+typedef _SetFunction = void Function({bool? value});
+typedef _GetFunction = bool Function();
 
 @immutable
 class ToggleState {
-  const ToggleState(this.value, this.toggle);
-  final bool value;
-  final _ToggleCallback toggle;
+  const ToggleState(this._getter, this._setter);
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ToggleState &&
-          runtimeType == other.runtimeType &&
-          value == other.value &&
-          toggle == other.toggle;
+  final _GetFunction _getter;
+  final _SetFunction _setter;
 
-  @override
-  int get hashCode => value.hashCode;
+  bool get value => _getter();
+  
+  set value(bool value) => _setter(value: value);
+  void toggle() => _setter(value: null);
 }
