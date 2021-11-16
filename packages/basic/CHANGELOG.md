@@ -16,4 +16,4 @@
 - Add `useBuildsCount()` hook.
 - Add `useError()` hook.
 - Add `useException()` hook.
-
+- Add `useFutureRetry()` hook.

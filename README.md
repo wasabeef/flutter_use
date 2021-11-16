@@ -35,7 +35,7 @@
     <br/>
     <br/>
 - **Side-effects**
-  - `useAsync`, `useAsyncFn`, and `useAsyncRetry` &mdash; resolves an `async` function.
+  - [`useFutureRetry`](./docs/useFutureRetry.md) &mdash; `useFuture` with an additional retry method.  [![][img-demo]](https://dartpad.dev/?id=ab910cc4170f5e8746229cc958ba845c&null_safety=true)
   - `useDebounce` &mdash; debounces a function.
   - [`useError`](./docs/useError.md) &mdash; error dispatcher. [![][img-demo]](https://dartpad.dev/?id=8e8e4876d546dd38517cb833ee694359&null_safety=true)
   - [`useException`](.docs/useException.md) &mdash; exception dispatcher. [![][img-demo]](https://dartpad.dev/?id=98580d1987dcae38ea0f27ee67a0d089&null_safety=true)
