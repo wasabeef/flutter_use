@@ -63,7 +63,7 @@
   - [`useToggle` and `useBoolean`](./docs/useToggle.md) &mdash; tracks state of a boolean. [![][img-demo]](https://dartpad.dev/?id=7e070264db2566b3c990c403dd61c3ff&null_safety=true)
   - `useCounter` and `useNumber` &mdash; tracks state of a number.
   - `useList` &mdash; tracks state of an array.
-  - `useMap` &mdash; tracks state of an object.
+  - [`useMap`](./docs/useMap.md) &mdash; tracks state of a map.  [![][img-demo]](https://dartpad.dev/?id=325b4737e78d40463fc0f3d3cc317b35&null_safety=true)
   - `useSet` &mdash; tracks state of a Set.
   - `useQueue` &mdash; implements simple queue.
   - `useStateValidator` &mdash; tracks state of an object.
