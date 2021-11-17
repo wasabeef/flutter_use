@@ -13,7 +13,7 @@ ToggleState useToggle(bool initialValue) {
   final getter = useCallback<bool Function()>(() {
     return toggle.value;
   }, const []);
-  
+
   final state = useState(ToggleState(getter, setter));
 
   return state.value;
@@ -30,7 +30,7 @@ class ToggleState {
   final _SetFunction _setter;
 
   bool get value => _getter();
-  
+
   set value(bool value) => _setter(value: value);
   void toggle() => _setter(value: null);
 }
