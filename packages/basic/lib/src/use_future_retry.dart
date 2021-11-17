@@ -10,28 +10,34 @@ FutureState<T> useFutureRetry<T>(
   bool preserveState = true,
 }) {
   final attempt = useState(0);
-  final state = useRef(FutureState<T>(const AsyncSnapshot.nothing(), () {}));
+  final snapshotRef = useRef<AsyncSnapshot<T>>(const AsyncSnapshot.nothing());
 
   final snapshot = useFuture<T>(
     useMemoized(() => future, [attempt.value]),
     initialData: initialData,
     preserveState: preserveState,
   );
+  snapshotRef.value = snapshot;
+
+  final snapshotCallback = useCallback<SnapshotCallback<T>>(() {
+    return snapshotRef.value;
+  }, const []);
 
   final retry = useCallback(() {
     attempt.value++;
   }, [future, initialData, preserveState]);
 
-  useEffect(() {
-    state.value = FutureState<T>(snapshot, retry);
-  });
+  final state = useRef(FutureState(snapshotCallback, retry));
 
   return state.value;
 }
 
+typedef SnapshotCallback<T> = AsyncSnapshot<T> Function();
+
 @immutable
 class FutureState<T> {
-  const FutureState(this.snapshot, this.retry);
-  final AsyncSnapshot<T> snapshot;
+  const FutureState(this._snapshot, this.retry);
+  final SnapshotCallback<T> _snapshot;
+  AsyncSnapshot<T> get snapshot => _snapshot();
   final VoidCallback retry;
 }
