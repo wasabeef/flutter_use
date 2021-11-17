@@ -54,7 +54,7 @@
     <br/>
     <br/>
 - **State**
-  - [`useDefault`](./docs/useDefault.md) &mdash; returns the default value when state is `null` or `undefined`. [![][img-demo]](https://dartpad.dev/?id=6511219165b2e5c64ec8890b69633da6&null_safety=true)
+  - [`useDefault`](./docs/useDefault.md) &mdash; returns the default value when state is `null`. [![][img-demo]](https://dartpad.dev/?id=6511219165b2e5c64ec8890b69633da6&null_safety=true)
   - [`useLatest`](./docs/useLatest.md) &mdash; returns the latest state or props.  [![][img-demo]](https://dartpad.dev/?id=2a76f5b16c2f27d11c023a140f38ce33&null_safety=true)
   - `usePreviousDistinct` &mdash; like `usePrevious` but with a predicate to determine if `previous` should update.
   - `useObservable` &mdash; tracks latest value of an `Observable`.
