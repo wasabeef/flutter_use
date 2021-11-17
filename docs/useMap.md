@@ -1,6 +1,6 @@
 # `useMap`
 
-Flutter state hook that tracks a value of a map.
+Flutter state hook that tracks a value of a Map.
 
 ## Installation
 

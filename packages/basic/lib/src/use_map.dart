@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-/// Flutter state hook that tracks a value of a map.
+/// Flutter state hook that tracks a value of a Map.
 MapAction<K, V> useMap<K, V>(Map<K, V> initialMap) {
   final map = useState(initialMap);
 
-  final mapCallback = useCallback<Map<K, V> Function()>(() {
+  final value = useCallback<Map<K, V> Function()>(() {
     return map.value;
   }, const []);
 
@@ -35,7 +35,7 @@ MapAction<K, V> useMap<K, V>(Map<K, V> initialMap) {
   }, const []);
 
   final state =
-      useRef(MapAction<K, V>(mapCallback, add, addAll, replace, remove, reset));
+      useRef(MapAction<K, V>(value, add, addAll, replace, remove, reset));
   return state.value;
 }
 
