@@ -64,7 +64,7 @@
   - `useCounter` and `useNumber` &mdash; tracks state of a number.
   - `useList` &mdash; tracks state of an array.
   - [`useMap`](./docs/useMap.md) &mdash; tracks state of a map.  [![][img-demo]](https://dartpad.dev/?id=325b4737e78d40463fc0f3d3cc317b35&null_safety=true)
-  - `useSet` &mdash; tracks state of a Set.
+  - [`useSet`](./docs/useSet.md) &mdash; tracks state of a Set. [![][img-demo]](https://dartpad.dev/?id=3d1199828a54b19c526a26a6c0021293&null_safety=true)
   - `useQueue` &mdash; implements simple queue.
   - `useStateValidator` &mdash; tracks state of an object.
   - `useMultiStateValidator` &mdash; alike the `useStateValidator`, but tracks multiple states at a time.

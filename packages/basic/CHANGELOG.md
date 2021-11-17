@@ -19,3 +19,6 @@
 - Add `useFutureRetry()` hook.
 - Add `useDebounce()` hook.
 - Add `useDefault()` hook.
+- Add `useLogger()` hook.
+- Add `useMap()` hook.
+- Add `useSet()` hook.

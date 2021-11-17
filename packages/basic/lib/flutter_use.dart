@@ -25,5 +25,6 @@ export 'src/use_latest.dart';
 export 'src/use_toggle.dart';
 export 'src/use_boolean.dart';
 export 'src/use_map.dart';
+export 'src/use_set.dart';
 export 'src/use_first_mount_state.dart';
 export 'src/use_builds_count.dart';
