@@ -7,8 +7,7 @@ import 'use_update_effect.dart';
 /// transitions through lifecycles.
 void useLogger(String componentName, {Map<String, dynamic> props = const {}}) {
   useEffectOnce(() {
-    debugPrint(
-        '$componentName mounted $props');
+    debugPrint('$componentName mounted $props');
     return () => debugPrint('$componentName unmounted');
   });
 
