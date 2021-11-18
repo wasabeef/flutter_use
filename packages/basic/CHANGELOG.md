@@ -22,3 +22,4 @@
 - Add `useLogger()` hook.
 - Add `useMap()` hook.
 - Add `useSet()` hook.
+- Add `useCustomCompareEffect()` hook.
