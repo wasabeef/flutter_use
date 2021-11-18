@@ -6,7 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 ToggleState useToggle(bool initialValue) {
   final toggle = useState(initialValue);
 
-  final setter = useCallback<_SetFunction>(({value}) {
+  final setter = useCallback<_SetFunction>(([value]) {
     toggle.value = value ?? !toggle.value;
   }, const []);
 
@@ -19,7 +19,7 @@ ToggleState useToggle(bool initialValue) {
   return state.value;
 }
 
-typedef _SetFunction = void Function({bool? value});
+typedef _SetFunction = void Function([bool? value]);
 typedef _GetFunction = bool Function();
 
 @immutable
@@ -31,6 +31,5 @@ class ToggleState {
 
   bool get value => _getter();
 
-  set value(bool value) => _setter(value: value);
-  void toggle() => _setter(value: null);
+  void toggle([bool? value]) => _setter(value);
 }

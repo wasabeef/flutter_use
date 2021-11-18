@@ -29,13 +29,13 @@ class Sample extends HookWidget {
         ),
         ElevatedButton(
           onPressed: () {
-            toggleState.value = true;
+            toggleState.toggle(true);
           },
           child: const Text('set ON'),
         ),
         ElevatedButton(
           onPressed: () {
-            toggleState.value = false;
+            toggleState.toggle(false);
           },
           child: const Text('set OFF'),
         ),
