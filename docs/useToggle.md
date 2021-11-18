@@ -1,4 +1,4 @@
-# `useEffectOnce`
+# `useBoolean` and `useToggle`
 
 Flutter state hook that tracks value of a boolean.
 `useBoolean` is an alias for `useToggle`.
