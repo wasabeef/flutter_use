@@ -35,7 +35,7 @@
     <br/>
     <br/>
 - **Side-effects**
-  - [`useFutureRetry`](./docs/useFutureRetry.md) &mdash; [`useFuture`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/useFuture.html) with an additional retry method.  [![][img-demo]](https://dartpad.dev/?id=ab910cc4170f5e8746229cc958ba845c&null_safety=true)
+  - [`useFutureRetry`](./docs/useFutureRetry.md) &mdash; [`useFuture`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/useFuture.html) with an additional retry method. [![][img-demo]](https://dartpad.dev/?id=ab910cc4170f5e8746229cc958ba845c&null_safety=true)
   - [`useDebounce`](./docs/useDebounce.md) &mdash; debounces a function. [![][img-demo]](https://dartpad.dev/?id=977ee00fc30da8f0dd1888f6808114eb&null_safety=true)
   - [`useError`](./docs/useError.md) &mdash; error dispatcher. [![][img-demo]](https://dartpad.dev/?id=8e8e4876d546dd38517cb833ee694359&null_safety=true)
   - [`useException`](.docs/useException.md) &mdash; exception dispatcher. [![][img-demo]](https://dartpad.dev/?id=98580d1987dcae38ea0f27ee67a0d089&null_safety=true)
@@ -46,16 +46,16 @@
   - [`useEffectOnce`](./docs/useEffectOnce.md) &mdash; a modified [`useEffect`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/useEffect.html) hook that only runs once.
   - [`useLifecycles`](./docs/useLifecycles.md) &mdash; calls `mount` and `unmount` callbacks.
   - `usePromise` &mdash; resolves promise only while component is mounted.
-  - [`useLogger`](./docs/useLogger.md) &mdash; logs in console as component goes through life-cycles.  [![][img-demo]](https://dartpad.dev/?id=c72c9ab0fa46f93dd266f6557a29a3ed&null_safety=true)
+  - [`useLogger`](./docs/useLogger.md) &mdash; logs in console as component goes through life-cycles. [![][img-demo]](https://dartpad.dev/?id=c72c9ab0fa46f93dd266f6557a29a3ed&null_safety=true)
   - [`useMount`](./docs/useMount.md) &mdash; calls `mount` callbacks. [![][img-demo]](https://dartpad.dev/?id=aa25e9bc3913779fcc795bef2bdc8d39&null_safety=true)
   - [`useUnMount`](./docs/useUnMount.md) &mdash; calls `unmount` callbacks.
   - [`useUpdateEffect`](./docs/useUpdateEffect.md) &mdash; run an `effect` only on updates. [![][img-demo]](https://dartpad.dev/?id=724fee007fe78419fde61f185b83095b&null_safety=true)
-  - `useDeepCompareEffect`, `useShallowCompareEffect`, and `useCustomCompareEffect` &mdash; run an `effect` depending on deep comparison of its dependencies
+  - [`useCustomCompareEffect`](./docs/useCustomCompareEffect.md) &mdash; run an `effect` depending on deep comparison of its dependencies. [![][img-demo]](https://dartpad.dev/?id=27146b5ca9189664e39ad4dfe9b08abe&null_safety=true)
     <br/>
     <br/>
 - **State**
   - [`useDefault`](./docs/useDefault.md) &mdash; returns the default value when state is `null`. [![][img-demo]](https://dartpad.dev/?id=6511219165b2e5c64ec8890b69633da6&null_safety=true)
-  - [`useLatest`](./docs/useLatest.md) &mdash; returns the latest state or props.  [![][img-demo]](https://dartpad.dev/?id=2a76f5b16c2f27d11c023a140f38ce33&null_safety=true)
+  - [`useLatest`](./docs/useLatest.md) &mdash; returns the latest state or props. [![][img-demo]](https://dartpad.dev/?id=2a76f5b16c2f27d11c023a140f38ce33&null_safety=true)
   - `usePreviousDistinct` &mdash; like `usePrevious` but with a predicate to determine if `previous` should update.
   - `useObservable` &mdash; tracks latest value of an `Observable`.
   - `useSetState` &mdash; creates `setState` method which works like `this.setState`.
@@ -63,7 +63,7 @@
   - [`useToggle` and `useBoolean`](./docs/useToggle.md) &mdash; tracks state of a boolean. [![][img-demo]](https://dartpad.dev/?id=7e070264db2566b3c990c403dd61c3ff&null_safety=true)
   - `useCounter` and `useNumber` &mdash; tracks state of a number.
   - `useList` &mdash; tracks state of an array.
-  - [`useMap`](./docs/useMap.md) &mdash; tracks state of a map.  [![][img-demo]](https://dartpad.dev/?id=325b4737e78d40463fc0f3d3cc317b35&null_safety=true)
+  - [`useMap`](./docs/useMap.md) &mdash; tracks state of a map. [![][img-demo]](https://dartpad.dev/?id=325b4737e78d40463fc0f3d3cc317b35&null_safety=true)
   - [`useSet`](./docs/useSet.md) &mdash; tracks state of a Set. [![][img-demo]](https://dartpad.dev/?id=3d1199828a54b19c526a26a6c0021293&null_safety=true)
   - `useQueue` &mdash; implements simple queue.
   - `useStateValidator` &mdash; tracks state of an object.

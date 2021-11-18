@@ -19,6 +19,7 @@ export 'src/use_lifecycles.dart';
 export 'src/use_mount.dart';
 export 'src/use_unmount.dart';
 export 'src/use_update_effect.dart';
+export 'src/use_custom_compare_effect.dart';
 // State
 export 'src/use_default.dart';
 export 'src/use_latest.dart';
