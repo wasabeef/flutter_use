@@ -23,3 +23,5 @@
 - Add `useMap()` hook.
 - Add `useSet()` hook.
 - Add `useCustomCompareEffect()` hook.
+- Add `useCounter()` hook.
+- Add `useNumber()` hook.

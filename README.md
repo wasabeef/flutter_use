@@ -61,7 +61,7 @@
   - `useSetState` &mdash; creates `setState` method which works like `this.setState`.
   - `useStateList` &mdash; circularly iterates over an array.
   - [`useToggle` and `useBoolean`](./docs/useToggle.md) &mdash; tracks state of a boolean. [![][img-demo]](https://dartpad.dev/?id=7e070264db2566b3c990c403dd61c3ff&null_safety=true)
-  - `useCounter` and `useNumber` &mdash; tracks state of a number.
+  - [`useCounter` and `useNumber`](./docs/useCounter.md) &mdash; tracks state of a number.  [![][img-demo]](https://dartpad.dev/?id=5ee82acd2f1947b2d0ca02da4ab327b8&null_safety=true)
   - `useList` &mdash; tracks state of an array.
   - [`useMap`](./docs/useMap.md) &mdash; tracks state of a map. [![][img-demo]](https://dartpad.dev/?id=325b4737e78d40463fc0f3d3cc317b35&null_safety=true)
   - [`useSet`](./docs/useSet.md) &mdash; tracks state of a Set. [![][img-demo]](https://dartpad.dev/?id=3d1199828a54b19c526a26a6c0021293&null_safety=true)
