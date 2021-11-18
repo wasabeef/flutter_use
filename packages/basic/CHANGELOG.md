@@ -25,3 +25,6 @@
 - Add `useCustomCompareEffect()` hook.
 - Add `useCounter()` hook.
 - Add `useNumber()` hook.
+- Add `useLatest()` hook.
+- Add `useMount()` hook.
+- Add `useUnMount()` hook.
