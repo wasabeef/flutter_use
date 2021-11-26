@@ -45,7 +45,6 @@
 - **Lifecycles**
   - [`useEffectOnce`](./docs/useEffectOnce.md) &mdash; a modified [`useEffect`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/useEffect.html) hook that only runs once.
   - [`useLifecycles`](./docs/useLifecycles.md) &mdash; calls `mount` and `unmount` callbacks.
-  - `usePromise` &mdash; resolves promise only while component is mounted.
   - [`useLogger`](./docs/useLogger.md) &mdash; logs in console as component goes through life-cycles. [![][img-demo]](https://dartpad.dev/?id=c72c9ab0fa46f93dd266f6557a29a3ed&null_safety=true)
   - [`useMount`](./docs/useMount.md) &mdash; calls `mount` callbacks. [![][img-demo]](https://dartpad.dev/?id=aa25e9bc3913779fcc795bef2bdc8d39&null_safety=true)
   - [`useUnMount`](./docs/useUnMount.md) &mdash; calls `unmount` callbacks.
@@ -57,8 +56,6 @@
   - [`useDefault`](./docs/useDefault.md) &mdash; returns the default value when state is `null`. [![][img-demo]](https://dartpad.dev/?id=6511219165b2e5c64ec8890b69633da6&null_safety=true)
   - [`useLatest`](./docs/useLatest.md) &mdash; returns the latest state or props. [![][img-demo]](https://dartpad.dev/?id=2a76f5b16c2f27d11c023a140f38ce33&null_safety=true)
   - `usePreviousDistinct` &mdash; like `usePrevious` but with a predicate to determine if `previous` should update.
-  - `useObservable` &mdash; tracks latest value of an `Observable`.
-  - `useSetState` &mdash; creates `setState` method which works like `this.setState`.
   - `useStateList` &mdash; circularly iterates over an array.
   - [`useToggle` and `useBoolean`](./docs/useToggle.md) &mdash; tracks state of a boolean. [![][img-demo]](https://dartpad.dev/?id=7e070264db2566b3c990c403dd61c3ff&null_safety=true)
   - [`useCounter` and `useNumber`](./docs/useCounter.md) &mdash; tracks state of a number.  [![][img-demo]](https://dartpad.dev/?id=5ee82acd2f1947b2d0ca02da4ab327b8&null_safety=true)
@@ -68,7 +65,6 @@
   - [`useTextFormValidator`](./docs/useTextFormValidator.md) &mdash; tracks state of an object. [![][img-demo]](https://dartpad.dev/?id=23dee1c153a8a9e455d463584537256e&null_safety=true)
   - [`useFirstMountState`](./docs/useFirstMountState.md) &mdash; check if current build is first. [![][img-demo]](https://dartpad.dev/?id=c9b6853d726ae29dcf902efcf7e85dc6&null_safety=true)
   - [`useBuildsCount`](./docs/useBuildsCount.md) &mdash; count component builds. [![][img-demo]](https://dartpad.dev/?id=d54979d95910abd48054547202e20c12&null_safety=true)
-  - `useMethods` &mdash; neat alternative to `useReducer`.
     <br/>
     <br/>
 - <details><summary><b>TBD</b></summary><div>
@@ -81,6 +77,10 @@
   - `useClickAway`&mdash; triggers callback when user clicks outside target area.
   - `usePageLeave` &mdash; triggers when mouse leaves page boundaries.
   - `usePermission` &mdash; query permission status for apps APIs.
+  - `useMethods` &mdash; neat alternative to `useReducer`.
+  - `useSetState` &mdash; creates `setState` method which works like `this.setState`.
+  - `usePromise` &mdash; resolves promise only while component is mounted.
+  - `useObservable` &mdash; tracks latest value of an `Observable`.
   
 </div></details>
 
