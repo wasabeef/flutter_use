@@ -16,7 +16,7 @@ T useTextFormValidator<T>({
   useEffect(() {
     controller.addListener(validate);
     return () => controller.removeListener(validate);
-  }, [validator, controller]);
+  }, [controller]);
 
   return state.value;
 }
