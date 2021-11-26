@@ -30,5 +30,6 @@ export 'src/use_number.dart';
 export 'src/use_list.dart';
 export 'src/use_map.dart';
 export 'src/use_set.dart';
+export 'src/use_text_form_validator.dart';
 export 'src/use_first_mount_state.dart';
 export 'src/use_builds_count.dart';
