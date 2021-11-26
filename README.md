@@ -55,7 +55,7 @@
 - **State**
   - [`useDefault`](./docs/useDefault.md) &mdash; returns the default value when state is `null`. [![][img-demo]](https://dartpad.dev/?id=6511219165b2e5c64ec8890b69633da6&null_safety=true)
   - [`useLatest`](./docs/useLatest.md) &mdash; returns the latest state or props. [![][img-demo]](https://dartpad.dev/?id=2a76f5b16c2f27d11c023a140f38ce33&null_safety=true)
-  - `usePreviousDistinct` &mdash; like `usePrevious` but with a predicate to determine if `previous` should update.
+  - [`usePreviousDistinct`](./docs/usePreviousDistinct.md) &mdash; like [`usePrevious`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/usePrevious.html) but with a predicate to determine if `previous` should update. [![][img-demo]](https://dartpad.dev/?id=86e0e29f8198095dbd0d68a736c671bb&null_safety=true)
   - `useStateList` &mdash; circularly iterates over an array.
   - [`useToggle` and `useBoolean`](./docs/useToggle.md) &mdash; tracks state of a boolean. [![][img-demo]](https://dartpad.dev/?id=7e070264db2566b3c990c403dd61c3ff&null_safety=true)
   - [`useCounter` and `useNumber`](./docs/useCounter.md) &mdash; tracks state of a number.  [![][img-demo]](https://dartpad.dev/?id=5ee82acd2f1947b2d0ca02da4ab327b8&null_safety=true)

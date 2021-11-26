@@ -23,6 +23,7 @@ export 'src/use_custom_compare_effect.dart';
 // State
 export 'src/use_default.dart';
 export 'src/use_latest.dart';
+export 'src/use_previous_distinct.dart';
 export 'src/use_toggle.dart';
 export 'src/use_boolean.dart';
 export 'src/use_counter.dart';
