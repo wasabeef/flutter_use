@@ -1,4 +1,3 @@
-// ignore_for_file: file_names
 import 'package:flutter_use/flutter_use.dart';
 
 /// Re-builds the component after a specified duration.

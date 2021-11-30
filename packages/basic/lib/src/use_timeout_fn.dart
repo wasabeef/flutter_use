@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -17,7 +15,7 @@ TimeoutState useTimeoutFn(VoidCallback fn, Duration delay) {
     callback.value = fn;
   }, [fn]);
 
-  final getIsReady = useCallback<_IsReadyFunction>(() {
+  final getIsReady = useCallback<bool? Function()>(() {
     return isReady.value;
   }, const []);
 
@@ -47,13 +45,11 @@ TimeoutState useTimeoutFn(VoidCallback fn, Duration delay) {
   return state.value;
 }
 
-typedef _IsReadyFunction = bool? Function();
-
 @immutable
 class TimeoutState {
   const TimeoutState(this.isReady, this.cancel, this.reset);
 
-  final _IsReadyFunction isReady;
+  final bool? Function() isReady;
   final VoidCallback cancel;
   final VoidCallback reset;
 }
