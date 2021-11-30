@@ -39,7 +39,6 @@
   - [`useDebounce`](./docs/useDebounce.md) &mdash; debounces a function. [![][img-demo]](https://dartpad.dev/?id=977ee00fc30da8f0dd1888f6808114eb&null_safety=true)
   - [`useError`](./docs/useError.md) &mdash; error dispatcher. [![][img-demo]](https://dartpad.dev/?id=8e8e4876d546dd38517cb833ee694359&null_safety=true)
   - [`useException`](.docs/useException.md) &mdash; exception dispatcher. [![][img-demo]](https://dartpad.dev/?id=98580d1987dcae38ea0f27ee67a0d089&null_safety=true)
-  - `useThrottle` and `useThrottleFn` &mdash; throttles a function.
     <br/>
     <br/>
 - **Lifecycles**
@@ -81,6 +80,7 @@
   - `useSetState` &mdash; creates `setState` method which works like `this.setState`.
   - `usePromise` &mdash; resolves promise only while component is mounted.
   - `useObservable` &mdash; tracks latest value of an `Observable`.
+  - `useThrottle` and `useThrottleFn` &mdash; throttles a function.
   
 </div></details>
 
