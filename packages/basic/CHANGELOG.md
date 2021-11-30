@@ -27,4 +27,4 @@
 - Add `useNumber()` hook.
 - Add `useLatest()` hook.
 - Add `useMount()` hook.
-- Add `useUnMount()` hook.
+- Add `useUnmount()` hook.

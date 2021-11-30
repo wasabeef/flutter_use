@@ -1,4 +1,4 @@
-# `useUnMount`
+# `useUnmount`
 
 Flutter lifecycle hook that calls a function when the component will unmount. Use useLifecycles if you need both a mount and unmount function.
 
@@ -15,7 +15,7 @@ dependencies:
 class Sample extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    useUnMount(() => debugPrint('UNMOUNTED'));
+    useUnmount(() => debugPrint('UNMOUNTED'));
 
     return Container();
   }
