@@ -20,7 +20,7 @@ class Sample extends HookWidget {
     final isRunning = useState(true);
     useInterval(
       () => count.value++,
-      delay: isRunning.value ? delay.value : null,
+      isRunning.value ? delay.value : null,
     );
 
     return Column(
