@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_use/src/use_effect_once.dart';
+import 'package:flutter_use/flutter_use.dart';
 import 'package:mockito/mockito.dart';
 
 import 'mock.dart';
