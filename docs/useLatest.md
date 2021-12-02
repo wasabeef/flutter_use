@@ -22,7 +22,7 @@ class Sample extends HookWidget {
     
     void handleClick() {
       Timer(const Duration(seconds: 2), () {
-        debugPrint("Latest count value: ${latestCount.value}");
+        debugPrint("Latest count value: ${latestCount}");
       });
     }
 
