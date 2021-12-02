@@ -18,7 +18,7 @@ class Sample extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final count = useState(0);
-    final latestCount = useLatest(count);
+    final latestCount = useLatest(count.value);
     
     void handleClick() {
       Timer(const Duration(seconds: 2), () {
