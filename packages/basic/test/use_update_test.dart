@@ -1,36 +1,24 @@
-import 'package:flutter/widgets.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_use/src/use_update.dart';
-import 'package:mockito/mockito.dart';
-
-import 'mock.dart';
+import 'package:flutter_use/flutter_use.dart';
+import 'flutter_hooks_test.dart';
 
 void main() {
   testWidgets('useUpdate basic use-case', (tester) async {
-    final effect = MockEffect();
-    const key = Key('button');
+    var buildCount = 0;
+    final result = await buildHook(() {
+      buildCount++;
+      return useUpdate();
+    });
+    // final update = result.current;
 
-    Widget builder() {
-      return HookBuilder(builder: (context) {
-        final update = useUpdate();
-        effect();
-        return GestureDetector(
-          key: key,
-          onTap: () => update(),
-        );
-      });
-    }
+    expect(buildCount, 1);
 
-    // called count is 1
-    await tester.pumpWidget(builder());
-    // called count is 2
-    await tester.tap(find.byKey(key));
-    await tester.pumpAndSettle(const Duration(milliseconds: 1));
-    // called count is 3
-    await tester.tap(find.byKey(key));
-    await tester.pumpAndSettle(const Duration(milliseconds: 1));
-    verify(effect()).called(3);
-    verifyNoMoreInteractions(effect);
+    await result.rebuild();
+    // or await act(() => update());
+    expect(buildCount, 2);
+
+    await result.rebuild();
+    // or await act(() => update());
+    expect(buildCount, 3);
   });
 }

@@ -1,56 +1,57 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_use/flutter_use.dart';
+import 'flutter_hooks_test.dart';
 import 'package:mockito/mockito.dart';
 
 import 'mock.dart';
 
 void main() {
-  testWidgets('useInterval basic use-case', (tester) async {
+  testWidgets('should init hook with default delay', (tester) async {
     final effect = MockEffect();
 
-    Widget builder() {
-      return HookBuilder(builder: (context) {
-        useInterval(
-          effect,
-          delay: const Duration(milliseconds: 100),
-        );
-        return Container();
-      });
-    }
-
-    await tester.pumpWidget(builder());
+    await buildHook(() => useInterval(effect));
     await tester.pump(const Duration(milliseconds: 1000));
     verify(effect()).called(10);
-    verifyNoMoreInteractions(effect);
   });
 
-  testWidgets('useInterval paused use-case', (tester) async {
+  testWidgets('useInterval should init hook with custom delay', (tester) async {
     final effect = MockEffect();
-    const key = Key('button');
 
-    Widget builder() {
-      return HookBuilder(builder: (context) {
-        final isRunning = useState(true);
-        useInterval(
-          effect,
-          delay: isRunning.value ? const Duration(milliseconds: 100) : null,
-        );
-        return GestureDetector(
-            key: key,
-            onTap: () {
-              isRunning.value = false;
-            });
-      });
-    }
+    await buildHook(() {
+      useInterval(effect, const Duration(milliseconds: 500));
+    });
+    await tester.pump(const Duration(milliseconds: 1000));
+    verify(effect()).called(2);
+  });
 
-    await tester.pumpWidget(builder());
+  testWidgets('useInterval should init hook without delay', (tester) async {
+    final effect = MockEffect();
+
+    await buildHook(() {
+      useInterval(effect, null);
+    });
+    await tester.pump(const Duration(milliseconds: 1000));
+    verifyNever(effect());
+  });
+
+  testWidgets('useInterval should pending when delay changed to null',
+      (tester) async {
+    final effect = MockEffect();
+
+    var isRunning = true;
+    final result = await buildHook(() {
+      useInterval(
+        effect,
+        isRunning ? const Duration(milliseconds: 100) : null,
+      );
+    });
+
     await tester.pump(const Duration(milliseconds: 500));
-    await tester.tap(find.byKey(key));
-    await tester.pumpAndSettle(const Duration(milliseconds: 1));
-    await tester.pump(const Duration(milliseconds: 500));
+
+    isRunning = false;
+    await result.rebuild();
+
+    await tester.pump(const Duration(seconds: 1000));
     verify(effect()).called(5);
     verifyNoMoreInteractions(effect);
   });
