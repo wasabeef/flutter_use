@@ -56,6 +56,4 @@ class _OrientationState extends HookState<Orientation, _OrientationHook>
   }
 }
 
-typedef _OrientationCallback = void Function(
-  Orientation orientation,
-);
+typedef _OrientationCallback = void Function(Orientation orientation);
