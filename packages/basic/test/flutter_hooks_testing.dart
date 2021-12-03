@@ -2,22 +2,26 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-Future<HookTestingAction<T>> buildHook<T>(T Function() hook) async {
+Future<_HookTestingAction<T, P>> buildHook<T, P>(
+  T Function(P? props) hook, {
+  P? initialProps,
+}) async {
   late T result;
 
-  Widget builder() {
+  Widget builder([P? props]) {
     return HookBuilder(builder: (context) {
-      result = hook();
+      result = hook(props);
       return Container();
     });
   }
 
-  Future<void> rebuild() => attachAndPump(builder());
-  await rebuild();
+  await _build(builder(initialProps));
 
-  Future<void> unmount() => attachAndPump(Container());
+  Future<void> rebuild([P? props]) => _build(builder(props));
 
-  return HookTestingAction<T>(result, rebuild, unmount);
+  Future<void> unmount() => _build(Container());
+
+  return _HookTestingAction<T, P>(() => result, rebuild, unmount);
 }
 
 Future<void> act(void Function() fn) {
@@ -30,23 +34,24 @@ Future<void> act(void Function() fn) {
   });
 }
 
-class HookTestingAction<T> {
-  const HookTestingAction(this.current, this.rebuild, this.unmount);
+class _HookTestingAction<T, P> {
+  const _HookTestingAction(this._current, this.rebuild, this.unmount);
 
   /// The current value of the result will reflect the latest of whatever is
   /// returned from the callback passed to buildHook.
-  final T current;
+  final T Function() _current;
+  T get current => _current();
 
   /// A function to rebuild the test component, causing any hooks to be
   /// recalculated.
-  final Future<void> Function() rebuild;
+  final Future<void> Function([P? props]) rebuild;
 
   /// A function to unmount the test component. This is commonly used to trigger
   /// cleanup effects for useEffect hooks.
   final Future<void> Function() unmount;
 }
 
-Future<void> attachAndPump(Widget widget) async {
+Future<void> _build(Widget widget) async {
   final binding = TestWidgetsFlutterBinding.ensureInitialized()
       as TestWidgetsFlutterBinding;
   return TestAsyncUtils.guard<void>(() {
