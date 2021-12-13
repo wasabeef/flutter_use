@@ -59,6 +59,7 @@ class Sample extends HookWidget {
 ## Reference
 
 - **`value`**_`: int`_ - current counter value;
+- **`get`**_`: int`_ - getter of current counter value;
 - **`inc(int?)`** - increment current value;
 - **`dec(int?)`** - decrement current value;
 - **`set(int)`** - set arbitrary value;

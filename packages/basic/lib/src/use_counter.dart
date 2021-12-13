@@ -6,12 +6,12 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 /// useNumber is an alias for useCounter.
 CounterActions useCounter(int initialValue, {int? min, int? max}) {
   if (min != null && initialValue < min) {
-    throw AssertionError(
+    throw ArgumentError(
         "The initialValue must be equal to or greater than min value.");
   }
 
   if (max != null && initialValue > max) {
-    throw AssertionError(
+    throw ArgumentError(
         "The initialValue must be equal to or less than max value.");
   }
 
@@ -62,18 +62,20 @@ CounterActions useCounter(int initialValue, {int? min, int? max}) {
   }, const []);
 
   final reset = useCallback<void Function([int?])>(([value]) {
-    if (max == null) {
-      if (value == null) {
-        state.value = initialValue;
-      } else {
-        state.value = value;
+    if (value != null) {
+      initialValue = value;
+
+      if (min != null) {
+        initialValue = math.max(value, min);
       }
+
+      if (max != null) {
+        initialValue = math.min(initialValue, max);
+      }
+      
+      state.value = initialValue;
     } else {
-      if (value == null) {
-        state.value = initialValue;
-      } else {
-        state.value = math.min(value, max);
-      }
+      state.value = initialValue;
     }
   }, const []);
 
@@ -99,7 +101,7 @@ CounterActions useCounter(int initialValue, {int? min, int? max}) {
 
 class CounterActions {
   CounterActions(
-    this._get,
+    this.get,
     this.inc,
     this.dec,
     this.set,
@@ -110,8 +112,8 @@ class CounterActions {
 
   final void Function([int?]) inc;
   final void Function([int?]) dec;
-  final int Function() _get;
-  int get value => _get();
+  final int Function() get;
+  int get value => get();
   final void Function(int) set;
   final void Function([int?]) reset;
   final int? Function() _min;
