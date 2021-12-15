@@ -12,7 +12,7 @@ dependencies:
 
 ## Usage
 
-[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)]((https://dartpad.dev/?id=5ee82acd2f1947b2d0ca02da4ab327b8&null_safety=true))
+[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)](https://dartpad.dev/?id=5ee82acd2f1947b2d0ca02da4ab327b8&null_safety=true)
 
 ```dart
 class Sample extends HookWidget {
