@@ -4,11 +4,10 @@ Tracks the state of device magnetometer.
 
 ## Installation
 
-Required [sensors_plus](https://pub.dev/packages/sensors_plus).
+Depends on [sensors_plus](https://pub.dev/packages/sensors_plus).
 
 ```yaml
 dependencies:
-  sensors_plus:
   flutter_use_sensors: ^0.0.2
 ```
 

@@ -11,6 +11,8 @@ dependencies:
 
 ## Usage
 
+[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)]((https://dartpad.dev/?id=adec4d3a92f52bc8a40dc55ff330d2ab&null_safety=true))
+
 ```dart
 class Sample extends HookWidget {
   @override
@@ -19,7 +21,7 @@ class Sample extends HookWidget {
       print('Running effect once on mount');
       return () {
         print('Running clean-up of effect on unmount');
-      }
+      };
     });
 
     return Container();

@@ -4,11 +4,10 @@ Tracks network connection.
 
 ## Installation
 
-Required [connectivity_plus](https://pub.dev/packages/connectivity_plus).
+Depends on [connectivity_plus](https://pub.dev/packages/connectivity_plus).
 
 ```yaml
 dependencies:
-  battery_plus:
   flutter_use_network_state: ^0.0.2
 ```
 

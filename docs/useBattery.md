@@ -4,11 +4,10 @@ Tracks battery status.
 
 ## Installation
 
-Required [battery_plus](https://pub.dev/packages/battery_plus).
+Depends on [battery_plus](https://pub.dev/packages/battery_plus).
 
 ```yaml
 dependencies:
-  battery_plus:
   flutter_use_battery: ^0.0.2
 ```
 

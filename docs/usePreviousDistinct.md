@@ -11,6 +11,8 @@ dependencies:
 
 ## Usage
 
+[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)]((https://dartpad.dev/?id=86e0e29f8198095dbd0d68a736c671bb&null_safety=true))
+
 ```dart
 class Sample extends HookWidget {
   @override

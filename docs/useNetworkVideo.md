@@ -4,11 +4,10 @@ Creates `VideoPlayerController` using [video_player](https://pub.dev/packages/vi
 
 ## Installation
 
-Required [video_player](https://pub.dev/packages/video_player).
+Depends on [video_player](https://pub.dev/packages/video_player).
 
 ```yaml
 dependencies:
-  video_player:
   flutter_use_video: ^0.0.2
 ```
 

@@ -4,11 +4,10 @@ Tracks the state of user's geographic location and permission using [geolocator]
 
 ## Installation
 
-Required [geolocator](https://pub.dev/packages/geolocator).
+Depends on [geolocator](https://pub.dev/packages/geolocator).
 
 ```yaml
 dependencies:
-  geolocator:
   flutter_use_geolocation: ^0.0.2
 ```
 

@@ -4,11 +4,10 @@ Creates `AudioPlayer`, tracks its state and exposes playback controls.
 
 ## Installation
 
-Required [just_audio](https://pub.dev/packages/just_audio).
+Depends on [just_audio](https://pub.dev/packages/just_audio).
 
 ```yaml
 dependencies:
-  just_audio:
   flutter_use_audio: ^0.0.2
 ```
 

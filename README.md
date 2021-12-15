@@ -31,7 +31,7 @@
   - [`useInterval`](./docs/useInterval.md) &mdash; re-builds component on a set interval using [`Timer.periodic`](https://api.dart.dev/stable/2.14.4/dart-async/Timer/Timer.periodic.html). [![][img-demo]](https://dartpad.dev/?id=d4ce8c315a0157ad18257886d661c8b9&null_safety=true)
   - [`useTimeout`](./docs/useTimeout.md) &mdash; re-builds component after a timeout. [![][img-demo]](https://dartpad.dev/?id=e1cb8d7045982ec96b0b314e9fb58202&null_safety=true)
   - [`useTimeoutFn`](./docs/useTimeoutFn.md) &mdash; calls given function after a timeout. [![][img-demo]](https://dartpad.dev/?id=12449436914e1dec13c8f9c5cf63935b&null_safety=true)
-  - [`useUpdate`](./docs/useUpdate.md) &mdash; returns a callback, which re-builds component when called.
+  - [`useUpdate`](./docs/useUpdate.md) &mdash; returns a callback, which re-builds component when called. [![][img-demo]](https://dartpad.dev/?id=27a74d481219749f532776a8e73f3464&null_safety=true)
     <br/>
     <br/>
 - **Side-effects**
@@ -42,7 +42,7 @@
     <br/>
     <br/>
 - **Lifecycles**
-  - [`useEffectOnce`](./docs/useEffectOnce.md) &mdash; a modified [`useEffect`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/useEffect.html) hook that only runs once.
+  - [`useEffectOnce`](./docs/useEffectOnce.md) &mdash; a modified [`useEffect`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/useEffect.html) hook that only runs once. [![][img-demo]](https://dartpad.dev/?id=adec4d3a92f52bc8a40dc55ff330d2ab&null_safety=true)
   - [`useLifecycles`](./docs/useLifecycles.md) &mdash; calls `mount` and `unmount` callbacks.
   - [`useLogger`](./docs/useLogger.md) &mdash; logs in console as component goes through life-cycles. [![][img-demo]](https://dartpad.dev/?id=c72c9ab0fa46f93dd266f6557a29a3ed&null_safety=true)
   - [`useMount`](./docs/useMount.md) &mdash; calls `mount` callbacks. [![][img-demo]](https://dartpad.dev/?id=aa25e9bc3913779fcc795bef2bdc8d39&null_safety=true)

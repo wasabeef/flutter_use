@@ -11,6 +11,8 @@ dependencies:
 
 ## Usage
 
+[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)]((https://dartpad.dev/?id=27a74d481219749f532776a8e73f3464&null_safety=true))
+
 ```dart
 class Sample extends HookWidget {
   @override
@@ -19,10 +21,10 @@ class Sample extends HookWidget {
 
     return Column(
       children: [
-        Text("count: ${DateTime.now()}"),
+        Text("Now: ${DateTime.now()}"),
         ElevatedButton(
           onPressed: () => update(),
-          child: const Text("Button"),
+          child: const Text("Update"),
         ),
       ]
     );

@@ -11,6 +11,8 @@ dependencies:
 
 ## Usage
 
+[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)]((https://dartpad.dev/?id=98580d1987dcae38ea0f27ee67a0d089&null_safety=true))
+
 ```dart
 class SampleException extends Exception {}
 
