@@ -38,7 +38,7 @@
   - [`useFutureRetry`](./docs/useFutureRetry.md) &mdash; [`useFuture`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/useFuture.html) with an additional retry method. [![][img-demo]](https://dartpad.dev/?id=ab910cc4170f5e8746229cc958ba845c&null_safety=true)
   - [`useDebounce`](./docs/useDebounce.md) &mdash; debounces a function. [![][img-demo]](https://dartpad.dev/?id=977ee00fc30da8f0dd1888f6808114eb&null_safety=true)
   - [`useError`](./docs/useError.md) &mdash; error dispatcher. [![][img-demo]](https://dartpad.dev/?id=8e8e4876d546dd38517cb833ee694359&null_safety=true)
-  - [`useException`](.docs/useException.md) &mdash; exception dispatcher. [![][img-demo]](https://dartpad.dev/?id=98580d1987dcae38ea0f27ee67a0d089&null_safety=true)
+  - [`useException`](./docs/useException.md) &mdash; exception dispatcher. [![][img-demo]](https://dartpad.dev/?id=98580d1987dcae38ea0f27ee67a0d089&null_safety=true)
     <br/>
     <br/>
 - **Lifecycles**
@@ -46,7 +46,7 @@
   - [`useLifecycles`](./docs/useLifecycles.md) &mdash; calls `mount` and `unmount` callbacks.
   - [`useLogger`](./docs/useLogger.md) &mdash; logs in console as component goes through life-cycles. [![][img-demo]](https://dartpad.dev/?id=c72c9ab0fa46f93dd266f6557a29a3ed&null_safety=true)
   - [`useMount`](./docs/useMount.md) &mdash; calls `mount` callbacks. [![][img-demo]](https://dartpad.dev/?id=aa25e9bc3913779fcc795bef2bdc8d39&null_safety=true)
-  - [`useUnmount`](./docs/useUnmount.md) &mdash; calls `unmount` callbacks.
+  - [`useUnmount`](./docs/useUnmount.md) &mdash; calls `unmount` callbacks.  [![][img-demo]](https://dartpad.dev/?id=aa25e9bc3913779fcc795bef2bdc8d39&null_safety=true)
   - [`useUpdateEffect`](./docs/useUpdateEffect.md) &mdash; run an `effect` only on updates. [![][img-demo]](https://dartpad.dev/?id=724fee007fe78419fde61f185b83095b&null_safety=true)
   - [`useCustomCompareEffect`](./docs/useCustomCompareEffect.md) &mdash; run an `effect` depending on deep comparison of its dependencies. [![][img-demo]](https://dartpad.dev/?id=27146b5ca9189664e39ad4dfe9b08abe&null_safety=true)
     <br/>
