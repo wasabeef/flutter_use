@@ -10,8 +10,8 @@ void main() {
       expect(result.current.value, 5);
       expect(result.current.inc, isA<Function>());
       expect(result.current.dec, isA<Function>());
-      expect(result.current.get, isA<Function>());
-      expect(result.current.set, isA<Function>());
+      expect(result.current.getter, isA<Function>());
+      expect(result.current.setter, isA<Function>());
       expect(result.current.reset, isA<Function>());
     });
     testWidgets('should init counter to negative number', (tester) async {
@@ -20,7 +20,7 @@ void main() {
     });
     testWidgets('should get current counter', (tester) async {
       final result = await buildHook((_) => useCounter(5));
-      expect(result.current.get(), 5);
+      expect(result.current.getter(), 5);
     });
     testWidgets('should increment by 1 if not value received', (tester) async {
       final result = await buildHook((_) => useCounter(5));
@@ -44,12 +44,12 @@ void main() {
     });
     testWidgets('should set to value received', (tester) async {
       final result = await buildHook((_) => useCounter(5));
-      await act(() => result.current.set(17));
+      await act(() => result.current.setter(17));
       expect(result.current.value, 17);
     });
     testWidgets('should reset to original value', (tester) async {
       final result = await buildHook((_) => useCounter(5));
-      await act(() => result.current.set(17));
+      await act(() => result.current.setter(17));
       expect(result.current.value, 17);
       await act(() => result.current.reset());
       expect(result.current.value, 5);
@@ -57,7 +57,7 @@ void main() {
     testWidgets('should reset and set new original value', (tester) async {
       final result = await buildHook((_) => useCounter(5));
       // set different value than initial one...
-      await act(() => result.current.set(17));
+      await act(() => result.current.setter(17));
       expect(result.current.value, 17);
 
       // ... now reset and set it to different than initial one...
@@ -65,13 +65,13 @@ void main() {
       expect(result.current.value, 8);
 
       // ... and set different value than initial one again...
-      await act(() => result.current.set(32));
+      await act(() => result.current.setter(32));
       expect(result.current.value, 32);
 
       // ... and reset it to new initial value
       await act(() => result.current.reset());
       expect(result.current.value, 8);
-      expect(result.current.get(), 8);
+      expect(result.current.getter(), 8);
     });
     testWidgets('should not exceed max value', (tester) async {
       expect(() => useCounter(10, max: 5), throwsArgumentError);

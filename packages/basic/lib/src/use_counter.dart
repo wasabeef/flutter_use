@@ -72,7 +72,7 @@ CounterActions useCounter(int initialValue, {int? min, int? max}) {
       if (max != null) {
         initialValue = math.min(initialValue, max);
       }
-      
+
       state.value = initialValue;
     } else {
       state.value = initialValue;
@@ -101,10 +101,10 @@ CounterActions useCounter(int initialValue, {int? min, int? max}) {
 
 class CounterActions {
   CounterActions(
-    this.get,
+    this.getter,
     this.inc,
     this.dec,
-    this.set,
+    this.setter,
     this.reset,
     this._min,
     this._max,
@@ -112,9 +112,9 @@ class CounterActions {
 
   final void Function([int?]) inc;
   final void Function([int?]) dec;
-  final int Function() get;
-  int get value => get();
-  final void Function(int) set;
+  final int Function() getter;
+  int get value => getter();
+  final void Function(int) setter;
   final void Function([int?]) reset;
   final int? Function() _min;
   int? get min => _min();
