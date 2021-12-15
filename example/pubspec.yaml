@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
 
   flutter_hooks: ^0.18.1
+  # collection:
 
   flutter_use:
     path: ../packages/basic
