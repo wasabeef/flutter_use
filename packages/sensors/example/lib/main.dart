@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_use_sensors/use_sensors.dart';
+import 'package:flutter_use_sensors/flutter_use_sensors.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_use_battery/use_battery.dart';
+import 'package:flutter_use_battery/flutter_use_battery.dart';
 
 void main() {
   runApp(const MyApp());
