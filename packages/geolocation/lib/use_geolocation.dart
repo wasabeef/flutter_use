@@ -9,8 +9,8 @@ GeolocationState useGeolocation({
   LocationSettings? locationSettings,
 }) {
   final state = useRef(const GeolocationState());
-  final positionChanged = useStream(
-      Geolocator.getPositionStream(locationSettings: locationSettings));
+  final positionChanged = useStream(useMemoized(
+      () => Geolocator.getPositionStream(locationSettings: locationSettings)));
 
   state.value = GeolocationState(
     fetched: positionChanged.hasData,
