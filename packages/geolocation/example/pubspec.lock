@@ -165,6 +165,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_use_geolocation:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.2"
   flutter_web_plugins:
     dependency: transitive
     description: flutter

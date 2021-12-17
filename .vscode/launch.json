@@ -2,8 +2,8 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run example on main.dart",
-            "program": "${workspaceFolder}/example/lib/main.dart",
+            "name": "Run Geolocation example on main.dart",
+            "program": "${workspaceFolder}/packages/geolocation/example/lib/main.dart",
             "request": "launch",
             "type": "dart",
             "args": [

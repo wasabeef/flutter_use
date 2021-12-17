@@ -14,7 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_hooks: ^0.18.1
-  geolocator: ^7.7.1
+  geolocator: ^8.0.1
 
 dev_dependencies:
   flutter_test:

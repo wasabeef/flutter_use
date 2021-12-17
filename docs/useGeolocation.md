@@ -17,6 +17,7 @@ dependencies:
 class Sample extends HookWidget {
   @override
   Widget build(BuildContext context) {
+    // You need call `Geolocator.checkPermission() and Geolocator.requestPermission()` yourself.
     final geolocation = useGeolocation();
     return Scaffold(
       body: Center(
@@ -25,7 +26,14 @@ class Sample extends HookWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text("-- Geolocation --"),
+            Text("permission checked: ${geolocation.fetched}"),
             Text("location: ${geolocation.position}"),
+            ElevatedButton(
+              onPressed: () async {
+                await Geolocator.requestPermission();
+              },
+              child: const Text('Grant Location permission'),
+            ),
           ],
         ),
       ),
