@@ -20,6 +20,15 @@
             ]
         },
         {
+            "name": "Run Battery example",
+            "program": "${workspaceFolder}/packages/battery/example/lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--debug"
+            ]
+        },
+        {
             "name": "Run Sensors example",
             "program": "${workspaceFolder}/packages/sensors/example/lib/main.dart",
             "request": "launch",
