@@ -19,11 +19,6 @@ scripts:
 
   format: ./scripts/dartfmt.sh
     
-  example:
-    run: melos exec --flutter -- exec flutter run
-    select-package:
-      scope: example
-
   unit:test:
     run: |
       melos exec -- exec flutter test
