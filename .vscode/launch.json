@@ -10,5 +10,14 @@
                 "--debug"
             ]
         },
+        {
+            "name": "Run Sensors example on main.dart",
+            "program": "${workspaceFolder}/packages/sensors/example/lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--debug"
+            ]
+        },
     ]
 }
