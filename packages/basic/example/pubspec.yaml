@@ -12,22 +12,9 @@ dependencies:
     sdk: flutter
 
   flutter_hooks: ^0.18.1
-  # collection:
 
   flutter_use:
-    path: ../packages/basic
-  flutter_use_video:
-    path: ../packages/video
-  flutter_use_audio:
-    path: ../packages/audio
-  flutter_use_battery:
-    path: ../packages/battery
-  flutter_use_network_state:
-    path: ../packages/network
-  flutter_use_sensors:
-    path: ../packages/sensors
-  flutter_use_geolocation:
-    path: ../packages/geolocation
+    path: ../
 
 dev_dependencies:
   flutter_test:
