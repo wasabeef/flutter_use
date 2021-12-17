@@ -36,8 +36,7 @@ void main() {
       final defaultValue = map['defaultValue'];
       final anotherValue = map['anotherValue'];
 
-      group(
-          'when value type is ${initialValue.runtimeType} ($map.toString())',
+      group('when value type is ${initialValue.runtimeType} ($map.toString())',
           () {
         testWidgets('should init state with initial value', (tester) async {
           final result = await buildHook(
