@@ -6,27 +6,15 @@ import 'package:geolocator/geolocator.dart';
 /// Tracks the state of user's geographic location using [geolocator](ref link).
 /// [ref link](https://pub.dev/packages/geolocator)
 GeolocationState useGeolocation({
-  Position initialPosition = const Position(
-    longitude: 0,
-    latitude: 0,
-    timestamp: null,
-    accuracy: 0,
-    altitude: 0,
-    heading: 0,
-    speed: 0,
-    speedAccuracy: 0,
-  ),
+  LocationSettings? locationSettings,
 }) {
-  final state = useRef(GeolocationState(
-    fetched: false,
-    position: initialPosition,
-  ));
-  final positionChanged =
-      useStream(useMemoized(() => Geolocator.getPositionStream()));
+  final state = useRef(const GeolocationState());
+  final positionChanged = useStream(
+      Geolocator.getPositionStream(locationSettings: locationSettings));
 
   state.value = GeolocationState(
     fetched: positionChanged.hasData,
-    position: positionChanged.data ?? initialPosition,
+    position: positionChanged.data,
   );
 
   return state.value;
@@ -35,10 +23,10 @@ GeolocationState useGeolocation({
 @immutable
 class GeolocationState {
   const GeolocationState({
-    required this.fetched,
-    required this.position,
+    this.fetched = false,
+    this.position,
   });
 
   final bool fetched;
-  final Position position;
+  final Position? position;
 }
