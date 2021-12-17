@@ -13,6 +13,14 @@
   <br />
 </div>
 
+
+<div align="center">
+  <br />
+  <pre>flutter pub add <a href="https://pub.dev/packages/flutter_use">flutter_use</a></pre>
+  <br />
+</div>
+
+
 - **Sensors**
   - [`useBattery`](./docs/useBattery.md) &mdash; tracks device battery state. [![battery_plus](https://img.shields.io/badge/required-battery__plus-brightgreen)](https://pub.dev/packages/battery_plus)
   - [`useGeolocation`](./docs/useGeolocation.md) &mdash; tracks geo location and permission state of user's device. [![geolocator](https://img.shields.io/badge/required-geolocator-brightgreen)](https://pub.dev/packages/geolocator)
