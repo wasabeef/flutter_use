@@ -16,6 +16,7 @@ export 'src/use_exception.dart';
 // Lifecycles
 export 'src/use_effect_once.dart';
 export 'src/use_lifecycles.dart';
+export 'src/use_logger.dart';
 export 'src/use_mount.dart';
 export 'src/use_unmount.dart';
 export 'src/use_update_effect.dart';
