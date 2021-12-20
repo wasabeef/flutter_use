@@ -25,7 +25,7 @@ jobs:
       - name: Set environment
         run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
 
-      - name: Get dependencies for macos and ubuntu
+      - name: Get dependencies
         run: |
           dart pub global activate melos 1.0.0-dev.14
           melos run pub:get
