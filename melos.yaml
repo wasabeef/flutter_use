@@ -10,18 +10,18 @@ ide:
 
 scripts:
   pub:upgrade:
-    run: melos exec --flutter -- exec flutter pub upgrade
+    run: melos exec -- flutter pub upgrade
 
   pub:get:
-    run: melos exec --flutter -- exec flutter pub get
+    run: melos exec -- flutter pub get
 
-  analyze: melos exec -- exec dart analyze .
+  analyze: melos exec -- dart analyze .
 
-  format: ./scripts/dartfmt.sh
+  format: bash ./scripts/dartfmt.sh
     
   unit:test:
     run: |
-      melos exec -- exec flutter test
+      melos exec -- flutter test
     select-package:
       dir-exists:
         - test
