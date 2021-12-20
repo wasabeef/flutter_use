@@ -27,7 +27,7 @@ jobs:
 
       - name: Get dependencies for macos and ubuntu
         run: |
-          dart pub global activate melos
+          dart pub global activate melos 1.0.0-dev.14
           melos run pub:get
     
       - name: Run tests for our dart project.
