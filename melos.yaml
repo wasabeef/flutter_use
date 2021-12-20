@@ -2,6 +2,7 @@ name: flutter_use
 
 packages:
   - packages/**
+  - packages/**/example/*
 
 ide:
   intellij: true
@@ -9,10 +10,10 @@ ide:
 
 scripts:
   pub:upgrade:
-    run: melos exec --ignore="example" -- flutter pub upgrade
+    run: melos exec -- flutter pub upgrade
 
   pub:get:
-    run: melos exec --ignore="example" -- flutter pub get
+    run: melos exec -- flutter pub get
 
   analyze: melos exec -- dart analyze .
 
@@ -24,4 +25,3 @@ scripts:
     select-package:
       dir-exists:
         - test
-      ignore: example
