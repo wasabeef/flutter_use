@@ -2,6 +2,9 @@
   <img src="https://github.com/wasabeef/flutter_use/raw/main/art/flutter_use_logo.png" width="480px" alt="flutter_use" />
   <div>
     <br />
+    <a href="https://pub.dartlang.org/packages/flutter_use">
+      <img src="https://img.shields.io/pub/v/flutter_use.svg">
+    </a>
     <a href="https://pub.dev/packages/flutter_lints">
       <img src="https://img.shields.io/badge/style-flutter__lints-40c4ff.svg" alt="flutter_lints" />
     </a>
