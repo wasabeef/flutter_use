@@ -1,6 +1,6 @@
 # `useGeolocation`
 
-Tracks the state of user's geographic location and permission using [geolocator](ref link).
+Tracks the state of user's geographic location and permission using [geolocator](https://pub.dev/packages/geolocator).
 
 ## Installation
 
