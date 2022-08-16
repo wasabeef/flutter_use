@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 /// Calls given function changed screen orientation of user's device.
+// ignore: library_private_types_in_public_api
 void useOrientationFn(_OrientationCallback onStateChanged) {
   final context = useContext();
   use(
@@ -34,7 +35,7 @@ class _OrientationState extends HookState<Orientation, _OrientationHook>
   @override
   void initHook() {
     super.initHook();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
@@ -52,7 +53,7 @@ class _OrientationState extends HookState<Orientation, _OrientationHook>
   @override
   void dispose() {
     super.dispose();
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
   }
 }
 

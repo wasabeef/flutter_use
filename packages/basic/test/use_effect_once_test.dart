@@ -10,6 +10,7 @@ void main() {
     testWidgets('should run provided effect only once', (tester) async {
       final effect = MockEffect();
       final result = await buildHook(
+        // ignore: body_might_complete_normally_nullable
         (_) => useEffectOnce(() {
           effect();
         }),

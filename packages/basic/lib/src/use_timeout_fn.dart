@@ -11,6 +11,7 @@ TimeoutState useTimeoutFn(VoidCallback fn, Duration delay) {
   final callback = useRef(fn);
 
   // update ref when function changes
+  // ignore: body_might_complete_normally_nullable
   useEffect(() {
     callback.value = fn;
   }, [fn]);

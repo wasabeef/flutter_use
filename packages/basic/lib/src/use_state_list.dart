@@ -12,6 +12,7 @@ UseStateList<T> useStateList<T>([List<T> stateSet = const []]) {
   final index = useRef(0);
 
   // If new state list is shorter that before - switch to the last element
+  // ignore: body_might_complete_normally_nullable
   useUpdateEffect(() {
     if (stateSet.length <= index.value) {
       index.value = stateSet.length - 1;

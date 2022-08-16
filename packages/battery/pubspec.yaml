@@ -1,23 +1,23 @@
 name: flutter_use_battery
 
 description: Collection of Flutter Hooks.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/wasabeef/flutter_use
 repository: https://github.com/wasabeef/flutter_use
 documentation: https://github.com/wasabeef/flutter_use
 issue_tracker: https://github.com/wasabeef/flutter_use/issues
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.14.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_hooks: ^0.18.1
-  battery_plus: ^2.0.1
+  flutter_hooks: ^0.18.5+1
+  battery_plus: ^2.1.4+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
-  mockito: ^5.0.16
+  flutter_lints: ^2.0.1
+  mockito: ^5.3.0

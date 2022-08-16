@@ -11,6 +11,7 @@ void useLogger(String componentName, {Map<String, dynamic> props = const {}}) {
     return () => debugPrint('$componentName unmounted');
   });
 
+  // ignore: body_might_complete_normally_nullable
   useUpdateEffect(() {
     debugPrint('$componentName updated $props');
   });
