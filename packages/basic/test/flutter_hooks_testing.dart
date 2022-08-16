@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+// ignore: library_private_types_in_public_api
 Future<_HookTestingAction<T, P>> buildHook<T, P>(
   T Function(P? props) hook, {
   P? initialProps,
@@ -26,8 +27,7 @@ Future<_HookTestingAction<T, P>> buildHook<T, P>(
 
 Future<void> act(void Function() fn) {
   return TestAsyncUtils.guard<void>(() {
-    final binding = TestWidgetsFlutterBinding.ensureInitialized()
-        as TestWidgetsFlutterBinding;
+    final binding = TestWidgetsFlutterBinding.ensureInitialized();
     fn();
     binding.scheduleFrame();
     return binding.pump();
@@ -52,8 +52,7 @@ class _HookTestingAction<T, P> {
 }
 
 Future<void> _build(Widget widget) async {
-  final binding = TestWidgetsFlutterBinding.ensureInitialized()
-      as TestWidgetsFlutterBinding;
+  final binding = TestWidgetsFlutterBinding.ensureInitialized();
   return TestAsyncUtils.guard<void>(() {
     binding.attachRootWidget(widget);
     binding.scheduleFrame();

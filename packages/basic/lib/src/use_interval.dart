@@ -12,10 +12,12 @@ void useInterval(
 ]) {
   final savedCallback = useRef<VoidCallback>(() => {});
 
+  // ignore: body_might_complete_normally_nullable
   useEffect(() {
     savedCallback.value = callback;
   });
 
+  // ignore: body_might_complete_normally_nullable
   useEffect(() {
     if (delay != null) {
       final timer = Timer.periodic(delay, (time) {

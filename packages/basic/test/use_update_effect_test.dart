@@ -9,6 +9,7 @@ void main() {
     testWidgets('should run effect on update', (tester) async {
       final effect = MockDispose();
       final result = await buildHook((_) {
+        // ignore: body_might_complete_normally_nullable
         useUpdateEffect(() {
           effect();
         });

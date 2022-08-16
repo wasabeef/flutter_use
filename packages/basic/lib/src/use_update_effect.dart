@@ -6,6 +6,7 @@ import 'package:flutter_use/src/use_first_mount_state.dart';
 void useUpdateEffect(Dispose? Function() effect, [List<Object?>? keys]) {
   final isFirstMount = useFirstMountState();
 
+  // ignore: body_might_complete_normally_nullable
   useEffect(() {
     if (!isFirstMount) {
       return effect();

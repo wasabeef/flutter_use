@@ -1,10 +1,10 @@
 name: Dart CI
 
 on:
-  pull_request: { }
+  pull_request: {}
   push:
     branches:
-      - 'main'
+      - "main"
 
 jobs:
   build:
@@ -12,24 +12,24 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '2.8.1'
+          channel: stable
       - uses: dart-lang/setup-dart@v1
         with:
-          sdk: '2.15.1'
+          sdk: stable
 
       - name: Set environment
         run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
 
       - name: Get dependencies
         run: |
-          dart pub global activate melos 1.0.0-dev.14
+          dart pub global activate melos
           melos run pub:get
-    
+
       - name: Run tests for our dart project.
         run: |
           melos run unit:test
