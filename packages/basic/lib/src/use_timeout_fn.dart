@@ -34,7 +34,7 @@ TimeoutState useTimeoutFn(VoidCallback fn, Duration delay) {
     timeout.value?.cancel();
   }, const []);
 
-  final state = useRef(TimeoutState(getIsReady, reset, cancel));
+  final state = useRef(TimeoutState(getIsReady, cancel, reset));
 
   // set on mount, clear on unmount
   useEffect(() {
