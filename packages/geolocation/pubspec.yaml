@@ -1,14 +1,15 @@
 name: flutter_use_geolocation
 
 description: Collection of Flutter Hooks.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/wasabeef/flutter_use
 repository: https://github.com/wasabeef/flutter_use
 documentation: https://github.com/wasabeef/flutter_use
 issue_tracker: https://github.com/wasabeef/flutter_use/issues
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=2.17.0 <4.0.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
