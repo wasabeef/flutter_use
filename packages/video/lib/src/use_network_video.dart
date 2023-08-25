@@ -13,8 +13,8 @@ VideoPlayerController useNetworkVideo({
   Map<String, String> httpHeaders = const {},
 }) {
   final controller = useMemoized(
-    () => VideoPlayerController.network(
-      dataSource,
+    () => VideoPlayerController.networkUrl(
+      Uri.parse(dataSource),
       closedCaptionFile: closedCaptionFile,
       videoPlayerOptions: videoPlayerOptions,
       httpHeaders: httpHeaders,
