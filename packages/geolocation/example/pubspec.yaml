@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
 
   flutter_hooks: ^0.20.0
-  geolocator: ^9.0.1
+  geolocator: ^10.0.0
   flutter_use_geolocation:
     path: ../
 
