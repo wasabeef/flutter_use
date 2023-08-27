@@ -15,7 +15,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_hooks: ^0.20.0
-  connectivity_plus: ^2.3.6+1
+  connectivity_plus: ^4.0.0
 
 dev_dependencies:
   flutter_test:
