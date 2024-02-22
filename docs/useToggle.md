@@ -18,7 +18,7 @@ dependencies:
 class Sample extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final state = useToggle();
+    final toggleState = useToggle();
 
     return Column(
       children: [
