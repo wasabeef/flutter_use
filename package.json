@@ -3,7 +3,7 @@
   "private": false,
   "author": "wasabeef",
   "devDependencies": {
-    "husky": "8.0.3",
+    "husky": "9.1.7",
     "lint-staged": "13.2.3",
     "prettier": "^3.0.0"
   },
