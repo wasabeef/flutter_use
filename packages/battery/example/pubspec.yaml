@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_hooks: ^0.20.0
+  flutter_hooks: ^0.21.0
   flutter_use_battery:
     path: ../
 
