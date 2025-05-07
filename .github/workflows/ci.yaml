@@ -14,7 +14,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
@@ -23,16 +23,16 @@ jobs:
           sdk: stable
 
       - name: Set environment
-        run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+        run: echo "$HOME/.pub-cache/bin" >> "$GITHUB_PATH"
 
       - name: Get dependencies
         run: |
           dart pub global activate melos
-          melos run pub:get
+          melos run get
 
       - name: Run tests for our dart project.
         run: |
-          melos run unit:test
+          melos run test
 
       - name: Check for any formatting and statically analyze the code.
         run: |
