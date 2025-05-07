@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 Future<_HookTestingAction<T, P>> buildHook<T, P>(
   T Function(P? props) hook, {
   P? initialProps,
+  Widget Function(Widget child)? wrapper,
 }) async {
   late T result;
 
@@ -16,9 +17,12 @@ Future<_HookTestingAction<T, P>> buildHook<T, P>(
     });
   }
 
-  await _build(builder(initialProps));
+  Widget wrappedBuilder([P? props]) =>
+      wrapper == null ? builder(props) : wrapper(builder(props));
 
-  Future<void> rebuild([P? props]) => _build(builder(props));
+  await _build(wrappedBuilder(initialProps));
+
+  Future<void> rebuild([P? props]) => _build(wrappedBuilder(props));
 
   Future<void> unmount() => _build(Container());
 
@@ -54,7 +58,7 @@ class _HookTestingAction<T, P> {
 Future<void> _build(Widget widget) async {
   final binding = TestWidgetsFlutterBinding.ensureInitialized();
   return TestAsyncUtils.guard<void>(() {
-    binding.attachRootWidget(widget);
+    binding.attachRootWidget(binding.wrapWithDefaultView(widget));
     binding.scheduleFrame();
     return binding.pump();
   });
