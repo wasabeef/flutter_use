@@ -6,7 +6,6 @@ packages:
 
 ide:
   intellij: true
-  vscode: true
 
 scripts:
   upgrade:
