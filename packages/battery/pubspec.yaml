@@ -15,7 +15,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_hooks: ^0.21.0
-  battery_plus: ^2.1.4+1
+  battery_plus: ^6.0.0
 
 dev_dependencies:
   flutter_test:
