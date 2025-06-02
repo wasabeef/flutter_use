@@ -6,7 +6,7 @@ Flutter utility hook that returns a function that forces component to re-build w
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

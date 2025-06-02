@@ -9,7 +9,7 @@ We can ensure that actions object and actions itself will not mutate or change b
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

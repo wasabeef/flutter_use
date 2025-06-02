@@ -6,7 +6,7 @@ Flutter effect hook that ignores the first invocation (e.g. on mount). The signa
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use:
 ```
 
 ## Usage

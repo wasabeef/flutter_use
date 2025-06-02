@@ -7,7 +7,7 @@ Flutter state hook that tracks value of a boolean.
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use:
 ```
 
 ## Usage

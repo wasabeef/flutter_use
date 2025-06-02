@@ -6,7 +6,7 @@ Just like `usePrevious` but it will only update once the value actually changes.
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

@@ -7,7 +7,7 @@ Provides handles to cancel and/or reset the timeout.
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

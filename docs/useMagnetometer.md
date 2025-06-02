@@ -8,7 +8,7 @@ Depends on [sensors_plus](https://pub.dev/packages/sensors_plus).
 
 ```yaml
 dependencies:
-  flutter_use_sensors: ^0.0.2
+  flutter_use_sensors:
 ```
 
 ## Usage

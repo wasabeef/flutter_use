@@ -6,7 +6,7 @@ Returns `true` if component is just mounted (on first build) and `false` otherwi
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

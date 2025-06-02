@@ -1,8 +1,12 @@
+## 0.0.5
+
+- Updated `flutter_hooks` to `^0.21.0`. See [PR #62](https://github.com/wasabeef/flutter_use/pull/62) for details.
+
 ## 0.0.4
 
 **Development**
 Update to require sdk >= 2.17.0 same as flutter_hooks 0.20.0
-Update to flutter_hooks ^0.20.0 
+Update to flutter_hooks ^0.20.0
 
 ## 0.0.3
 

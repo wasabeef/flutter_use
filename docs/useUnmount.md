@@ -6,7 +6,7 @@ Flutter lifecycle hook that calls a function when the component will unmount. Us
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use:
 ```
 
 ## Usage

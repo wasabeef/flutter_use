@@ -8,7 +8,7 @@ Depends on [video_player](https://pub.dev/packages/video_player).
 
 ```yaml
 dependencies:
-  flutter_use_video: ^0.0.2
+  flutter_use_video: 
 ```
 
 ## Usage

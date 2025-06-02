@@ -8,7 +8,7 @@ Depends on [geolocator](https://pub.dev/packages/geolocator).
 
 ```yaml
 dependencies:
-  flutter_use_geolocation: ^0.0.2
+  flutter_use_geolocation: 
 ```
 
 ## Usage

@@ -13,7 +13,7 @@ Several thing about it's work:
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

@@ -16,13 +16,11 @@
   <br />
 </div>
 
-
 <div align="center">
   <br />
   <pre>flutter pub add <a href="https://pub.dev/packages/flutter_use">flutter_use</a></pre>
   <br />
 </div>
-
 
 - **Sensors**
   - [`useBattery`](./docs/useBattery.md) &mdash; tracks device battery state. [![battery_plus](https://img.shields.io/badge/required-battery__plus-brightgreen)](https://pub.dev/packages/battery_plus)
@@ -57,7 +55,7 @@
   - [`useLifecycles`](./docs/useLifecycles.md) &mdash; calls `mount` and `unmount` callbacks.
   - [`useLogger`](./docs/useLogger.md) &mdash; logs in console as component goes through life-cycles. [![][img-demo]](https://dartpad.dev/?id=c72c9ab0fa46f93dd266f6557a29a3ed&null_safety=true)
   - [`useMount`](./docs/useMount.md) &mdash; calls `mount` callbacks. [![][img-demo]](https://dartpad.dev/?id=aa25e9bc3913779fcc795bef2bdc8d39&null_safety=true)
-  - [`useUnmount`](./docs/useUnmount.md) &mdash; calls `unmount` callbacks.  [![][img-demo]](https://dartpad.dev/?id=aa25e9bc3913779fcc795bef2bdc8d39&null_safety=true)
+  - [`useUnmount`](./docs/useUnmount.md) &mdash; calls `unmount` callbacks. [![][img-demo]](https://dartpad.dev/?id=aa25e9bc3913779fcc795bef2bdc8d39&null_safety=true)
   - [`useUpdateEffect`](./docs/useUpdateEffect.md) &mdash; run an `effect` only on updates. [![][img-demo]](https://dartpad.dev/?id=724fee007fe78419fde61f185b83095b&null_safety=true)
   - [`useCustomCompareEffect`](./docs/useCustomCompareEffect.md) &mdash; run an `effect` depending on deep comparison of its dependencies. [![][img-demo]](https://dartpad.dev/?id=27146b5ca9189664e39ad4dfe9b08abe&null_safety=true)
     <br/>
@@ -68,7 +66,7 @@
   - [`usePreviousDistinct`](./docs/usePreviousDistinct.md) &mdash; like [`usePrevious`](https://pub.dev/documentation/flutter_hooks/latest/flutter_hooks/usePrevious.html) but with a predicate to determine if `previous` should update. [![][img-demo]](https://dartpad.dev/?id=86e0e29f8198095dbd0d68a736c671bb&null_safety=true)
   - [`useStateList`](./docs/useStateList.md) &mdash; circularly iterates over an array. [![][img-demo]](https://dartpad.dev/?id=5761442418062838b04cbe21a36be586&null_safety=true)
   - [`useToggle` and `useBoolean`](./docs/useToggle.md) &mdash; tracks state of a boolean. [![][img-demo]](https://dartpad.dev/?id=7e070264db2566b3c990c403dd61c3ff&null_safety=true)
-  - [`useCounter` and `useNumber`](./docs/useCounter.md) &mdash; tracks state of a number.  [![][img-demo]](https://dartpad.dev/?id=5ee82acd2f1947b2d0ca02da4ab327b8&null_safety=true)
+  - [`useCounter` and `useNumber`](./docs/useCounter.md) &mdash; tracks state of a number. [![][img-demo]](https://dartpad.dev/?id=5ee82acd2f1947b2d0ca02da4ab327b8&null_safety=true)
   - [`useList`](./docs/useList.md) &mdash; tracks state of an array. [![][img-demo]](https://dartpad.dev/?id=e04b584b8ab67492a1024ea7dd9adcbb&null_safety=true)
   - [`useMap`](./docs/useMap.md) &mdash; tracks state of a map. [![][img-demo]](https://dartpad.dev/?id=325b4737e78d40463fc0f3d3cc317b35&null_safety=true)
   - [`useSet`](./docs/useSet.md) &mdash; tracks state of a Set. [![][img-demo]](https://dartpad.dev/?id=3d1199828a54b19c526a26a6c0021293&null_safety=true)
@@ -78,7 +76,7 @@
     <br/>
     <br/>
 - <details><summary><b>TBD</b></summary><div>
-  
+
   - `useCopyToClipboard` &mdash; copies text to clipboard.
   - `useEvent` &mdash; subscribe to events.
   - `useScroll` &mdash; tracks a widget's scroll position.
@@ -92,9 +90,8 @@
   - `usePromise` &mdash; resolves promise only while component is mounted.
   - `useObservable` &mdash; tracks latest value of an `Observable`.
   - `useThrottle` and `useThrottleFn` &mdash; throttles a function.
-  
-</div></details>
 
+</div></details>
 
 <br />
 <br />
@@ -106,6 +103,5 @@
 
 <br />
 <br />
-
 
 [img-demo]: https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg

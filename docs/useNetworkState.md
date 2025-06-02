@@ -8,7 +8,7 @@ Depends on [connectivity_plus](https://pub.dev/packages/connectivity_plus).
 
 ```yaml
 dependencies:
-  flutter_use_network_state: ^0.0.2
+  flutter_use_network_state: 
 ```
 
 ## Usage
