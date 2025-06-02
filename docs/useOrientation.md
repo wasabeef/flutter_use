@@ -6,7 +6,7 @@ Tracks screen orientation of user's device.
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

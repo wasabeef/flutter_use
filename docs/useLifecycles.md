@@ -7,7 +7,7 @@ If you want to use hook that app lifecycles, recommended use to flutter_hooks v0
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

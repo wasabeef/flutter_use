@@ -6,7 +6,7 @@ Flutter state hook that returns the default value when state is null or undefine
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

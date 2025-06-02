@@ -7,7 +7,7 @@ Supports forward and backward iterations and arbitrary position set.
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

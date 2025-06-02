@@ -6,7 +6,7 @@ Flutter lifecycle hook that console logs parameters as component transitions thr
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

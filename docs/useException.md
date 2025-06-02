@@ -6,7 +6,7 @@ Flutter side-effect hook that returns an exception dispatcher.
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

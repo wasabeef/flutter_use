@@ -6,7 +6,7 @@ Flutter lifecycle hook that calls a function after the component is mounted. Use
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

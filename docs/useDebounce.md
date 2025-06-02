@@ -8,7 +8,7 @@ The third argument is the array of values that the debounce depends on, in the s
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

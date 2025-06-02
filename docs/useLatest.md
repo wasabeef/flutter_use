@@ -8,7 +8,7 @@ This is mostly useful to get access to the latest value of some props or state i
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

@@ -7,7 +7,7 @@ Flutter state hook that tracks a numeric value.
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

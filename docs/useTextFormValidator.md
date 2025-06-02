@@ -6,7 +6,7 @@ Each time given state changes - validator function is invoked.
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

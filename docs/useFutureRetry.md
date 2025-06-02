@@ -6,7 +6,7 @@ Uses `useFuture` with an additional retry method to easily retry/refresh the fut
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage

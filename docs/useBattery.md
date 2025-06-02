@@ -8,7 +8,7 @@ Depends on [battery_plus](https://pub.dev/packages/battery_plus).
 
 ```yaml
 dependencies:
-  flutter_use_battery: ^0.0.2
+  flutter_use_battery: 
 ```
 
 ## Usage

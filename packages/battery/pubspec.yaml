@@ -1,7 +1,7 @@
 name: flutter_use_battery
 
 description: Collection of Flutter Hooks.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/wasabeef/flutter_use
 repository: https://github.com/wasabeef/flutter_use
 documentation: https://github.com/wasabeef/flutter_use

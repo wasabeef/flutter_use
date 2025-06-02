@@ -8,7 +8,7 @@ Depends on [just_audio](https://pub.dev/packages/just_audio).
 
 ```yaml
 dependencies:
-  flutter_use_audio: ^0.0.2
+  flutter_use_audio: 
 ```
 
 ## Usage

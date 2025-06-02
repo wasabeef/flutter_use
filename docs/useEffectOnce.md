@@ -6,7 +6,7 @@ Flutter lifecycle hook that runs an effect only once.
 
 ```yaml
 dependencies:
-  flutter_use: ^0.0.2
+  flutter_use: 
 ```
 
 ## Usage
