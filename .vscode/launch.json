@@ -1,50 +1,40 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Run Basic example",
-            "program": "${workspaceFolder}/packages/basic/example/lib/main.dart",
-            "request": "launch",
-            "type": "dart",
-            "args": [
-                "--debug"
-            ]
-        },
-        {
-            "name": "Run Geolocation example",
-            "program": "${workspaceFolder}/packages/geolocation/example/lib/main.dart",
-            "request": "launch",
-            "type": "dart",
-            "args": [
-                "--debug"
-            ]
-        },
-        {
-            "name": "Run Network example",
-            "program": "${workspaceFolder}/packages/network/example/lib/main.dart",
-            "request": "launch",
-            "type": "dart",
-            "args": [
-                "--debug"
-            ]
-        },
-        {
-            "name": "Run Battery example",
-            "program": "${workspaceFolder}/packages/battery/example/lib/main.dart",
-            "request": "launch",
-            "type": "dart",
-            "args": [
-                "--debug"
-            ]
-        },
-        {
-            "name": "Run Sensors example",
-            "program": "${workspaceFolder}/packages/sensors/example/lib/main.dart",
-            "request": "launch",
-            "type": "dart",
-            "args": [
-                "--debug"
-            ]
-        },
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Basic example",
+      "program": "${workspaceFolder}/packages/basic/example/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": ["--debug"]
+    },
+    {
+      "name": "Run Geolocation example",
+      "program": "${workspaceFolder}/packages/geolocation/example/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": ["--debug"]
+    },
+    {
+      "name": "Run Network example",
+      "program": "${workspaceFolder}/packages/network/example/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": ["--debug"]
+    },
+    {
+      "name": "Run Battery example",
+      "program": "${workspaceFolder}/packages/battery/example/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": ["--debug"]
+    },
+    {
+      "name": "Run Sensors example",
+      "program": "${workspaceFolder}/packages/sensors/example/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": ["--debug"]
+    }
+  ]
 }

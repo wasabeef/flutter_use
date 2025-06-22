@@ -94,3 +94,7 @@ node_modules/
 coverage/
 *.lcov
 
+# Lefthook
+.lefthook/
+.lefthook-local/
+

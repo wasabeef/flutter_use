@@ -2,18 +2,12 @@
   "name": "flutter_use",
   "private": false,
   "author": "wasabeef",
-  "devDependencies": {
-    "husky": "8.0.3",
-    "lint-staged": "13.2.3",
-    "prettier": "^3.0.0"
-  },
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "lefthook install",
+    "format": "prettier --write ."
   },
-  "lint-staged": {
-    "*.dart": "dart format",
-    "*.@(json|yaml|yml)": [
-      "prettier --write"
-    ]
+  "devDependencies": {
+    "@evilmartians/lefthook": "^1.5.5",
+    "prettier": "^3.5.3"
   }
 }
