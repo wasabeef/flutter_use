@@ -90,3 +90,7 @@ node_modules/
 # SpecStory
 .specstory/
 
+# Coverage reports
+coverage/
+*.lcov
+

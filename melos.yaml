@@ -16,10 +16,39 @@ scripts:
 
   analyze: melos exec -- dart analyze .
 
-  format: dart format .
+  format:
+    run: dart format .
+    description: Format all Dart code
+
+  format-check:
+    run: dart format --set-exit-if-changed .
+    description: Check if code is properly formatted
 
   test:
     run: |
       melos exec -c 8 -- flutter test
     packageFilters:
       scope: flutter_use
+    description: Run tests for flutter_use package
+
+  test-coverage:
+    run: |
+      melos exec -c 8 --scope="flutter_use" -- flutter test --coverage
+    description: Run tests with coverage for flutter_use package
+
+  coverage-report:
+    run: |
+      melos exec -c 1 --scope="flutter_use" -- genhtml coverage/lcov.info -o coverage/html
+    description: Generate HTML coverage report
+
+  pub-get-all:
+    run: melos exec -- flutter pub get
+    description: Get dependencies for all packages
+
+  clean:
+    run: melos exec -- flutter clean
+    description: Clean all packages
+
+  deps-upgrade:
+    run: melos exec -- flutter pub upgrade
+    description: Upgrade dependencies for all packages

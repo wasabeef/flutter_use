@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
@@ -30,11 +30,20 @@ jobs:
           dart pub global activate melos
           melos run get
 
-      - name: Run tests for our dart project.
+      - name: Run tests with coverage
         run: |
-          melos run test
+          melos run test-coverage
+
+      - name: Upload coverage to Codecov
+        if: matrix.os == 'ubuntu-latest'
+        uses: codecov/codecov-action@v3
+        with:
+          directory: ./packages/basic/coverage
+          flags: unittests
+          name: flutter-use-coverage
+          fail_ci_if_error: false
 
       - name: Check for any formatting and statically analyze the code.
         run: |
-          melos run format
+          melos run format-check
           melos run analyze
