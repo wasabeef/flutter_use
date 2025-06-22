@@ -4,10 +4,26 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'use_update.dart';
 import 'use_update_effect.dart';
 
+/// Custom hook to track if widget is mounted
+bool Function() _useIsMounted() {
+  final context = useContext();
+  final isMountedRef = useRef(true);
+
+  useEffect(() {
+    return () {
+      isMountedRef.value = false;
+    };
+  }, const []);
+
+  return useCallback(() {
+    return isMountedRef.value && context.mounted;
+  }, const []);
+}
+
 /// Provides handles for circular iteration over states list.
 /// Supports forward and backward iterations and arbitrary position set.
 UseStateList<T> useStateList<T>([List<T> stateSet = const []]) {
-  final isMounted = useIsMounted();
+  final isMounted = _useIsMounted();
   final update = useUpdate();
   final index = useRef(0);
 
