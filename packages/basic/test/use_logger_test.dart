@@ -12,8 +12,10 @@ void main() {
     setUp(() {
       logs.clear();
       originalDebugPrint = debugPrint;
-      debugPrint = (String? message, {int? wrapWidth}) {
-        if (message != null) logs.add(message);
+      debugPrint = (message, {wrapWidth}) {
+        if (message != null) {
+          logs.add(message);
+        }
       };
     });
 

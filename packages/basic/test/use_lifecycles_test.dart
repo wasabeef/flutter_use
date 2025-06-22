@@ -9,10 +9,12 @@ void main() {
       var mountCalled = false;
       var unmountCalled = false;
 
-      await buildHook((_) => useLifecycles(
-            mount: () => mountCalled = true,
-            unmount: () => unmountCalled = true,
-          ));
+      await buildHook(
+        (_) => useLifecycles(
+          mount: () => mountCalled = true,
+          unmount: () => unmountCalled = true,
+        ),
+      );
 
       expect(mountCalled, true);
       expect(unmountCalled, false);
@@ -22,10 +24,12 @@ void main() {
       var mountCalled = false;
       var unmountCalled = false;
 
-      final result = await buildHook((_) => useLifecycles(
-            mount: () => mountCalled = true,
-            unmount: () => unmountCalled = true,
-          ));
+      final result = await buildHook(
+        (_) => useLifecycles(
+          mount: () => mountCalled = true,
+          unmount: () => unmountCalled = true,
+        ),
+      );
 
       expect(mountCalled, true);
       expect(unmountCalled, false);
@@ -38,10 +42,12 @@ void main() {
       var mountCount = 0;
       var unmountCount = 0;
 
-      final result = await buildHook((_) => useLifecycles(
-            mount: () => mountCount++,
-            unmount: () => unmountCount++,
-          ));
+      final result = await buildHook(
+        (_) => useLifecycles(
+          mount: () => mountCount++,
+          unmount: () => unmountCount++,
+        ),
+      );
 
       expect(mountCount, 1);
       expect(unmountCount, 0);
@@ -58,9 +64,11 @@ void main() {
     testWidgets('should handle null mount callback', (tester) async {
       var unmountCalled = false;
 
-      final result = await buildHook((_) => useLifecycles(
-            unmount: () => unmountCalled = true,
-          ));
+      final result = await buildHook(
+        (_) => useLifecycles(
+          unmount: () => unmountCalled = true,
+        ),
+      );
 
       await result.unmount();
       expect(unmountCalled, true);
@@ -69,9 +77,11 @@ void main() {
     testWidgets('should handle null unmount callback', (tester) async {
       var mountCalled = false;
 
-      final result = await buildHook((_) => useLifecycles(
-            mount: () => mountCalled = true,
-          ));
+      final result = await buildHook(
+        (_) => useLifecycles(
+          mount: () => mountCalled = true,
+        ),
+      );
 
       expect(mountCalled, true);
       await result.unmount(); // Should not throw

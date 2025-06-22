@@ -10,21 +10,30 @@ NetworkState useNetworkState() {
       useStream(useMemoized(() => Connectivity().onConnectivityChanged));
 
   state.value = NetworkState(
-      fetched: connectivityChanged.hasData,
-      connectivity: connectivityChanged.data);
+    fetched: connectivityChanged.hasData,
+    connectivity: connectivityChanged.data,
+  );
 
   return state.value;
 }
 
+/// State object containing current network connectivity information.
+///
+/// This immutable class holds the current network connectivity state
+/// as reported by the device's network interfaces.
 @immutable
 class NetworkState {
+  /// Creates a [NetworkState] with the provided connectivity information.
   const NetworkState({
     required this.fetched,
     ConnectivityResult? connectivity,
   }) : _connectivity = connectivity ?? ConnectivityResult.none;
 
+  /// Whether network connectivity data has been successfully fetched.
   final bool fetched;
 
   final ConnectivityResult _connectivity;
+
+  /// The current network connectivity state (wifi, mobile, ethernet, none, etc.).
   ConnectivityResult get connectivity => _connectivity;
 }

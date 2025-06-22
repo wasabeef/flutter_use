@@ -37,7 +37,7 @@ class MyHomePage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("build");
+    debugPrint('build');
 
     final toggleState = useToggle(false);
 
@@ -49,8 +49,8 @@ class MyHomePage extends HookWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text("-- Toggle --"),
-              Text("${toggleState.value}"),
+              const Text('-- Toggle --'),
+              Text('${toggleState.value}'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

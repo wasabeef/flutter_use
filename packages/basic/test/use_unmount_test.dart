@@ -9,14 +9,14 @@ void main() {
   group('useUnmount', () {
     testWidgets('should not call provided callback on mount', (tester) async {
       final effect = MockEffect();
-      await buildHook((_) => useUnmount(() => effect()));
+      await buildHook((_) => useUnmount(effect));
       verifyNever(effect());
     });
 
     testWidgets('should not call provided callback on re-builds',
         (tester) async {
       final effect = MockEffect();
-      final result = await buildHook((_) => useUnmount(() => effect()));
+      final result = await buildHook((_) => useUnmount(effect));
 
       await result.rebuild();
       await result.rebuild();
@@ -29,7 +29,7 @@ void main() {
 
     testWidgets('should call provided callback on unmount', (tester) async {
       final effect = MockEffect();
-      final result = await buildHook((_) => useUnmount(() => effect()));
+      final result = await buildHook((_) => useUnmount(effect));
 
       await result.unmount();
       verify(effect()).called(1);

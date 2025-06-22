@@ -52,3 +52,9 @@ scripts:
   deps-upgrade:
     run: melos exec -- flutter pub upgrade
     description: Upgrade dependencies for all packages
+
+  fix:
+    run: |
+      melos exec -- dart fix --apply
+      dart format .
+    description: Auto-fix lint issues and format code across all packages

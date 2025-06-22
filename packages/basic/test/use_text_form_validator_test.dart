@@ -17,22 +17,26 @@ void main() {
     });
 
     testWidgets('should return initial value', (tester) async {
-      final result = await buildHook((_) => useTextFormValidator<String?>(
-            validator: (value) => value.isEmpty ? 'Required' : null,
-            controller: controller,
-            initialValue: 'initial',
-          ));
+      final result = await buildHook(
+        (_) => useTextFormValidator<String?>(
+          validator: (value) => value.isEmpty ? 'Required' : null,
+          controller: controller,
+          initialValue: 'initial',
+        ),
+      );
 
       expect(result.current, 'initial');
     });
 
     testWidgets('should validate on text change', (tester) async {
       controller.text = 'initial text';
-      final result = await buildHook((_) => useTextFormValidator<String?>(
-            validator: (value) => value.isEmpty ? 'Required' : null,
-            controller: controller,
-            initialValue: null,
-          ));
+      final result = await buildHook(
+        (_) => useTextFormValidator<String?>(
+          validator: (value) => value.isEmpty ? 'Required' : null,
+          controller: controller,
+          initialValue: null,
+        ),
+      );
 
       expect(result.current, null);
 
@@ -46,11 +50,13 @@ void main() {
     });
 
     testWidgets('should work with different validation types', (tester) async {
-      final result = await buildHook((_) => useTextFormValidator<bool>(
-            validator: (value) => value.length >= 5,
-            controller: controller,
-            initialValue: false,
-          ));
+      final result = await buildHook(
+        (_) => useTextFormValidator<bool>(
+          validator: (value) => value.length >= 5,
+          controller: controller,
+          initialValue: false,
+        ),
+      );
 
       expect(result.current, false);
 
@@ -64,22 +70,28 @@ void main() {
     });
 
     testWidgets('should handle complex validation', (tester) async {
-      final result = await buildHook((_) => useTextFormValidator<List<String>>(
-            validator: (value) {
-              final errors = <String>[];
-              if (value.isEmpty) errors.add('Required');
-              if (value.length < 3) errors.add('Too short');
-              if (!RegExp(r'^[a-zA-Z]+$').hasMatch(value) && value.isNotEmpty) {
-                errors.add('Letters only');
-              }
-              return errors;
-            },
-            controller: controller,
-            initialValue: [],
-          ));
+      final result = await buildHook(
+        (_) => useTextFormValidator<List<String>>(
+          validator: (value) {
+            final errors = <String>[];
+            if (value.isEmpty) {
+              errors.add('Required');
+            }
+            if (value.length < 3) {
+              errors.add('Too short');
+            }
+            if (!RegExp(r'^[a-zA-Z]+$').hasMatch(value) && value.isNotEmpty) {
+              errors.add('Letters only');
+            }
+            return errors;
+          },
+          controller: controller,
+          initialValue: <String>[],
+        ),
+      );
 
       // Initial state with empty controller should validate
-      expect(result.current, []);
+      expect(result.current, <String>[]);
 
       // Manually trigger validation by setting text slightly differently
       controller.text = ' ';
@@ -98,15 +110,17 @@ void main() {
 
       controller.text = 'abc';
       await tester.pump();
-      expect(result.current, []);
+      expect(result.current, <String>[]);
     });
 
     testWidgets('should clean up listener on unmount', (tester) async {
-      final result = await buildHook((_) => useTextFormValidator<String?>(
-            validator: (value) => value.isEmpty ? 'Required' : null,
-            controller: controller,
-            initialValue: null,
-          ));
+      final result = await buildHook(
+        (_) => useTextFormValidator<String?>(
+          validator: (value) => value.isEmpty ? 'Required' : null,
+          controller: controller,
+          initialValue: null,
+        ),
+      );
 
       // Verify listener is working
       controller.text = 'test';
@@ -123,7 +137,7 @@ void main() {
     });
 
     testWidgets('should handle controller change', (tester) async {
-      var currentController = controller;
+      final currentController = controller;
 
       final result = await buildHook(
         (props) => useTextFormValidator<String?>(

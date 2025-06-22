@@ -38,12 +38,17 @@ void main() {
     testWidgets('should pending when delay changed to null', (tester) async {
       final effect = MockEffect();
 
-      final result = await buildHook((bool? isRunning) {
-        useInterval(
-          effect,
-          isRunning ?? false ? const Duration(milliseconds: 100) : null,
-        );
-      }, initialProps: true);
+      final result = await buildHook(
+        (isRunning) {
+          useInterval(
+            effect,
+            (isRunning as bool? ?? false)
+                ? const Duration(milliseconds: 100)
+                : null,
+          );
+        },
+        initialProps: true,
+      );
 
       await tester.pump(const Duration(milliseconds: 500));
 

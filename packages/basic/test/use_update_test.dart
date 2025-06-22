@@ -16,10 +16,10 @@ void main() {
 
       expect(buildCount, 1);
 
-      await act(() => update());
+      await act(update);
       expect(buildCount, 2);
 
-      await act(() => update());
+      await act(update);
       expect(buildCount, 3);
     });
   });

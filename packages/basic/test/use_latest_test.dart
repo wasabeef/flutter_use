@@ -6,8 +6,8 @@ void main() {
   group('useLatest', () {
     testWidgets('should return a ref with the latest value on initial render',
         (tester) async {
-      final result = await buildHook(
-        (count) => useLatest(count),
+      final result = await buildHook<int, int>(
+        (props) => useLatest<int>(props!),
         initialProps: 123,
       );
 

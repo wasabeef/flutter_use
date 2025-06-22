@@ -43,7 +43,7 @@ void main() {
     testWidgets('should clear list', (tester) async {
       final result = await buildHook((_) => useList([1, 2, 3]));
       await act(() => result.current.clear());
-      expect(result.current.list, []);
+      expect(result.current.list, <int>[]);
     });
 
     testWidgets('should insert element at index', (tester) async {
@@ -67,7 +67,7 @@ void main() {
     testWidgets('should reset to initial value', (tester) async {
       final result = await buildHook((_) => useList([1, 2, 3]));
       await act(() => result.current.clear());
-      expect(result.current.list, []);
+      expect(result.current.list, <int>[]);
       await act(() => result.current.reset());
       expect(result.current.list, [1, 2, 3]);
     });

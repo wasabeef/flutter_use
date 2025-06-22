@@ -34,7 +34,7 @@ void main() {
     testWidgets('should handle errors', (tester) async {
       final errorFuture = Future<int>.delayed(
         const Duration(milliseconds: 10),
-        () => throw 'Test error',
+        () => throw Exception('Test error'),
       );
 
       final result = await buildHook(
@@ -46,7 +46,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(result.current.snapshot.hasError, true);
-      expect(result.current.snapshot.error, 'Test error');
+      expect(result.current.snapshot.error.toString(), 'Exception: Test error');
       expect(result.current.snapshot.connectionState, ConnectionState.done);
     });
 
@@ -71,7 +71,6 @@ void main() {
         (_) => useFutureRetry(
           Future.value(42),
           initialData: 10,
-          preserveState: true,
         ),
       );
 

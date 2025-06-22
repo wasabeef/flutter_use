@@ -10,15 +10,13 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyHomePage(),
+      );
 }
 
 class SampleError extends Error {
@@ -37,7 +35,7 @@ class MyHomePage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("build");
+    debugPrint('build');
 
     final battery = useBattery();
 
@@ -47,13 +45,12 @@ class MyHomePage extends HookWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text("-- Battery --"),
-              Text("fetched: ${battery.fetched}"),
-              Text("batteryState: ${battery.batteryState}"),
-              Text("level: ${battery.batteryLevel}"),
-              Text("isInBatterySaveMode: ${battery.isInBatterySaveMode}"),
+              const Text('-- Battery --'),
+              Text('fetched: ${battery.fetched}'),
+              Text('batteryState: ${battery.batteryState}'),
+              Text('level: ${battery.batteryLevel}'),
+              Text('isInBatterySaveMode: ${battery.isInBatterySaveMode}'),
             ],
           ),
         ),

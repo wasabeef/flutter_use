@@ -9,7 +9,9 @@ void main() {
       var called = false;
       final result = await buildHook(
         (_) => useTimeoutFn(
-            () => called = true, const Duration(milliseconds: 100)),
+          () => called = true,
+          const Duration(milliseconds: 100),
+        ),
       );
 
       expect(called, false);
@@ -28,7 +30,9 @@ void main() {
       var called = false;
       final result = await buildHook(
         (_) => useTimeoutFn(
-            () => called = true, const Duration(milliseconds: 100)),
+          () => called = true,
+          const Duration(milliseconds: 100),
+        ),
       );
 
       await tester.pump(const Duration(milliseconds: 50));
@@ -62,7 +66,9 @@ void main() {
 
       final result = await buildHook(
         (props) => useTimeoutFn(
-            props as void Function(), const Duration(milliseconds: 100)),
+          props as void Function(),
+          const Duration(milliseconds: 100),
+        ),
         initialProps: fn,
       );
 
@@ -99,7 +105,9 @@ void main() {
       var called = false;
       final result = await buildHook(
         (_) => useTimeoutFn(
-            () => called = true, const Duration(milliseconds: 100)),
+          () => called = true,
+          const Duration(milliseconds: 100),
+        ),
       );
 
       await tester.pump(const Duration(milliseconds: 50));

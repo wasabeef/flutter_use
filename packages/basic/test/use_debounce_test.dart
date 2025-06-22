@@ -47,7 +47,9 @@ void main() {
 
       await tester.pump(const Duration(milliseconds: 50));
       expect(
-          called, true); // Should be called after total 110ms from key change
+        called,
+        true,
+      ); // Should be called after total 110ms from key change
     });
 
     testWidgets('should cancel on unmount', (tester) async {

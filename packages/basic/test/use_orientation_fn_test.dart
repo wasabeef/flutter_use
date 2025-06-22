@@ -6,16 +6,15 @@ import 'package:flutter_hooks_test/flutter_hooks_test.dart';
 
 void main() {
   group('useOrientationFn', () {
-    Widget Function(Widget) mediaQueryWrapper(Orientation orientation) {
-      return (Widget child) => MediaQuery(
-            data: MediaQueryData(
-              size: orientation == Orientation.portrait
-                  ? const Size(400, 800)
-                  : const Size(800, 400),
-            ),
-            child: child,
-          );
-    }
+    Widget Function(Widget) mediaQueryWrapper(Orientation orientation) =>
+        (child) => MediaQuery(
+              data: MediaQueryData(
+                size: orientation == Orientation.portrait
+                    ? const Size(400, 800)
+                    : const Size(800, 400),
+              ),
+              child: child,
+            );
 
     testWidgets('should call callback with initial orientation',
         (tester) async {

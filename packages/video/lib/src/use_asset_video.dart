@@ -22,17 +22,20 @@ VideoPlayerController useAssetVideo({
     [asset, package, closedCaptionFile, videoPlayerOptions],
   );
 
-  useEffect(() {
-    controller
-      ..initialize()
-      ..setLooping(looping);
+  useEffect(
+    () {
+      controller
+        ..initialize()
+        ..setLooping(looping);
 
-    if (autoPlay) {
-      controller.play();
-    }
+      if (autoPlay) {
+        controller.play();
+      }
 
-    return controller.dispose;
-  }, [asset, package, closedCaptionFile, videoPlayerOptions]);
+      return controller.dispose;
+    },
+    [asset, package, closedCaptionFile, videoPlayerOptions],
+  );
 
   return controller;
 }

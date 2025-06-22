@@ -8,14 +8,16 @@ void main() {
     testWidgets('should run effect on mount', (tester) async {
       var effectCount = 0;
 
-      await buildHook((_) => useCustomCompareEffect(
-            () {
-              effectCount++;
-              return null;
-            },
-            [],
-            (prev, next) => false, // Always different
-          ));
+      await buildHook(
+        (_) => useCustomCompareEffect(
+          () {
+            effectCount++;
+            return null;
+          },
+          [],
+          (prev, next) => false, // Always different
+        ),
+      );
 
       expect(effectCount, 1);
     });
@@ -71,7 +73,7 @@ void main() {
     testWidgets('should use deep comparison', (tester) async {
       var effectCount = 0;
       var deps = [
-        {'a': 1, 'b': 2}
+        {'a': 1, 'b': 2},
       ];
 
       final result = await buildHook(
@@ -82,18 +84,28 @@ void main() {
           },
           props as List<Map<String, int>>,
           (prev, next) {
-            if (prev == null || next == null) return false;
-            if (prev.length != next.length) return false;
+            if (prev == null || next == null) {
+              return false;
+            }
+            if (prev.length != next.length) {
+              return false;
+            }
 
             for (var i = 0; i < prev.length; i++) {
               final prevMap = prev[i] as Map<String, int>?;
               final nextMap = next[i] as Map<String, int>?;
 
-              if (prevMap == null || nextMap == null) return false;
-              if (prevMap.length != nextMap.length) return false;
+              if (prevMap == null || nextMap == null) {
+                return false;
+              }
+              if (prevMap.length != nextMap.length) {
+                return false;
+              }
 
               for (final key in prevMap.keys) {
-                if (prevMap[key] != nextMap[key]) return false;
+                if (prevMap[key] != nextMap[key]) {
+                  return false;
+                }
               }
             }
             return true;
@@ -106,14 +118,14 @@ void main() {
 
       // New object with same values
       deps = [
-        {'a': 1, 'b': 2}
+        {'a': 1, 'b': 2},
       ];
       await result.rebuild(deps);
       expect(effectCount, 1); // Should not run because values are deep equal
 
       // Different values
       deps = [
-        {'a': 1, 'b': 3}
+        {'a': 1, 'b': 3},
       ];
       await result.rebuild(deps);
       expect(effectCount, 2); // Should run because values changed
@@ -125,9 +137,7 @@ void main() {
 
       final result = await buildHook(
         (props) => useCustomCompareEffect(
-          () {
-            return () => cleanupCalled = true;
-          },
+          () => () => cleanupCalled = true,
           props as List<int>,
           (prev, next) => false, // Always different
         ),
@@ -156,11 +166,15 @@ void main() {
       );
 
       expect(
-          effectCount, 1); // Runs once on initial mount with null dependencies
+        effectCount,
+        1,
+      ); // Runs once on initial mount with null dependencies
 
       await result.rebuild(deps);
-      expect(effectCount,
-          2); // Runs again on rebuild even with same null dependencies
+      expect(
+        effectCount,
+        2,
+      ); // Runs again on rebuild even with same null dependencies
 
       deps = [1, 2];
       await result.rebuild(deps);

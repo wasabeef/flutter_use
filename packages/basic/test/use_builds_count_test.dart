@@ -27,7 +27,9 @@ void main() {
 
       for (var i = 1; i <= 5; i++) {
         expect(result.current, i);
-        if (i < 5) await result.rebuild();
+        if (i < 5) {
+          await result.rebuild();
+        }
       }
     });
 

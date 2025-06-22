@@ -22,17 +22,20 @@ VideoPlayerController useNetworkVideo({
     [dataSource, closedCaptionFile, videoPlayerOptions, httpHeaders],
   );
 
-  useEffect(() {
-    controller
-      ..initialize()
-      ..setLooping(looping);
+  useEffect(
+    () {
+      controller
+        ..initialize()
+        ..setLooping(looping);
 
-    if (autoPlay) {
-      controller.play();
-    }
+      if (autoPlay) {
+        controller.play();
+      }
 
-    return controller.dispose;
-  }, [dataSource, closedCaptionFile, videoPlayerOptions, httpHeaders]);
+      return controller.dispose;
+    },
+    [dataSource, closedCaptionFile, videoPlayerOptions, httpHeaders],
+  );
 
   return controller;
 }

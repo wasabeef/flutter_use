@@ -17,16 +17,24 @@ UserAccelerometerState useUserAccelerometer() {
   return state.value;
 }
 
+/// State object containing current user accelerometer sensor data.
+///
+/// This immutable class holds the latest user accelerometer readings
+/// from the device's motion sensors with gravity effects removed.
 @immutable
 class UserAccelerometerState {
+  /// Creates a [UserAccelerometerState] with the provided sensor data.
   UserAccelerometerState({
     required this.fetched,
     UserAccelerometerEvent? userAccelerometer,
   }) : _userAccelerometer =
             userAccelerometer ?? UserAccelerometerEvent(0, 0, 0);
 
+  /// Whether user accelerometer data has been successfully fetched from sensors.
   final bool fetched;
 
   final UserAccelerometerEvent _userAccelerometer;
+
+  /// The current user accelerometer reading with gravity removed (x, y, z values).
   UserAccelerometerEvent get userAccelerometer => _userAccelerometer;
 }

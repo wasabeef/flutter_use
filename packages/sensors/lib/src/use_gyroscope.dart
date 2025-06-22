@@ -16,15 +16,23 @@ GyroscopeState useGyroscope() {
   return state.value;
 }
 
+/// State object containing current gyroscope sensor data.
+///
+/// This immutable class holds the latest gyroscope readings
+/// from the device's motion sensors.
 @immutable
 class GyroscopeState {
+  /// Creates a [GyroscopeState] with the provided sensor data.
   GyroscopeState({
     required this.fetched,
     GyroscopeEvent? gyroscope,
   }) : _gyroscope = gyroscope ?? GyroscopeEvent(0, 0, 0);
 
+  /// Whether gyroscope data has been successfully fetched from sensors.
   final bool fetched;
 
   final GyroscopeEvent _gyroscope;
+
+  /// The current gyroscope reading with x, y, z angular velocity values.
   GyroscopeEvent get gyroscope => _gyroscope;
 }

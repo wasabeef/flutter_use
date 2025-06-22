@@ -10,8 +10,10 @@ void main() {
       final effect = MockDispose();
       final result = await buildHook((_) {
         // ignore: body_might_complete_normally_nullable
+        // ignore: unnecessary_lambdas
         useUpdateEffect(() {
           effect();
+          return null;
         });
       });
       verifyNever(effect());
@@ -21,9 +23,7 @@ void main() {
     testWidgets('should run cleanup on unmount', (tester) async {
       final dispose = MockDispose();
       final result = await buildHook((_) {
-        useUpdateEffect(() {
-          return dispose;
-        });
+        useUpdateEffect(() => dispose);
       });
       await result.rebuild();
       await result.unmount();

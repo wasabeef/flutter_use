@@ -30,19 +30,19 @@ AudioPlayer useAudio({
     ],
   );
 
-  useEffect(() {
-    return () {
-      audio.stop();
-      audio.dispose();
-    };
-  }, [
-    userAgent,
-    handleInterruptions,
-    androidApplyAudioAttributes,
-    handleAudioSessionActivation,
-    audioLoadConfiguration,
-    audioPipeline,
-  ]);
+  useEffect(
+      () => () {
+            audio.stop();
+            audio.dispose();
+          },
+      [
+        userAgent,
+        handleInterruptions,
+        androidApplyAudioAttributes,
+        handleAudioSessionActivation,
+        audioLoadConfiguration,
+        audioPipeline,
+      ]);
 
   return audio;
 }

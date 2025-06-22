@@ -17,15 +17,23 @@ AccelerometerState useAccelerometer() {
   return state.value;
 }
 
+/// State object containing current accelerometer sensor data.
+///
+/// This immutable class holds the latest accelerometer readings
+/// from the device's motion sensors.
 @immutable
 class AccelerometerState {
+  /// Creates an [AccelerometerState] with the provided sensor data.
   AccelerometerState({
     required this.fetched,
     AccelerometerEvent? accelerometer,
   }) : _accelerometer = accelerometer ?? AccelerometerEvent(0, 0, 0);
 
+  /// Whether accelerometer data has been successfully fetched from sensors.
   final bool fetched;
 
   final AccelerometerEvent _accelerometer;
+
+  /// The current accelerometer reading with x, y, z acceleration values.
   AccelerometerEvent get accelerometer => _accelerometer;
 }
