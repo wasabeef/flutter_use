@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_use/flutter_use.dart';
 import 'package:mockito/mockito.dart';
-import 'flutter_hooks_testing.dart';
+import 'package:flutter_hooks_test/flutter_hooks_test.dart';
 
 import 'mock.dart';
 
@@ -11,9 +11,7 @@ void main() {
       final effect = MockEffect();
       final result = await buildHook(
         // ignore: body_might_complete_normally_nullable
-        (_) => useEffectOnce(() {
-          effect();
-        }),
+        (_) => useEffectOnce(effect),
       );
       verify(effect()).called(1);
       await result.rebuild();
@@ -24,9 +22,7 @@ void main() {
     testWidgets('should run dispose only once after unmount', (tester) async {
       final dispose = MockDispose();
       final result = await buildHook(
-        (_) => useEffectOnce(() {
-          return () => dispose();
-        }),
+        (_) => useEffectOnce(() => dispose),
       );
       await result.unmount();
       verify(dispose()).called(1);

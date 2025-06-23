@@ -7,9 +7,13 @@ void useUpdateEffect(Dispose? Function() effect, [List<Object?>? keys]) {
   final isFirstMount = useFirstMountState();
 
   // ignore: body_might_complete_normally_nullable
-  useEffect(() {
-    if (!isFirstMount) {
-      return effect();
-    }
-  }, keys);
+  useEffect(
+    () {
+      if (!isFirstMount) {
+        return effect();
+      }
+      return null;
+    },
+    keys,
+  );
 }

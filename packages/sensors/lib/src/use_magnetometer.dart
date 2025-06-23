@@ -17,15 +17,23 @@ MagnetometerState useMagnetometer() {
   return state.value;
 }
 
+/// State object containing current magnetometer sensor data.
+///
+/// This immutable class holds the latest magnetometer readings
+/// from the device's magnetic field sensors.
 @immutable
 class MagnetometerState {
+  /// Creates a [MagnetometerState] with the provided sensor data.
   MagnetometerState({
     required this.fetched,
     MagnetometerEvent? magnetometer,
   }) : _magnetometer = magnetometer ?? MagnetometerEvent(0, 0, 0);
 
+  /// Whether magnetometer data has been successfully fetched from sensors.
   final bool fetched;
 
   final MagnetometerEvent _magnetometer;
+
+  /// The current magnetometer reading with x, y, z magnetic field values.
   MagnetometerEvent get magnetometer => _magnetometer;
 }

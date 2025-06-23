@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_use/flutter_use.dart';
 import 'package:mockito/mockito.dart';
-import 'flutter_hooks_testing.dart';
+import 'package:flutter_hooks_test/flutter_hooks_test.dart';
 import 'mock.dart';
 
 void main() {
@@ -10,8 +10,10 @@ void main() {
       final effect = MockDispose();
       final result = await buildHook((_) {
         // ignore: body_might_complete_normally_nullable
+        // ignore: unnecessary_lambdas
         useUpdateEffect(() {
           effect();
+          return null;
         });
       });
       verifyNever(effect());
@@ -21,9 +23,7 @@ void main() {
     testWidgets('should run cleanup on unmount', (tester) async {
       final dispose = MockDispose();
       final result = await buildHook((_) {
-        useUpdateEffect(() {
-          return dispose;
-        });
+        useUpdateEffect(() => dispose);
       });
       await result.rebuild();
       await result.unmount();

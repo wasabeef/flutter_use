@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_use/flutter_use.dart';
-import 'flutter_hooks_testing.dart';
+import 'package:flutter_hooks_test/flutter_hooks_test.dart';
 import 'package:mockito/mockito.dart';
 
 import 'mock.dart';
@@ -38,12 +38,17 @@ void main() {
     testWidgets('should pending when delay changed to null', (tester) async {
       final effect = MockEffect();
 
-      final result = await buildHook((bool? isRunning) {
-        useInterval(
-          effect,
-          isRunning ?? false ? const Duration(milliseconds: 100) : null,
-        );
-      }, initialProps: true);
+      final result = await buildHook(
+        (isRunning) {
+          useInterval(
+            effect,
+            (isRunning as bool? ?? false)
+                ? const Duration(milliseconds: 100)
+                : null,
+          );
+        },
+        initialProps: true,
+      );
 
       await tester.pump(const Duration(milliseconds: 500));
 

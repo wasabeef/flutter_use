@@ -1,0 +1,14 @@
+# lefthook.yml
+# https://github.com/evilmartians/lefthook
+
+pre-commit:
+  parallel: true
+  commands:
+    dart-format:
+      glob: "**/*.dart"
+      run: dart format {staged_files}
+      stage_fixed: true
+    prettier:
+      glob: "*.{json,yaml,yml,md}"
+      run: npx prettier --write {staged_files}
+      stage_fixed: true

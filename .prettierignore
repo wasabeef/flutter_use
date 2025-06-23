@@ -1,5 +1,28 @@
-*.md
+# Flutter/Dart
 .dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub/
 build/
-ios/
-android/
+coverage/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Lefthook
+.lefthook/
+.lefthook-local/
+
+# Generated files
+**/*.g.dart
+**/*.freezed.dart
+**/*.reflectable.dart
+**/generated_plugin_registrant.dart

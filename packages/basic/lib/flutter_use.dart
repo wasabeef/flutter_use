@@ -11,8 +11,14 @@ export 'src/use_update.dart';
 // Side-effects
 export 'src/use_future_retry.dart';
 export 'src/use_debounce.dart';
+export 'src/use_throttle.dart';
+export 'src/use_throttle_fn.dart';
+export 'src/use_scroll.dart';
+export 'src/use_scrolling.dart';
+export 'src/use_click_away.dart';
 export 'src/use_error.dart';
 export 'src/use_exception.dart';
+export 'src/use_copy_to_clipboard.dart';
 // Lifecycles
 export 'src/use_effect_once.dart';
 export 'src/use_lifecycles.dart';

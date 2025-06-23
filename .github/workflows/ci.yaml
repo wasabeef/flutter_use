@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
@@ -30,11 +30,11 @@ jobs:
           dart pub global activate melos
           melos run get
 
-      - name: Run tests for our dart project.
+      - name: Run tests with coverage
         run: |
-          melos run test
+          melos run test-coverage
 
       - name: Check for any formatting and statically analyze the code.
         run: |
-          melos run format
+          melos run check
           melos run analyze

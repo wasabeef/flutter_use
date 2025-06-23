@@ -1,0 +1,72 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+*"
+
+permissions:
+  contents: write
+  id-token: write # Required for OIDC authentication
+
+jobs:
+  release:
+    name: Release and Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Flutter and Dart
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Set environment
+        run: echo "$HOME/.pub-cache/bin" >> "$GITHUB_PATH"
+
+      - name: Install Melos
+        run: dart pub global activate melos
+
+      - name: Bootstrap packages
+        run: melos bootstrap
+
+      - name: Verify all tests pass
+        run: melos run test
+
+      - name: Verify code formatting
+        run: melos run check
+
+      - name: Verify static analysis
+        run: melos run analyze
+
+      - name: Check packages can be published (dry-run)
+        run: melos publish --dry-run
+
+      - name: Generate release notes
+        id: release_notes
+        uses: orhun/git-cliff-action@v3
+        with:
+          config: .github/cliff.toml
+          args: --latest --strip header
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          body: ${{ steps.release_notes.outputs.content }}
+          draft: false
+          prerelease: false
+
+      - name: Publish to pub.dev
+        run: melos publish --no-dry-run --yes

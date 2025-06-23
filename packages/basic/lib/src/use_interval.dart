@@ -18,12 +18,16 @@ void useInterval(
   });
 
   // ignore: body_might_complete_normally_nullable
-  useEffect(() {
-    if (delay != null) {
-      final timer = Timer.periodic(delay, (time) {
-        savedCallback.value();
-      });
-      return () => timer.cancel();
-    }
-  }, [delay]);
+  useEffect(
+    () {
+      if (delay != null) {
+        final timer = Timer.periodic(delay, (time) {
+          savedCallback.value();
+        });
+        return timer.cancel;
+      }
+      return null;
+    },
+    [delay],
+  );
 }

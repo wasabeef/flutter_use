@@ -10,12 +10,12 @@ Future<_HookTestingAction<T, P>> buildHook<T, P>(
 }) async {
   late T result;
 
-  Widget builder([P? props]) {
-    return HookBuilder(builder: (context) {
-      result = hook(props);
-      return Container();
-    });
-  }
+  Widget builder([P? props]) => HookBuilder(
+        builder: (context) {
+          result = hook(props);
+          return Container();
+        },
+      );
 
   Widget wrappedBuilder([P? props]) =>
       wrapper == null ? builder(props) : wrapper(builder(props));
@@ -29,14 +29,12 @@ Future<_HookTestingAction<T, P>> buildHook<T, P>(
   return _HookTestingAction<T, P>(() => result, rebuild, unmount);
 }
 
-Future<void> act(void Function() fn) {
-  return TestAsyncUtils.guard<void>(() {
-    final binding = TestWidgetsFlutterBinding.ensureInitialized();
-    fn();
-    binding.scheduleFrame();
-    return binding.pump();
-  });
-}
+Future<void> act(void Function() fn) => TestAsyncUtils.guard<void>(() {
+      final binding = TestWidgetsFlutterBinding.ensureInitialized();
+      fn();
+      binding.scheduleFrame();
+      return binding.pump();
+    });
 
 class _HookTestingAction<T, P> {
   const _HookTestingAction(this._current, this.rebuild, this.unmount);

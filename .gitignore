@@ -90,3 +90,11 @@ node_modules/
 # SpecStory
 .specstory/
 
+# Coverage reports
+coverage/
+*.lcov
+
+# Lefthook
+.lefthook/
+.lefthook-local/
+

@@ -1,4 +1,92 @@
+# Analysis options for flutter_use package (basic hooks)
+# This file provides strict, comprehensive linting rules for high-quality Flutter packages
+
 include: package:flutter_lints/flutter.yaml
 
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+analyzer:
+  # Enable stricter type checking for better code quality
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+
+  # Treat specific warnings as errors for critical issues
+  errors:
+    # Treat missing return statements as errors
+    missing_return: error
+    # Treat unused imports as errors
+    unused_import: error
+    # Treat unused local variables as errors
+    unused_local_variable: error
+    # Treat dead code as errors
+    dead_code: error
+    # Treat invalid assignments as errors
+    invalid_assignment: error
+
+linter:
+  rules:
+    # === ERROR PREVENTION ===
+    avoid_dynamic_calls: true
+    only_throw_errors: true
+    unrelated_type_equality_checks: true
+    cancel_subscriptions: true
+    close_sinks: true
+    test_types_in_equals: true
+    valid_regexps: true
+
+    # === NULL SAFETY ===
+    prefer_null_aware_operators: true
+    unnecessary_nullable_for_final_variable_declarations: true
+    avoid_null_checks_in_equality_operators: true
+
+    # === TYPE SAFETY ===
+    always_specify_types: false # Allow type inference for cleaner code
+    avoid_types_on_closure_parameters: true
+    omit_local_variable_types: true
+    prefer_typing_uninitialized_variables: true
+    type_annotate_public_apis: true
+
+    # === PERFORMANCE ===
+    avoid_print: true # Use logging framework instead
+    prefer_const_constructors: true
+    prefer_const_constructors_in_immutables: true
+    prefer_const_declarations: true
+    prefer_const_literals_to_create_immutables: true
+    prefer_final_fields: true
+    prefer_final_locals: true
+    unnecessary_lambdas: true
+
+    # === CODE STYLE ===
+    always_put_control_body_on_new_line: true
+    avoid_catches_without_on_clauses: true
+    avoid_catching_errors: true
+    avoid_empty_else: true
+    avoid_redundant_argument_values: true
+    camel_case_extensions: true
+    camel_case_types: true
+    curly_braces_in_flow_control_structures: true
+    prefer_single_quotes: true
+    require_trailing_commas: true
+
+    # === DOCUMENTATION ===
+    public_member_api_docs: true # Require docs for all public APIs
+
+    # === MAINTENANCE ===
+    avoid_positional_boolean_parameters: false # Allow positional bool for simple hooks like useBoolean/useToggle
+    prefer_expression_function_bodies: true
+    prefer_if_null_operators: true
+    prefer_is_empty: true
+    prefer_is_not_empty: true
+    prefer_iterable_whereType: true
+    unnecessary_const: true
+    unnecessary_new: true
+    unnecessary_this: true
+
+    # === DISABLED RULES ===
+    avoid_classes_with_only_static_members: false # Allow utility classes
+    avoid_function_literals_in_foreach_calls: false # forEach is readable
+    prefer_relative_imports: false # Package imports are clearer
+
+    # === CORE HOOKS SPECIFIC ===
+    prefer_final_in_for_each: true
+    prefer_foreach: false # Use for loops for better readability in hooks
