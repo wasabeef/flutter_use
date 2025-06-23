@@ -42,7 +42,7 @@ jobs:
         run: melos run test
 
       - name: Verify code formatting
-        run: melos run format-check
+        run: melos run check
 
       - name: Verify static analysis
         run: melos run analyze

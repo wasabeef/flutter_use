@@ -25,10 +25,8 @@ void main() {
       final keys = <GlobalKey>[];
       var counter = 0;
 
-      Widget buildTestWidget() {
-        return StatefulBuilder(
-          builder: (context, setState) {
-            return HookBuilder(
+      Widget buildTestWidget() => StatefulBuilder(
+            builder: (context, setState) => HookBuilder(
               builder: (context) {
                 final clickAway = useClickAway(() {});
                 if (keys.length <= counter) {
@@ -39,13 +37,11 @@ void main() {
                     counter++;
                     setState(() {});
                   },
-                  child: Text('Rebuild'),
+                  child: const Text('Rebuild'),
                 );
               },
-            );
-          },
-        );
-      }
+            ),
+          );
 
       await tester.pumpWidget(MaterialApp(home: buildTestWidget()));
 
@@ -154,10 +150,8 @@ void main() {
       var callbackValue = 'initial';
       late GlobalKey targetKey;
 
-      Widget buildTestWidget() {
-        return StatefulBuilder(
-          builder: (context, setState) {
-            return HookBuilder(
+      Widget buildTestWidget() => StatefulBuilder(
+            builder: (context, setState) => HookBuilder(
               builder: (context) {
                 final clickAway = useClickAway(() {
                   callbackValue = 'changed';
@@ -190,10 +184,8 @@ void main() {
                   ),
                 );
               },
-            );
-          },
-        );
-      }
+            ),
+          );
 
       await tester.pumpWidget(MaterialApp(home: buildTestWidget()));
 
@@ -250,10 +242,8 @@ void main() {
       var showWidget = true;
       late GlobalKey targetKey;
 
-      Widget buildTestWidget() {
-        return StatefulBuilder(
-          builder: (context, setState) {
-            return MaterialApp(
+      Widget buildTestWidget() => StatefulBuilder(
+            builder: (context, setState) => MaterialApp(
               home: showWidget
                   ? HookBuilder(
                       builder: (context) {
@@ -290,10 +280,8 @@ void main() {
                         child: const Text('After Unmount'),
                       ),
                     ),
-            );
-          },
-        );
-      }
+            ),
+          );
 
       await tester.pumpWidget(buildTestWidget());
 

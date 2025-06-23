@@ -55,9 +55,7 @@ T useThrottle<T>(T value, Duration duration) {
   }
 
   useEffect(
-    () {
-      return () => timer.value?.cancel();
-    },
+    () => () => timer.value?.cancel(),
     [],
   );
 

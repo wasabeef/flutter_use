@@ -3,6 +3,7 @@ name: flutter_use
 packages:
   - packages/**
   - packages/**/example/*
+  - demo
 
 ide:
   intellij: true
@@ -20,7 +21,7 @@ scripts:
     run: dart format .
     description: Format all Dart code
 
-  format-check:
+  check:
     run: dart format --set-exit-if-changed .
     description: Check if code is properly formatted
 
@@ -31,30 +32,36 @@ scripts:
       scope: flutter_use
     description: Run tests for flutter_use package
 
-  test-coverage:
+  coverage:
     run: |
       melos exec -c 8 --scope="flutter_use" -- flutter test --coverage
     description: Run tests with coverage for flutter_use package
 
-  coverage-report:
+  test-coverage:
+    run: melos run coverage
+    description: Run tests with coverage for flutter_use package
+
+  report:
     run: |
       melos exec -c 1 --scope="flutter_use" -- genhtml coverage/lcov.info -o coverage/html
     description: Generate HTML coverage report
 
-  pub-get-all:
-    run: melos exec -- flutter pub get
-    description: Get dependencies for all packages
-
   clean:
     run: melos exec -- flutter clean
     description: Clean all packages
-
-  deps-upgrade:
-    run: melos exec -- flutter pub upgrade
-    description: Upgrade dependencies for all packages
 
   fix:
     run: |
       melos exec -- dart fix --apply
       dart format .
     description: Auto-fix lint issues and format code across all packages
+
+  demo-build:
+    run: |
+      melos exec --scope="demo" -- flutter build web --release --base-href "/flutter_use/"
+    description: Build demo app for GitHub Pages
+
+  demo-run:
+    run: |
+      melos exec --scope="demo" -- flutter run -d web-server --web-port 8080
+    description: Run demo app on web server

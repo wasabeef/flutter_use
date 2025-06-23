@@ -62,13 +62,19 @@ ClickAwayState useClickAway(VoidCallback onClickAway) {
     () {
       void handlePointerEvent(PointerEvent event) {
         // Only handle pointer down events
-        if (event is! PointerDownEvent) return;
+        if (event is! PointerDownEvent) {
+          return;
+        }
 
         final context = ref.currentContext;
-        if (context == null) return;
+        if (context == null) {
+          return;
+        }
 
         final renderBox = context.findRenderObject() as RenderBox?;
-        if (renderBox == null) return;
+        if (renderBox == null) {
+          return;
+        }
 
         final offset = renderBox.globalToLocal(event.position);
         final size = renderBox.size;

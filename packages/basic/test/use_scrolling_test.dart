@@ -156,10 +156,8 @@ void main() {
       var showWidget = true;
       late ScrollingState scrollingState;
 
-      Widget buildTestWidget() {
-        return StatefulBuilder(
-          builder: (context, setState) {
-            return MaterialApp(
+      Widget buildTestWidget() => StatefulBuilder(
+            builder: (context, setState) => MaterialApp(
               home: showWidget
                   ? HookBuilder(
                       builder: (context) {
@@ -179,10 +177,8 @@ void main() {
                       },
                     )
                   : const Text('Unmounted'),
-            );
-          },
-        );
-      }
+            ),
+          );
 
       await tester.pumpWidget(buildTestWidget());
 
