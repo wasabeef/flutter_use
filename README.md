@@ -52,6 +52,16 @@ Try out all hooks with live examples at: **[https://wasabeef.github.io/flutter_u
 
 ## 📚 Hooks by Category
 
+### 📱 Mobile-first Hooks
+
+_Core package: `flutter_use`_
+
+- [`useAsync`](./docs/useAsync.md) &mdash; manages async operations with loading, data, and error states.
+- [`useDebounceFn`](./docs/useDebounceFn.md) &mdash; debounces function calls for better performance.
+- [`useInfiniteScroll`](./docs/useInfiniteScroll.md) &mdash; implements infinite scrolling with automatic loading.
+- [`useForm`](./docs/useForm.md) &mdash; comprehensive form state management with validation.
+- [`useKeyboard`](./docs/useKeyboard.md) &mdash; tracks keyboard visibility and manages layouts (mobile only).
+
 ### 🎭 State Management
 
 _Core package: `flutter_use`_
