@@ -35,6 +35,12 @@ import 'hooks/use_builds_count_demo.dart';
 import 'hooks/use_custom_compare_effect_demo.dart';
 import 'hooks/use_orientation_fn_demo.dart';
 import 'hooks/use_number_demo.dart';
+import 'hooks/use_async_demo.dart';
+import 'hooks/use_async_fn_demo.dart';
+import 'hooks/use_debounce_fn_demo.dart';
+import 'hooks/use_infinite_scroll_demo.dart';
+import 'hooks/use_form_demo.dart';
+import 'hooks/use_keyboard_demo.dart';
 
 void main() {
   runApp(const FlutterUseDemo());
@@ -93,6 +99,12 @@ class FlutterUseDemo extends StatelessWidget {
             const UseCustomCompareEffectDemo(),
         '/use-orientation-fn': (context) => const UseOrientationFnDemo(),
         '/use-number': (context) => const UseNumberDemo(),
+        '/use-async': (context) => const UseAsyncDemo(),
+        '/use-async-fn': (context) => const UseAsyncFnDemo(),
+        '/use-debounce-fn': (context) => const UseDebounceFnDemo(),
+        '/use-infinite-scroll': (context) => const UseInfiniteScrollDemo(),
+        '/use-form': (context) => const UseFormDemo(),
+        '/use-keyboard': (context) => const UseKeyboardDemo(),
       },
     );
   }
@@ -600,6 +612,71 @@ class HomePage extends StatelessWidget {
                       Icons.calculate,
                       Colors.green,
                       '/use-number',
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 48),
+
+                // Mobile-first Hooks Section
+                _buildRefinedSection(
+                  context,
+                  '📱 Mobile-first Hooks',
+                  'Essential hooks for modern mobile app development',
+                  [
+                    _buildEnhancedDemoCard(
+                      context,
+                      'useAsync',
+                      'Manage async operations with loading and error states',
+                      '',
+                      Icons.sync,
+                      Colors.blue,
+                      '/use-async',
+                    ),
+                    _buildEnhancedDemoCard(
+                      context,
+                      'useAsyncFn',
+                      'Manual async operations for forms and user actions',
+                      '',
+                      Icons.touch_app,
+                      Colors.blueAccent,
+                      '/use-async-fn',
+                    ),
+                    _buildEnhancedDemoCard(
+                      context,
+                      'useDebounceFn',
+                      'Debounce function calls for better performance',
+                      '',
+                      Icons.timer_off,
+                      Colors.orange,
+                      '/use-debounce-fn',
+                    ),
+                    _buildEnhancedDemoCard(
+                      context,
+                      'useInfiniteScroll',
+                      'Implement infinite scrolling with automatic loading',
+                      '',
+                      Icons.all_inclusive,
+                      Colors.purple,
+                      '/use-infinite-scroll',
+                    ),
+                    _buildEnhancedDemoCard(
+                      context,
+                      'useForm',
+                      'Comprehensive form state management with validation',
+                      '',
+                      Icons.assignment,
+                      Colors.green,
+                      '/use-form',
+                    ),
+                    _buildEnhancedDemoCard(
+                      context,
+                      'useKeyboard',
+                      'Track keyboard visibility and manage layouts',
+                      '',
+                      Icons.keyboard,
+                      Colors.teal,
+                      '/use-keyboard',
                     ),
                   ],
                 ),
