@@ -1,3 +1,25 @@
+## 1.0.0
+
+**First Stable Release**
+
+Professional video playback capabilities for Flutter. Whether you're building
+educational content, entertainment apps, or media galleries.
+
+**Features**
+- `useAssetVideo()` - Bundled video playback with optimized loading
+- `useNetworkVideo()` - Streaming video with smart buffering
+- Complete playback controls: play, pause, stop, and precise seeking
+- Intelligent state management for loading, playing, paused, and completed
+- Volume and playback speed adjustments
+- Real-time duration and position tracking
+- Memory-efficient video handling
+
+**Production Ready**
+- Smooth playback across device capabilities
+- Handles network interruptions gracefully
+- Optimized for various video formats and resolutions
+- Clear documentation with implementation examples
+
 ## 0.0.5
 
 - Updated `flutter_hooks` to `^0.21.0`. See [PR #62](https://github.com/wasabeef/flutter_use/pull/62) for details.

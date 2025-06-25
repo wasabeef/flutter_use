@@ -1,3 +1,24 @@
+## 1.0.0
+
+**First Stable Release**
+
+Precise location tracking made simple. Build location-aware apps with confidence,
+from fitness trackers to delivery services.
+
+**Features**
+- `useGeolocation()` hook with intelligent position tracking
+- Real-time GPS updates with configurable accuracy
+- Smart permission handling for seamless user experience
+- Distance and accuracy filtering to reduce noise
+- Robust error handling for offline scenarios
+- Works reliably across iOS and Android platforms
+
+**Developer Experience**
+- Production-ready stability
+- Clear error messages and states
+- Flexible configuration options
+- Comprehensive usage examples
+
 ## 0.0.5
 
 - Updated `flutter_hooks` to `^0.21.0`. See [PR #62](https://github.com/wasabeef/flutter_use/pull/62) for details.

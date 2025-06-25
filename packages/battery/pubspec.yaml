@@ -1,7 +1,7 @@
 name: flutter_use_battery
 
-description: Collection of Flutter Hooks.
-version: 0.0.5
+description: Battery monitoring hooks for Flutter applications. Provides useBattery hook for real-time battery level and charging state tracking across platforms.
+version: 1.0.0
 homepage: https://github.com/wasabeef/flutter_use
 repository: https://github.com/wasabeef/flutter_use
 documentation: https://github.com/wasabeef/flutter_use

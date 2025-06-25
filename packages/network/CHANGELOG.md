@@ -1,3 +1,24 @@
+## 1.0.0
+
+**First Stable Release**
+
+Network connectivity awareness for modern apps. Handle offline scenarios gracefully
+and provide users with clear connection status feedback.
+
+**Features**
+- `useNetworkState()` hook for comprehensive connectivity monitoring
+- Real-time network status updates
+- Detailed connection type detection (WiFi, mobile, ethernet)
+- Connection quality assessment
+- Seamless offline/online state transitions
+- Consistent behavior across all platforms
+
+**Reliability**
+- Battle-tested in production environments
+- Handles edge cases and network transitions smoothly
+- Minimal performance impact
+- Easy integration with existing error handling
+
 ## 0.0.5
 
 - Updated `flutter_hooks` to `^0.21.0`. See [PR #62](https://github.com/wasabeef/flutter_use/pull/62) for details.
