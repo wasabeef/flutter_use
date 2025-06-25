@@ -48,7 +48,7 @@ jobs:
         run: melos run analyze
 
       - name: Check packages can be published (dry-run)
-        run: melos publish --dry-run
+        run: melos publish --dry-run --yes
 
       - name: Generate release notes
         id: release_notes
