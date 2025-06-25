@@ -78,14 +78,87 @@ All hooks follow a consistent pattern:
 
 ## Development Workflow
 
-1. Pre-commit hooks automatically format Dart code via Husky and lint-staged
+1. Pre-commit hooks automatically format Dart code via lefthook and lint-staged
 2. All packages support Dart SDK `>=2.17.0 <4.0.0` and Flutter `>=3.0.0`
-3. Each package is independently versioned and published to pub.dev
+3. All packages use unified versioning (currently v1.0.0)
+4. Automated CI/CD pipeline with GitHub Actions for quality assurance and publishing
 
 ## Creating New Hooks
 
 1. Add hook file to `packages/[package_name]/lib/src/`
 2. Follow existing naming convention: `use_[hook_name].dart`
-3. Export from main library file
-4. Add comprehensive tests using the hook testing utilities
-5. Add documentation in `/docs/` with DartPad example link if applicable
+3. For function-suffixed hooks (e.g., `useAsyncFn`), place in separate files for consistency
+4. Export from main library file (`packages/[package_name]/lib/[package_name].dart`)
+5. Add comprehensive tests using the hook testing utilities
+6. Add documentation in `/docs/` with DartPad example link if applicable
+7. Create demo implementations in `/demo/lib/hooks/` for interactive examples
+
+## Release Process
+
+### Automated Release Pipeline
+The project uses fully automated releases via GitHub Actions:
+
+1. **Tag Creation**: Create and push a version tag (e.g., `v1.0.1`)
+   ```bash
+   git tag v1.0.1
+   git push origin main --tags
+   ```
+
+2. **Automated Steps**: GitHub Actions automatically:
+   - Runs comprehensive quality checks (tests, formatting, analysis)
+   - Validates all packages can be published (`melos publish --dry-run --yes`)
+   - Generates release notes using git-cliff
+   - Creates GitHub Release
+   - Publishes all packages to pub.dev (`melos publish --no-dry-run --yes`)
+
+### Version Management
+- All packages maintain unified versioning
+- Update version in all `pubspec.yaml` files before tagging
+- Update `CHANGELOG.md` for each package with release notes
+
+### Pre-Release Checklist
+- [ ] All tests pass: `melos test`
+- [ ] Code formatted: `melos format`
+- [ ] Static analysis clean: `melos analyze`
+- [ ] Package descriptions are accurate and specific
+- [ ] CHANGELOG.md updated for all packages
+- [ ] Version bumped in all pubspec.yaml files
+
+### CI/CD Troubleshooting
+- **Interactive Prompts**: Use `--yes` flag for Melos commands in CI
+- **Package Validation**: Ensure all required fields in pubspec.yaml (name, version, description, homepage, repository, documentation, issue_tracker)
+- **Git Clean State**: Commit all changes before tagging for release
+
+## Documentation Standards
+
+### DartDoc Comments
+- Use comprehensive DartDoc comments for all public APIs
+- Include usage examples in comments
+- Document parameter types and return values
+- Explain hook behavior and lifecycle
+
+### CHANGELOG Format
+- Use natural, developer-friendly language
+- Group changes by type: New Features, Improvements, Breaking Changes
+- Include context about why changes were made
+- Avoid AI-generated tone in favor of authentic developer communication
+
+### Package Descriptions
+Each package should have a specific, descriptive summary:
+- `flutter_use`: "Essential Flutter hooks collection with 36 production-ready hooks for async operations, form management, UI interactions, and state management."
+- `flutter_use_audio`: "Audio playback hooks for Flutter applications..."
+- etc.
+
+## Quality Assurance
+
+### Testing Requirements
+- Minimum 252 tests for the basic package
+- Test all hook states and edge cases
+- Use proper cleanup in tests to prevent timer leaks
+- Test error scenarios and recovery
+
+### Code Standards
+- Follow strict static analysis rules
+- Use explicit type parameters where needed for type inference
+- Maintain consistent file organization patterns
+- Prefer composition over inheritance in hook design
