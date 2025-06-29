@@ -18,7 +18,7 @@ dependencies:
 
 ## Usage
 
-[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)](https://dartpad.dev/?id=12449436914e1dec13c8f9c5cf63935b&null_safety=true)
+[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)](https://wasabeef.github.io/flutter_use/#/use-timeout-fn)
 
 ```dart
 class Sample extends HookWidget {

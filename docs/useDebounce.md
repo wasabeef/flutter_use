@@ -13,7 +13,7 @@ dependencies:
 
 ## Usage
 
-[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)](https://dartpad.dev/?id=977ee00fc30da8f0dd1888f6808114eb&null_safety=true)
+[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)](https://wasabeef.github.io/flutter_use/#/use-debounce)
 
 ```dart
 class Sample extends HookWidget {

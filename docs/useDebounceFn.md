@@ -4,6 +4,8 @@ A hook that debounces function calls, delaying execution until after a specified
 
 ## Usage
 
+[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)](https://wasabeef.github.io/flutter_use/#/use-debounce-fn)
+
 ```dart
 import 'package:flutter_use/flutter_use.dart';
 

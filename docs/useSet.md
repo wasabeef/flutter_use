@@ -11,7 +11,7 @@ dependencies:
 
 ## Usage
 
-[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)](https://dartpad.dev/?id=3d1199828a54b19c526a26a6c0021293&null_safety=true)
+[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)](https://wasabeef.github.io/flutter_use/#/use-set)
 
 ```dart
 class Sample extends HookWidget {

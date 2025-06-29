@@ -11,7 +11,7 @@ dependencies:
 ```
 ## Usage
 
-[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)](https://dartpad.dev/?id=27146b5ca9189664e39ad4dfe9b08abe&null_safety=true)
+[![](https://img.shields.io/badge/demo-%20%20%20%F0%9F%9A%80-green.svg)](https://wasabeef.github.io/flutter_use/#/use-custom-compare-effect)
 
 ```dart
 class Sample extends HookWidget {
